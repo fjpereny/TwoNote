@@ -1,5 +1,6 @@
 #include "tabmainwidget.h"
 #include "floattextedit.h"
+#include "notetabwidget.h"
 
 #include <QMouseEvent>
 #include <iostream>
@@ -7,7 +8,9 @@
 TabMainWidget::TabMainWidget(QWidget *parent)
     : QWidget{parent}
 {
+    this->setParent(parent);
     this->setCursor(Qt::ArrowCursor);
+
     clicked_x = nullptr;
     clicked_y = nullptr;
 }

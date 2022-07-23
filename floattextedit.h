@@ -17,6 +17,8 @@ private:
     void focusOutEvent(QFocusEvent *event);
     void enterEvent(QEvent *event);
     void leaveEvent(QEvent *event);
+    void fontSizeUp();
+    void fontSizeDown();
 
 private slots:
 

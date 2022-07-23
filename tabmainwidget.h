@@ -2,6 +2,7 @@
 #define TABMAINWIDGET_H
 
 #include <QWidget>
+#include "notetabwidget.h"
 
 class TabMainWidget : public QWidget
 {

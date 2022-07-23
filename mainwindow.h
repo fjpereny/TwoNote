@@ -16,13 +16,20 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void setCurrentObject(QWidget* object = nullptr);
+    QWidget* getCurrentObject(QWidget *object);
+
+    static MainWindow* getMainWindow();
+
 private slots:
     void on_ribbonBar_currentChanged(int index);
     void on_tabWidget_tabBarDoubleClicked(int index);
     void setTabText();
     void on_tabWidget_tabBarClicked(int index);
+    void on_boldButton_clicked();
 
 private:
     Ui::MainWindow *ui;
+    QWidget *currentObject;
 };
 #endif // MAINWINDOW_H

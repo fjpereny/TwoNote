@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "tabmainwidget.h"
+#include "floattextedit.h"
 
 #include <iostream>
 #include <QDialog>
@@ -16,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    currentObject = nullptr;
 }
 
 MainWindow::~MainWindow()
@@ -80,3 +83,39 @@ void MainWindow::on_tabWidget_tabBarClicked(int index)
     this->ui->tabWidget->insertTab(lastTabIndex, newPage, "New Section");
 }
 
+void MainWindow::on_boldButton_clicked()
+{
+    if (this->currentObject)
+    {
+        QTextEdit *floatTextEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        if (floatTextEdit)
+        {
+            floatTextEdit->setFontItalic(true);
+            return;
+        }
+    }
+}
+
+
+void MainWindow::setCurrentObject(QWidget *object)
+{
+    this->currentObject = object;
+}
+
+QWidget* MainWindow::getCurrentObject(QWidget *object)
+{
+    return this->currentObject;
+}
+
+
+static MainWindow* getMainWindow()
+{
+    foreach (QWidget *widget, qApp->topLevelWidgets())
+    {
+        if (MainWindow *win = qobject_cast<MainWindow*>(widget))
+        {
+            return win;
+        }
+    }
+    return nullptr;
+}

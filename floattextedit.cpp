@@ -1,6 +1,10 @@
 #include "floattextedit.h"
+#include "tabmainwidget.h"
+#include "mainwindow.h"
+
 #include <QKeyEvent>
 #include <QFocusEvent>
+#include <QApplication>
 #include <iostream>
 
 FloatTextEdit::FloatTextEdit(QWidget *parent)
@@ -16,6 +20,9 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
                 "border-color : gray;"
                 "background-color : transparent;"
             );
+
+    this->setFontPointSize(12);
+    this->setFontFamily("DejaVu Sans");
 
     selected = new bool(false);
 }
@@ -43,6 +50,10 @@ void FloatTextEdit::keyPressEvent(QKeyEvent *event)
 
 void FloatTextEdit::focusInEvent(QFocusEvent *event)
 {
+    QWidget *winWidget = QWidget::window();
+    MainWindow *win = qobject_cast<MainWindow*>(winWidget);
+    win->setCurrentObject(this);
+
     this->setStyleSheet
             (   "color: black;"
                 "border-width : 4px;"
@@ -82,4 +93,15 @@ void FloatTextEdit::enterEvent(QEvent *event)
 void FloatTextEdit::leaveEvent(QEvent *event)
 {
     this->setCursor(Qt::ArrowCursor);
+}
+
+
+void FloatTextEdit::fontSizeUp()
+{
+
+}
+
+void FloatTextEdit::fontSizeDown()
+{
+
 }

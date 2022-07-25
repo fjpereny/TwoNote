@@ -29,6 +29,8 @@ set(PROJECT_SOURCES
         floattextedit.cpp
         tabmainwidget.h
         tabmainwidget.cpp
+        container.h
+        container.cpp
         ${TS_FILES}
 )
 

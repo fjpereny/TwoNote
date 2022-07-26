@@ -34,7 +34,6 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
 FloatTextEdit::~FloatTextEdit()
 {
     this->parentWidget()->close();
-    this->close();
 }
 
 

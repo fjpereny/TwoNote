@@ -11,6 +11,7 @@
 #include <QPushButton>
 #include <QString>
 #include <QKeyEvent>
+#include <QTextCursor>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -90,7 +91,54 @@ void MainWindow::on_boldButton_clicked()
         QTextEdit *floatTextEdit = qobject_cast<QTextEdit*>(this->currentObject);
         if (floatTextEdit)
         {
-            floatTextEdit->setFontItalic(true);
+            QFont font = floatTextEdit->currentFont();
+            font.setBold(!font.bold());
+            floatTextEdit->setCurrentFont(font);
+            return;
+        }
+    }
+}
+
+
+void MainWindow::on_italicButton_clicked()
+{
+    if (this->currentObject)
+    {
+        QTextEdit *floatTextEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        if (floatTextEdit)
+        {
+            floatTextEdit->setFontItalic(!floatTextEdit->fontItalic());
+            return;
+        }
+    }
+}
+
+
+void MainWindow::on_underlineButton_clicked()
+{
+    if (this->currentObject)
+    {
+        QTextEdit *floatTextEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        if (floatTextEdit)
+        {
+            floatTextEdit->setFontUnderline(!floatTextEdit->fontUnderline());
+            return;
+        }
+    }
+}
+
+
+void MainWindow::on_strikeButton_clicked()
+{
+    if (this->currentObject)
+    {
+        QTextEdit *floatTextEdit = qobject_cast<QTextEdit*>(this->currentObject);
+
+        if (floatTextEdit)
+        {
+            QFont font = floatTextEdit->currentFont();
+            font.setStrikeOut(!font.strikeOut());
+            floatTextEdit->setCurrentFont(font);
             return;
         }
     }
@@ -119,3 +167,7 @@ static MainWindow* getMainWindow()
     }
     return nullptr;
 }
+
+
+
+

@@ -28,6 +28,12 @@ private slots:
     void on_tabWidget_tabBarClicked(int index);
     void on_boldButton_clicked();
 
+    void on_italicButton_clicked();
+
+    void on_underlineButton_clicked();
+
+    void on_strikeButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QWidget *currentObject;

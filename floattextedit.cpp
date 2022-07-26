@@ -6,6 +6,7 @@
 #include <QKeyEvent>
 #include <QFocusEvent>
 #include <QApplication>
+#include <iostream>
 
 
 FloatTextEdit::FloatTextEdit(QWidget *parent)
@@ -13,6 +14,12 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     this->setParent(parent);
     this->setAttribute(Qt::WA_DeleteOnClose, true);
     this->setAutoFillBackground(true);
+
+    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    this->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
+    this->setSizeIncrement(50, 50);
 
     selected = new bool(false);
 }
@@ -27,16 +34,12 @@ FloatTextEdit::~FloatTextEdit()
 
 void FloatTextEdit::keyPressEvent(QKeyEvent *event)
 {
-    if (event->key() == Qt::Key_Delete && *selected)
-    {
-        Container *parent = qobject_cast<Container*>(this->parent());
-        parent->close();
-        this->close();
-    }
+    QTextEdit::keyPressEvent(event);
 
-    else
+    Container *parent = qobject_cast<Container*>(this->parent());
+    if (this->height() > parent->height())
     {
-        QTextEdit::keyPressEvent(event);
+        parent->resize(parent->width(), this->height());
     }
 }
 
@@ -77,9 +80,10 @@ void FloatTextEdit::focusOutEvent(QFocusEvent *event)
 {
     if (this->toPlainText() == "" || this->toPlainText() == "Blank Note")
     {
-        this->close();
+        Container *parent = qobject_cast<Container*>(this->parent());
+        if (!parent->hasFocus())
+            parent->close();
     }
-
 
     *selected = false;
 

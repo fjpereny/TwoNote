@@ -20,8 +20,11 @@ private:
     void fontSizeUp();
     void fontSizeDown();
 
-private slots:
+signals:
 
+
+private slots:
+    void changeParentCursor();
 };
 
 #endif // FLOATTEXTEDIT_H

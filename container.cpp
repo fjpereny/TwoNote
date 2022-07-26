@@ -18,8 +18,7 @@ Container::Container(QWidget *parent)
     this->setMaximumWidth(16777215);
     this->setMaximumHeight(16777215);
 
-    QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    this->setSizePolicy(sizePolicy);
+    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     this->setStyleSheet
             (
@@ -71,13 +70,55 @@ bool Container::getMovable()
 
 void Container::focusInEvent(QFocusEvent *event)
 {
+    this->setStyleSheet
+            (
+                "Container "
+                "{"
+                    "border-width : 2px;"
+                    "border-style : solid;"
+                    "border-radius : 0px;"
+                    "border-color : rgb(200, 200, 200);"
+                    "border-top-width : 15px;"
+                    "background-color : none;"
+                "}"
 
+                "Container:hover"
+                "{"
+                    "border-width : 2px;"
+                    "border-style : solid;"
+                    "border-radius : 0px;"
+                    "border-color : rgb(200, 200, 200);"
+                    "border-top-width : 15px;"
+                    "background-color : none;"
+                "}"
+            );
 }
 
 
 void Container::focusOutEvent(QFocusEvent *event)
 {
+    this->setStyleSheet
+            (
+                "Container "
+                "{"
+                    "border-width : 2px;"
+                    "border-style : solid;"
+                    "border-radius : 0px;"
+                    "border-color : none;"
+                    "border-top-width : 15px;"
+                    "background-color : none;"
+                "}"
 
+                "Container:hover"
+                "{"
+                    "border-width : 2px;"
+                    "border-style : solid;"
+                    "border-radius : 0px;"
+                    "border-color : rgb(225, 225, 225);"
+                    "border-top-width : 15px;"
+                    "background-color : none;"
+                "}"
+            );
 }
 
 

@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "container.h"
 
+#include <QObject>
 #include <QKeyEvent>
 #include <QFocusEvent>
 #include <QApplication>
@@ -15,13 +16,18 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     this->setAttribute(Qt::WA_DeleteOnClose, true);
     this->setAutoFillBackground(true);
 
-    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    this->setMinimumWidth(200);
+    this->setMaximumWidth(400);
+    this->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
     this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     this->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
-    this->setSizeIncrement(50, 50);
+
+    this->setCursor(Qt::IBeamCursor);
 
     selected = new bool(false);
+
+    QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::changeParentCursor);
 }
 
 
@@ -36,16 +42,15 @@ void FloatTextEdit::keyPressEvent(QKeyEvent *event)
 {
     QTextEdit::keyPressEvent(event);
 
-    Container *parent = qobject_cast<Container*>(this->parent());
-    if (this->height() > parent->height())
+    if (event->key() == Qt::Key_Insert)
     {
-        parent->resize(parent->width(), this->height());
+        this->setOverwriteMode(!this->overwriteMode());
     }
 }
 
 
 void FloatTextEdit::focusInEvent(QFocusEvent *event)
-{
+{    
     QWidget *winWidget = QWidget::window();
     MainWindow *win = qobject_cast<MainWindow*>(winWidget);
     win->setCurrentObject(this);
@@ -96,7 +101,7 @@ void FloatTextEdit::focusOutEvent(QFocusEvent *event)
             (
                 "Container "
                 "{"
-                    "border-width : 0px;"
+                    "border-width : 2px;"
                     "border-style : solid;"
                     "border-radius : 0px;"
                     "border-color : none;"
@@ -119,7 +124,7 @@ void FloatTextEdit::focusOutEvent(QFocusEvent *event)
 
 void FloatTextEdit::enterEvent(QEvent *event)
 {
-    this->setCursor(Qt::IBeamCursor);
+
 }
 
 
@@ -137,4 +142,10 @@ void FloatTextEdit::fontSizeUp()
 void FloatTextEdit::fontSizeDown()
 {
 
+}
+
+void FloatTextEdit::changeParentCursor()
+{
+    Container *parent = qobject_cast<Container*>(this->parent());
+    parent->setCursor(Qt::IBeamCursor);
 }

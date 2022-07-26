@@ -128,4 +128,35 @@ void Container::mousePressEvent(QMouseEvent *event)
 void Container::mouseReleaseEvent(QMouseEvent *event)
 {
     this->setMovable(false);
+
+//    Snapping position by pixel location
+    int snapPixelSize = 10; // Set to even number to ensure proper
+    int newX, newY, gapX, gapY;
+
+    gapX = this->pos().x() % snapPixelSize;
+    gapY = this->pos().y() % snapPixelSize;
+
+    if (gapX <= snapPixelSize / 2)
+        newX = this->pos().x() - gapX;
+    else
+        newX = this->pos().x() + gapX;
+
+    if (gapY <= snapPixelSize / 2)
+        newY = this->pos().y() - gapY;
+    else
+        newY = this->pos().y() + gapY;
+
+    this->move(newX, newY);
+}
+
+
+void Container::keyPressEvent(QKeyEvent *event)
+{
+    if (this->hasFocus())
+    {
+        if (event->key() == Qt::Key_Delete || event->key() == Qt::Key_Backspace)
+        {
+            this->close();
+        }
+    }
 }

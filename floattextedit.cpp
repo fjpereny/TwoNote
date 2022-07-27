@@ -31,6 +31,8 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     selected = new bool(false);
 
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::changeParentCursor);
+
+    this->setFontPointSize(12);
 }
 
 
@@ -135,16 +137,6 @@ void FloatTextEdit::leaveEvent(QEvent *event)
 
 }
 
-
-void FloatTextEdit::fontSizeUp()
-{
-
-}
-
-void FloatTextEdit::fontSizeDown()
-{
-
-}
 
 void FloatTextEdit::changeParentCursor()
 {

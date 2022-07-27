@@ -169,5 +169,18 @@ static MainWindow* getMainWindow()
 }
 
 
+void MainWindow::on_fontSizeComboBox_currentIndexChanged(int index)
+{
+    QTextEdit *widget = qobject_cast<QTextEdit*>(this->currentObject);
+    if (widget)
+    {
+        QString fontSizeTextPt = ui->fontSizeComboBox->currentText();
+        QString fontSizeText = fontSizeTextPt.split(' ')[0];
+        int fontSize = fontSizeText.toInt();
 
+        QFont font = widget->currentFont();
+        font.setPointSize(fontSize);
+        widget->setCurrentFont(font);
+    }
+}
 

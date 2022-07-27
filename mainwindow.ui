@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1002</width>
+    <width>1011</width>
     <height>643</height>
    </rect>
   </property>
@@ -577,7 +577,148 @@
                <widget class="QComboBox" name="comboBox"/>
               </item>
               <item>
-               <widget class="QComboBox" name="comboBox_2"/>
+               <widget class="QComboBox" name="fontSizeComboBox">
+                <property name="maximumSize">
+                 <size>
+                  <width>75</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="currentText">
+                 <string>12 pt</string>
+                </property>
+                <property name="maxVisibleItems">
+                 <number>6</number>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>6 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>7 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>8 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>9 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>10 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>11 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>12 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>13 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>14 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>16 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>18 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>20 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>22 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>24 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>26 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>28 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>30 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>32 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>36 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>40 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>48 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>54 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>64 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>76 pt</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>96 pt</string>
+                 </property>
+                </item>
+               </widget>
               </item>
               <item>
                <widget class="QPushButton" name="pushButton_5">

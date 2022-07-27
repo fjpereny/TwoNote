@@ -34,6 +34,8 @@ private slots:
 
     void on_strikeButton_clicked();
 
+    void on_fontSizeComboBox_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
     QWidget *currentObject;

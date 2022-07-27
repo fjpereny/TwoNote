@@ -128,16 +128,23 @@ void Container::mouseMoveEvent(QMouseEvent *event)
     x = event->position().x();
     y = event->position().y();
 
-    int grabSize = 15;
-    int minVPixels = grabSize;
-    int maxHPixels = this->width() - grabSize;
+    int grabSizeV = 15;
+    int grabSizeH = 5;
+    int minVPixels = grabSizeV;
+    int maxHPixels = this->width() - grabSizeH;
 
     if (y <= minVPixels)
-        this->setCursor(Qt::SizeAllCursor);
+    {
+           this->setCursor(Qt::SizeAllCursor);
+    }
     else if (x >= maxHPixels)
+    {
         this->setCursor(Qt::SizeHorCursor);
+    }
     else
+    {
         this->setCursor(Qt::IBeamCursor);
+    }
 
     if (this->hasFocus() && this->getMovable())
     {
@@ -171,7 +178,7 @@ void Container::mouseReleaseEvent(QMouseEvent *event)
     this->setMovable(false);
 
 //    Snapping position by pixel location
-    int snapPixelSize = 10; // Set to even number to ensure proper
+    int snapPixelSize = 16; // Set to even number to ensure proper rouding (division by 2)
     int newX, newY, gapX, gapY;
 
     gapX = this->pos().x() % snapPixelSize;
@@ -201,3 +208,5 @@ void Container::keyPressEvent(QKeyEvent *event)
         }
     }
 }
+
+

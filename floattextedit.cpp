@@ -16,8 +16,11 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     this->setAttribute(Qt::WA_DeleteOnClose, true);
     this->setAutoFillBackground(true);
 
-    this->setMinimumWidth(200);
-    this->setMaximumWidth(400);
+    int marginTop = 2;
+    int marginSides = 10;
+    this->setFixedHeight(parent->height() - marginTop);
+    this->setFixedWidth(parent->width() - marginSides);
+
     this->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
     this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -148,3 +151,5 @@ void FloatTextEdit::changeParentCursor()
     Container *parent = qobject_cast<Container*>(this->parent());
     parent->setCursor(Qt::IBeamCursor);
 }
+
+

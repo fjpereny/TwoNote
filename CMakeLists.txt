@@ -48,7 +48,10 @@ set(PROJECT_SOURCES
         tabmainwidget.cpp
         container.h
         container.cpp
+
         rsc/rsc.qrc
+
+        css/ribbonButtons.css
         ${TS_FILES}
 )
 
@@ -92,3 +95,6 @@ set_target_properties(TwoNote PROPERTIES
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(TwoNote main.cpp)
 endif()
+
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/css/ribbonButtons.css DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/css/ribbonButtons.css)

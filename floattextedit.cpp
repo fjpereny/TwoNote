@@ -20,7 +20,6 @@
 #include "tabmainwidget.h"
 #include "mainwindow.h"
 #include "container.h"
-#include "ui_mainwindow.h"
 
 #include <QObject>
 #include <QKeyEvent>

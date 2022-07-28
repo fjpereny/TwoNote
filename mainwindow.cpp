@@ -30,6 +30,9 @@
 #include <QString>
 #include <QKeyEvent>
 #include <QTextCursor>
+#include <QFile>
+#include <QDir>
+#include <QTextStream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -46,6 +49,33 @@ MainWindow::MainWindow(QWidget *parent)
     italic = new bool(false);
     underline = new bool(false);
     strike = new bool(false);
+
+
+    QDir dir;
+    QFile file;
+
+    QString folder = "/css/";
+    QString fileName = "ribbonButtons.css";
+    dir.setCurrent(QApplication::applicationDirPath() + folder);
+    file.setFileName(fileName);
+    if (file.exists())
+    {
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text))
+        {
+            QTextStream stream(&file);
+            QString css = stream.readAll();
+            ui->boldButton->setStyleSheet(css);
+            file.close();
+        }
+        else
+        {
+            std::cout << "Warning: Failed to open CSS file - ribbonButtons.css" << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "Warning: Missing CSS file - ribbonButtons.css" << std::endl;
+    }
 }
 
 MainWindow::~MainWindow()

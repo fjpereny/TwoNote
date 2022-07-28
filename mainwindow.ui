@@ -35,13 +35,13 @@
       <property name="minimumSize">
        <size>
         <width>0</width>
-        <height>125</height>
+        <height>150</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>125</height>
+        <height>150</height>
        </size>
       </property>
       <property name="palette">
@@ -513,34 +513,130 @@
               <item>
                <layout class="QVBoxLayout" name="verticalLayout_4">
                 <item>
-                 <widget class="QPushButton" name="pushButton_2">
-                  <property name="text">
-                   <string>Cut</string>
-                  </property>
-                  <property name="flat">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
+                 <layout class="QHBoxLayout" name="horizontalLayout_5">
+                  <item>
+                   <widget class="QPushButton" name="pushButton_2">
+                    <property name="focusPolicy">
+                     <enum>Qt::NoFocus</enum>
+                    </property>
+                    <property name="text">
+                     <string>Cut</string>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="rsc/rsc.qrc">
+                      <normaloff>:/icons/feather/feather/scissors.svg</normaloff>:/icons/feather/feather/scissors.svg</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="shortcut">
+                     <string>Ctrl+X</string>
+                    </property>
+                    <property name="flat">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_2">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_3">
-                  <property name="text">
-                   <string>Copy</string>
-                  </property>
-                  <property name="flat">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
+                 <layout class="QHBoxLayout" name="horizontalLayout_9">
+                  <item>
+                   <widget class="QPushButton" name="pushButton_3">
+                    <property name="focusPolicy">
+                     <enum>Qt::NoFocus</enum>
+                    </property>
+                    <property name="text">
+                     <string>Copy</string>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="rsc/rsc.qrc">
+                      <normaloff>:/icons/feather/feather/copy.svg</normaloff>:/icons/feather/feather/copy.svg</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="shortcut">
+                     <string>Ctrl+C</string>
+                    </property>
+                    <property name="flat">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_4">
-                  <property name="text">
-                   <string>Format Painter</string>
-                  </property>
-                  <property name="flat">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
+                 <layout class="QHBoxLayout" name="horizontalLayout_10">
+                  <item>
+                   <widget class="QPushButton" name="pushButton_4">
+                    <property name="focusPolicy">
+                     <enum>Qt::NoFocus</enum>
+                    </property>
+                    <property name="text">
+                     <string>Format Painter</string>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="rsc/rsc.qrc">
+                      <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/brush.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/brush.svg</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>20</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                    <property name="flat">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_4">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
                 </item>
                </layout>
               </item>
@@ -781,12 +877,15 @@
                 <property name="focusPolicy">
                  <enum>Qt::NoFocus</enum>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
                 <property name="text">
                  <string/>
                 </property>
                 <property name="icon">
                  <iconset resource="rsc/rsc.qrc">
-                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/bold.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/bold.svg</iconset>
+                  <normaloff>:/icons/feather/feather/bold.svg</normaloff>:/icons/feather/feather/bold.svg</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -813,7 +912,11 @@
                  <enum>Qt::NoFocus</enum>
                 </property>
                 <property name="text">
-                 <string>I</string>
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="rsc/rsc.qrc">
+                  <normaloff>:/icons/feather/feather/italic.svg</normaloff>:/icons/feather/feather/italic.svg</iconset>
                 </property>
                 <property name="flat">
                  <bool>true</bool>
@@ -826,7 +929,11 @@
                  <enum>Qt::NoFocus</enum>
                 </property>
                 <property name="text">
-                 <string>U</string>
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="rsc/rsc.qrc">
+                  <normaloff>:/icons/feather/feather/underline.svg</normaloff>:/icons/feather/feather/underline.svg</iconset>
                 </property>
                 <property name="flat">
                  <bool>true</bool>
@@ -839,7 +946,11 @@
                  <enum>Qt::NoFocus</enum>
                 </property>
                 <property name="text">
-                 <string>Strike</string>
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="rsc/rsc.qrc">
+                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/strikethrough.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/strikethrough.svg</iconset>
                 </property>
                 <property name="flat">
                  <bool>true</bool>
@@ -965,7 +1076,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="frame_2">
+     <widget class="QFrame" name="tabFrame">
       <property name="palette">
        <palette>
         <active/>

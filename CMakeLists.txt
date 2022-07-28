@@ -1,6 +1,23 @@
+#
+# Copyright (C) 2022 Frank Pereny
+#
+# This file is part of TwoNote <https://github.com/fjpereny/TwoNote>.
+#
+# TwoNote is free software: you can redistribute it and/or modify it under the terms of the
+# GNU General Public License as published by the Free Software Foundation, either version 3
+# of the License, or (at your option) any later version.
+#
+# TwoNote is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with Foobar.
+# If not, see <https://www.gnu.org/licenses/>.
+#
+
 cmake_minimum_required(VERSION 3.5)
 
-project(TwoNote VERSION 0.1 LANGUAGES CXX)
+project(TwoNote VERSION 0.0.1 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -64,7 +81,7 @@ endif()
 target_link_libraries(TwoNote PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 set_target_properties(TwoNote PROPERTIES
-    MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
+    MACOSX_BUNDLE_GUI_IDENTIFIER frankpereny.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE

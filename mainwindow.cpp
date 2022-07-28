@@ -1,3 +1,21 @@
+/*
+ * Copyright (C) 2022 Frank Pereny
+ *
+ * This file is part of TwoNote <https://github.com/fjpereny/TwoNote>.
+ *
+ * TwoNote is free software: you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *
+ * TwoNote is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with Foobar.
+ * If not, see <https://www.gnu.org/licenses/>.
+*/
+
+
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "tabmainwidget.h"
@@ -26,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Application States
     bold = new bool(false);
     italic = new bool(false);
-    underscore = new bool(false);
+    underline = new bool(false);
     strike = new bool(false);
 }
 
@@ -35,7 +53,7 @@ MainWindow::~MainWindow()
     delete ui;
     delete bold;
     delete italic;
-    delete underscore;
+    delete underline;
     delete strike;
 }
 
@@ -105,64 +123,86 @@ void MainWindow::on_tabWidget_tabBarClicked(int index)
 
 void MainWindow::on_boldButton_clicked()
 {
-    if (this->bold)
+    *this->bold = !(*this->bold);
+
+    if (this->currentObject)
     {
-        *this->bold = !(*this->bold);
-        if (this->currentObject)
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        if (textEdit)
         {
-            std::cout << "current obj" << std::endl;
-            QTextEdit *floatTextEdit = qobject_cast<QTextEdit*>(this->currentObject);
-            if (floatTextEdit)
-            {
-                QFont font = floatTextEdit->currentFont();
-                font.setBold(*this->bold);
-                floatTextEdit->setCurrentFont(font);
-                return;
-            }
+            QFont font = textEdit->currentFont();
+            font.setBold(*bold);
+            textEdit->setCurrentFont(font);
         }
     }
 }
 
 void MainWindow::on_italicButton_clicked()
 {
+    *this->italic = !(*this->italic);
+
     if (this->currentObject)
     {
-        QTextEdit *floatTextEdit = qobject_cast<QTextEdit*>(this->currentObject);
-        if (floatTextEdit)
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        if (textEdit)
         {
-            floatTextEdit->setFontItalic(!floatTextEdit->fontItalic());
-            return;
+            QFont font = textEdit->currentFont();
+            font.setItalic(*italic);
+            textEdit->setCurrentFont(font);
         }
     }
 }
 
 void MainWindow::on_underlineButton_clicked()
 {
+    *this->underline = !(*this->underline);
+
     if (this->currentObject)
     {
-        QTextEdit *floatTextEdit = qobject_cast<QTextEdit*>(this->currentObject);
-        if (floatTextEdit)
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        if (textEdit)
         {
-            floatTextEdit->setFontUnderline(!floatTextEdit->fontUnderline());
-            return;
+            QFont font = textEdit->currentFont();
+            font.setUnderline(*underline);
+            textEdit->setCurrentFont(font);
         }
     }
 }
 
 void MainWindow::on_strikeButton_clicked()
 {
+    *this->strike = !(*this->strike);
+
     if (this->currentObject)
     {
-        QTextEdit *floatTextEdit = qobject_cast<QTextEdit*>(this->currentObject);
-
-        if (floatTextEdit)
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        if (textEdit)
         {
-            QFont font = floatTextEdit->currentFont();
-            font.setStrikeOut(!font.strikeOut());
-            floatTextEdit->setCurrentFont(font);
-            return;
+            QFont font = textEdit->currentFont();
+            font.setStrikeOut(*strike);
+            textEdit->setCurrentFont(font);
         }
     }
+}
+
+bool MainWindow::getBold()
+{
+    return *bold;
+}
+
+bool MainWindow::getItalic()
+{
+    return *italic;
+}
+
+bool MainWindow::getUnderline()
+{
+    return *underline;
+}
+
+bool MainWindow::getStrike()
+{
+    return *strike;
 }
 
 

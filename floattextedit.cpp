@@ -1,3 +1,21 @@
+/*
+ * Copyright (C) 2022 Frank Pereny
+ *
+ * This file is part of TwoNote <https://github.com/fjpereny/TwoNote>.
+ *
+ * TwoNote is free software: you can redistribute it and/or modify it under the terms of the
+ * GNU General Public License as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ *
+ * TwoNote is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+ * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with Foobar.
+ * If not, see <https://www.gnu.org/licenses/>.
+*/
+
+
 #include "floattextedit.h"
 #include "tabmainwidget.h"
 #include "mainwindow.h"
@@ -28,19 +46,14 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     this->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
 
     this->setCursor(Qt::IBeamCursor);
+    this->setupFont();
+    this->setText("Blank Note");
+    this->selectAll();
+    this->setStyleSheet("background-color: rgba(0, 0, 0, 0);");
 
     selected = new bool(false);
 
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::changeParentCursor);
-
-    QWidget *winWidget = QWidget::window();
-    MainWindow *win = qobject_cast<MainWindow*>(winWidget);
-    this->setText("Blank Note");
-    this->selectAll();
-    this->setFontPointSize(win->getFontSize());
-    this->setFontFamily("DejaVu Sans");
-    this->setStyleSheet("background-color: rgba(0, 0, 0, 0);");
-    this->setTextColor(Qt::black);
 }
 
 
@@ -60,14 +73,31 @@ FloatTextEdit::~FloatTextEdit()
 }
 
 
-void FloatTextEdit::keyPressEvent(QKeyEvent *event)
+void FloatTextEdit::setupFont()
 {
+    QWidget *winWidget = QWidget::window();
+    MainWindow *win = qobject_cast<MainWindow*>(winWidget);
+    QFont font = this->currentFont();
+    font.setPointSize(win->getFontSize());
+    font.setFamily("DejaVu Sans");
+    font.setBold(win->getBold());
+    font.setItalic(win->getItalic());
+    font.setStrikeOut(false);
+    this->setCurrentFont(font);
+    this->setTextColor(Qt::black);
+}
+
+
+void FloatTextEdit::keyPressEvent(QKeyEvent *event)
+{    
     QTextEdit::keyPressEvent(event);
 
     if (event->key() == Qt::Key_Insert)
     {
         this->setOverwriteMode(!this->overwriteMode());
     }
+
+    this->setupFont();
 }
 
 

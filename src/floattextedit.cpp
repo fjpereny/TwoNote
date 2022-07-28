@@ -16,16 +16,16 @@
 */
 
 
-#include "floattextedit.h"
-#include "tabmainwidget.h"
-#include "mainwindow.h"
-#include "container.h"
+#include "src/container.h"
+#include "src/floattextedit.h"
+#include "src/mainwindow.h"
+#include "src/tabmainwidget.h"
 
+#include <iostream>
 #include <QObject>
 #include <QKeyEvent>
 #include <QFocusEvent>
 #include <QApplication>
-#include <iostream>
 
 
 FloatTextEdit::FloatTextEdit(QWidget *parent)

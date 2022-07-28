@@ -16,11 +16,11 @@
 */
 
 
-#include "container.h"
-#include "mainwindow.h"
+#include "src/container.h"
+#include "src/mainwindow.h"
 
-#include <QMouseEvent>
 #include <iostream>
+#include <QMouseEvent>
 
 
 Container::Container(QWidget *parent)

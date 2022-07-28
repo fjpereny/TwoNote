@@ -16,15 +16,15 @@
 */
 
 
-#include "tabmainwidget.h"
-#include "floattextedit.h"
-#include "notetabwidget.h"
-#include "container.h"
+#include "src/tabmainwidget.h"
+#include "src/floattextedit.h"
+#include "src/notetabwidget.h"
+#include "src/container.h"
 
-#include <QMouseEvent>
 #include <iostream>
-#include <QWidget>
 #include <QHBoxLayout>
+#include <QMouseEvent>
+#include <QWidget>
 
 TabMainWidget::TabMainWidget(QWidget *parent)
     : QWidget{parent}

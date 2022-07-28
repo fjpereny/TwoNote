@@ -34,20 +34,20 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 set(TS_FILES TwoNote_en_US.ts)
 
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        ribbonbar.h
-        ribbonbar.cpp
-        notetabwidget.h
-        notetabwidget.cpp
-        floattextedit.h
-        floattextedit.cpp
-        tabmainwidget.h
-        tabmainwidget.cpp
-        container.h
-        container.cpp
+        src/main.cpp
+        src/mainwindow.cpp
+        src/mainwindow.h
+        src/mainwindow.ui
+        src/ribbonbar.h
+        src/ribbonbar.cpp
+        src/notetabwidget.h
+        src/notetabwidget.cpp
+        src/floattextedit.h
+        src/floattextedit.cpp
+        src/tabmainwidget.h
+        src/tabmainwidget.cpp
+        src/container.h
+        src/container.cpp
 
         rsc/rsc.qrc
 

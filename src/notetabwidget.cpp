@@ -16,11 +16,12 @@
 */
 
 
-#include "notetabwidget.h"
+#include "src/floattextedit.h"
+#include "src/notetabwidget.h"
 
 #include <QMouseEvent>
 #include <QTextEdit>
-#include <floattextedit.h>
+
 
 
 NoteTabWidget::NoteTabWidget(QWidget* parent)

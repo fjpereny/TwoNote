@@ -16,14 +16,26 @@
 */
 
 
-#include "ribbonbar.h"
+#include "src/mainwindow.h"
 
-RibbonBar::RibbonBar(QWidget* parent)
+#include <QApplication>
+#include <QLocale>
+#include <QTranslator>
+
+int main(int argc, char *argv[])
 {
-    this->setParent(parent);
-}
+    QApplication a(argc, argv);
 
-RibbonBar::~RibbonBar()
-{
-
+    QTranslator translator;
+    const QStringList uiLanguages = QLocale::system().uiLanguages();
+    for (const QString &locale : uiLanguages) {
+        const QString baseName = "TwoNote_" + QLocale(locale).name();
+        if (translator.load(":/i18n/" + baseName)) {
+            a.installTranslator(&translator);
+            break;
+        }
+    }
+    MainWindow w;
+    w.show();
+    return a.exec();
 }

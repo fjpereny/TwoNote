@@ -19,12 +19,30 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    currentContainer = nullptr;
     currentObject = nullptr;
+
+
+    // Application States
+    bold = new bool(false);
+    italic = new bool(false);
+    underscore = new bool(false);
+    strike = new bool(false);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete bold;
+    delete italic;
+    delete underscore;
+    delete strike;
+}
+
+
+Ui::MainWindow* MainWindow::getUi()
+{
+    return this->ui;
 }
 
 
@@ -84,21 +102,26 @@ void MainWindow::on_tabWidget_tabBarClicked(int index)
     this->ui->tabWidget->insertTab(lastTabIndex, newPage, "New Section");
 }
 
+
 void MainWindow::on_boldButton_clicked()
 {
-    if (this->currentObject)
+    if (this->bold)
     {
-        QTextEdit *floatTextEdit = qobject_cast<QTextEdit*>(this->currentObject);
-        if (floatTextEdit)
+        *this->bold = !(*this->bold);
+        if (this->currentObject)
         {
-            QFont font = floatTextEdit->currentFont();
-            font.setBold(!font.bold());
-            floatTextEdit->setCurrentFont(font);
-            return;
+            std::cout << "current obj" << std::endl;
+            QTextEdit *floatTextEdit = qobject_cast<QTextEdit*>(this->currentObject);
+            if (floatTextEdit)
+            {
+                QFont font = floatTextEdit->currentFont();
+                font.setBold(*this->bold);
+                floatTextEdit->setCurrentFont(font);
+                return;
+            }
         }
     }
 }
-
 
 void MainWindow::on_italicButton_clicked()
 {
@@ -113,7 +136,6 @@ void MainWindow::on_italicButton_clicked()
     }
 }
 
-
 void MainWindow::on_underlineButton_clicked()
 {
     if (this->currentObject)
@@ -126,7 +148,6 @@ void MainWindow::on_underlineButton_clicked()
         }
     }
 }
-
 
 void MainWindow::on_strikeButton_clicked()
 {
@@ -145,12 +166,22 @@ void MainWindow::on_strikeButton_clicked()
 }
 
 
+void MainWindow::setCurrentContainer(Container *container)
+{
+    this->currentContainer = container;
+}
+
+Container* MainWindow::getCurrentContainer()
+{
+    return this->currentContainer;
+}
+
 void MainWindow::setCurrentObject(QWidget *object)
 {
     this->currentObject = object;
 }
 
-QWidget* MainWindow::getCurrentObject(QWidget *object)
+QWidget* MainWindow::getCurrentObject()
 {
     return this->currentObject;
 }
@@ -171,16 +202,24 @@ static MainWindow* getMainWindow()
 
 void MainWindow::on_fontSizeComboBox_currentIndexChanged(int index)
 {
-    QTextEdit *widget = qobject_cast<QTextEdit*>(this->currentObject);
-    if (widget)
+    if (this->currentObject)
     {
-        QString fontSizeTextPt = ui->fontSizeComboBox->currentText();
-        QString fontSizeText = fontSizeTextPt.split(' ')[0];
-        int fontSize = fontSizeText.toInt();
-
-        QFont font = widget->currentFont();
-        font.setPointSize(fontSize);
-        widget->setCurrentFont(font);
+        QTextEdit* textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        if (textEdit)
+        {
+            QFont font = textEdit->currentFont();
+            int fontSize = this->getFontSize();
+            font.setPointSize(fontSize);
+            textEdit->setCurrentFont(font);
+        }
     }
 }
 
+
+int MainWindow::getFontSize()
+{
+    QString fontSizeTextPt = ui->fontSizeComboBox->currentText();
+    QString fontSizeText = fontSizeTextPt.split(' ')[0];
+    int fontSize = fontSizeText.toInt();
+    return fontSize;
+}

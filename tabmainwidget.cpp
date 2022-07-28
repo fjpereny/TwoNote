@@ -51,16 +51,9 @@ void TabMainWidget::mousePressEvent(QMouseEvent *event)
             if (*createMode == "TextEdit")
             {
                 FloatTextEdit *newTextEdit = new FloatTextEdit(newContainer);
-                newContainerLayout->addWidget(newTextEdit);
-                newTextEdit->setText("Blank Note");
-                newTextEdit->selectAll();
-                newTextEdit->setFontPointSize(12);
-                newTextEdit->setFontFamily("DejaVu Sans");
-                newTextEdit->setStyleSheet("background-color: rgba(0, 0, 0, 0);");
-                newTextEdit->setTextColor(Qt::black);
+                newContainerLayout->addWidget(newTextEdit);                
                 newTextEdit->show();
                 newTextEdit->setFocus();
-
             }
         }
     }

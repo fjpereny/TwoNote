@@ -590,8 +590,11 @@
                 <property name="currentText">
                  <string>12 pt</string>
                 </property>
-                <property name="maxVisibleItems">
+                <property name="currentIndex">
                  <number>6</number>
+                </property>
+                <property name="maxVisibleItems">
+                 <number>12</number>
                 </property>
                 <item>
                  <property name="text">

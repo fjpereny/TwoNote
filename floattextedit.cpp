@@ -2,6 +2,7 @@
 #include "tabmainwidget.h"
 #include "mainwindow.h"
 #include "container.h"
+#include "ui_mainwindow.h"
 
 #include <QObject>
 #include <QKeyEvent>
@@ -32,13 +33,30 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
 
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::changeParentCursor);
 
-    this->setFontPointSize(12);
+    QWidget *winWidget = QWidget::window();
+    MainWindow *win = qobject_cast<MainWindow*>(winWidget);
+    this->setText("Blank Note");
+    this->selectAll();
+    this->setFontPointSize(win->getFontSize());
+    this->setFontFamily("DejaVu Sans");
+    this->setStyleSheet("background-color: rgba(0, 0, 0, 0);");
+    this->setTextColor(Qt::black);
 }
 
 
 FloatTextEdit::~FloatTextEdit()
 {
-    this->parentWidget()->close();
+    QWidget *winWidget = QWidget::window();
+    MainWindow *win = qobject_cast<MainWindow*>(winWidget);
+    if (win->getCurrentObject() == this)
+    {
+        win->setCurrentObject(nullptr);
+    }
+
+    if (this->parent())
+    {
+        this->parentWidget()->close();
+    }
 }
 
 
@@ -54,12 +72,13 @@ void FloatTextEdit::keyPressEvent(QKeyEvent *event)
 
 
 void FloatTextEdit::focusInEvent(QFocusEvent *event)
-{    
+{
     QWidget *winWidget = QWidget::window();
     MainWindow *win = qobject_cast<MainWindow*>(winWidget);
     win->setCurrentObject(this);
 
     Container *parent = qobject_cast<Container*>(this->parent());
+    win->setCurrentContainer(parent);
     parent->setStyleSheet
             (
                 "Container "
@@ -82,13 +101,18 @@ void FloatTextEdit::focusInEvent(QFocusEvent *event)
                     "background-color : none;"
                 "}"
             );
+
+
+    QFont font = this->currentFont();
+    font.setPointSize(win->getFontSize());
+    this->setCurrentFont(font);
 }
 
 
 void FloatTextEdit::focusOutEvent(QFocusEvent *event)
 {
     if (this->toPlainText() == "" || this->toPlainText() == "Blank Note")
-    {
+    {        
         Container *parent = qobject_cast<Container*>(this->parent());
         if (!parent->hasFocus())
             parent->close();

@@ -52,8 +52,13 @@ Container::Container(QWidget *parent)
 
 
 Container::~Container()
-{
-
+{    
+    QWidget *winWidget = QWidget::window();
+    MainWindow *win = qobject_cast<MainWindow*>(winWidget);
+    if (win->getCurrentContainer() == this)
+    {
+        win->setCurrentContainer(nullptr);
+    }
 }
 
 
@@ -70,6 +75,12 @@ bool Container::getMovable()
 
 void Container::focusInEvent(QFocusEvent *event)
 {
+    QWidget *winWidget = QWidget::window();
+    MainWindow *win = qobject_cast<MainWindow*>(winWidget);
+    win->setCurrentContainer(this);
+    QWidget *child = this->findChild<QWidget*>();
+    win->setCurrentObject(child);
+
     this->setStyleSheet
             (
                 "Container "
@@ -178,7 +189,7 @@ void Container::mouseReleaseEvent(QMouseEvent *event)
     this->setMovable(false);
 
 //    Snapping position by pixel location
-    int snapPixelSize = 16; // Set to even number to ensure proper rouding (division by 2)
+    int snapPixelSize = 30; // Set to even number to ensure proper rouding (division by 2)
     int newX, newY, gapX, gapY;
 
     gapX = this->pos().x() % snapPixelSize;

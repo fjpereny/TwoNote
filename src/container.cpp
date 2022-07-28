@@ -206,7 +206,12 @@ void Container::mouseMoveEvent(QMouseEvent *event)
         {
             newWidth = 200;
         }
-        this->setFixedWidth(newWidth);
+        this->setFixedWidth(newWidth);                
+        QWidget *child = this->findChild<QWidget*>();
+        if (child)
+        {
+            child->setFixedWidth(newWidth - grabSizeH);
+        }
     }
 }
 

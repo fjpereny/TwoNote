@@ -48,6 +48,7 @@ set(PROJECT_SOURCES
         tabmainwidget.cpp
         container.h
         container.cpp
+        rsc/rsc.qrc
         ${TS_FILES}
 )
 
@@ -89,5 +90,5 @@ set_target_properties(TwoNote PROPERTIES
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(TwoNote)
+    qt_finalize_executable(TwoNote main.cpp)
 endif()

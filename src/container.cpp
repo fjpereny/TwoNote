@@ -17,6 +17,7 @@
 
 
 #include "src/container.h"
+#include "src/floattextedit.h"
 #include "src/mainwindow.h"
 
 #include <iostream>
@@ -64,8 +65,12 @@ Container::Container(QWidget *parent)
     this->setMouseTracking(true);
 
     this->isMovable = new bool(false);
-    this->clickOffsetX = new int;
-    this->clickOffsetY = new int;
+    this->isSizable = new bool(false);
+    this->clickOffsetX = new int(0);
+    this->clickOffsetY = new int(0);
+    this->clickPointX = new int(0);
+    this->clickPointY = new int(0);
+    this->startingWidth = new int;
 }
 
 
@@ -88,6 +93,17 @@ void Container::setMovable(bool b)
 bool Container::getMovable()
 {
     return *this->isMovable;
+}
+
+
+void Container::setSizable(bool b)
+{
+    *this->isSizable = b;
+}
+
+bool Container::getSizable()
+{
+    return *this->isSizable;
 }
 
 
@@ -182,6 +198,16 @@ void Container::mouseMoveEvent(QMouseEvent *event)
 
         this->move(curX + event->position().x() - *this->clickOffsetX, curY + event->position().y() - *this->clickOffsetY);
     }
+    else if (this->hasFocus() && this->getSizable())
+    {
+        int moveX = event->globalPosition().x() - *this->clickPointX;
+        int newWidth = *this->startingWidth + moveX;
+        if (newWidth < 200)
+        {
+            newWidth = 200;
+        }
+        this->setFixedWidth(newWidth);
+    }
 }
 
 
@@ -193,6 +219,7 @@ void Container::mousePressEvent(QMouseEvent *event)
 
     int grabSize = 15;
     int minVPixels = grabSize;
+    int maxHPixels = this->width() - grabSize;
 
     if (y <= minVPixels)
     {
@@ -200,11 +227,19 @@ void Container::mousePressEvent(QMouseEvent *event)
         *this->clickOffsetX = x;
         *this->clickOffsetY = y;
     }
+    else if (x >= maxHPixels)
+    {
+        this->setSizable(true);
+        *this->clickPointX = event->globalPosition().x();
+        *this->clickPointY = event->globalPosition().y();
+        *this->startingWidth = this->width();
+    }
 }
 
 void Container::mouseReleaseEvent(QMouseEvent *event)
 {
     this->setMovable(false);
+    this->setSizable(false);
 
 //    Snapping position by pixel location
     int snapPixelSize = 30; // Set to even number to ensure proper rouding (division by 2)

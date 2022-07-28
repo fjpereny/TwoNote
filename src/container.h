@@ -31,6 +31,8 @@ public:
 
     void setMovable(bool);
     bool getMovable();
+    void setSizable(bool);
+    bool getSizable();
 
 private:
     void focusInEvent(QFocusEvent *event);
@@ -41,8 +43,12 @@ private:
     void keyPressEvent(QKeyEvent *event);
 
     bool *isMovable;
+    bool *isSizable;
     int *clickOffsetX;
     int *clickOffsetY;
+    int *clickPointX;
+    int *clickPointY;
+    int *startingWidth;
 
 private slots:
 

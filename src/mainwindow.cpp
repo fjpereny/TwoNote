@@ -53,9 +53,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->ui->ribbonBar->setStyleSheet
             (
-
                 "QWidget"
                 "{"
+                    "margin: 0px, 0px, 0px, 0px;"
+                    "padding: 0px, 0px, 0px, 0px;"
                     "color: rgb(0, 0, 0);"
                     "background-color: rgb(243, 243, 243);"
                 "}"
@@ -112,34 +113,7 @@ MainWindow::MainWindow(QWidget *parent)
                 "{"
                     "background: rgb(198, 198, 198);"
                 "}"
-
             );
-
-//    QDir dir;
-//    QFile file;
-
-//    QString folder = "/css/";
-//    QString fileName = "ribbonButtons.css";
-//    dir.setCurrent(QApplication::applicationDirPath() + folder);
-//    file.setFileName(fileName);
-//    if (file.exists())
-//    {
-//        if (file.open(QIODevice::ReadOnly | QIODevice::Text))
-//        {
-//            QTextStream stream(&file);
-//            QString css = stream.readAll();
-//            ui->boldButton->setStyleSheet(css);
-//            file.close();
-//        }
-//        else
-//        {
-//            std::cout << "Warning: Failed to open CSS file - ribbonButtons.css" << std::endl;
-//        }
-//    }
-//    else
-//    {
-//        std::cout << "Warning: Missing CSS file - ribbonButtons.css" << std::endl;
-//    }
 }
 
 MainWindow::~MainWindow()

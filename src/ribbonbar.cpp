@@ -17,6 +17,8 @@
 
 
 #include "src/ribbonbar.h"
+#include <QObject>
+#include <QWidget>
 
 RibbonBar::RibbonBar(QWidget* parent)
 {

@@ -51,31 +51,95 @@ MainWindow::MainWindow(QWidget *parent)
     strike = new bool(false);
 
 
-    QDir dir;
-    QFile file;
+    this->ui->ribbonBar->setStyleSheet
+            (
 
-    QString folder = "/css/";
-    QString fileName = "ribbonButtons.css";
-    dir.setCurrent(QApplication::applicationDirPath() + folder);
-    file.setFileName(fileName);
-    if (file.exists())
-    {
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text))
-        {
-            QTextStream stream(&file);
-            QString css = stream.readAll();
-            ui->boldButton->setStyleSheet(css);
-            file.close();
-        }
-        else
-        {
-            std::cout << "Warning: Failed to open CSS file - ribbonButtons.css" << std::endl;
-        }
-    }
-    else
-    {
-        std::cout << "Warning: Missing CSS file - ribbonButtons.css" << std::endl;
-    }
+                "QWidget"
+                "{"
+                    "color: rgb(0, 0, 0);"
+                    "background-color: rgb(243, 243, 243);"
+                "}"
+
+                "QTabBar"
+                "{"
+                    "margin-top: 0px;"
+                    "margin-bottom: 0px;"
+                    "border: 0px;"
+                    "background: rgb(128, 57, 123);"
+                "}"
+
+                "QTabWidget"
+                "{"
+                    "margin: 0px, 10px, 0px, 0px;"
+                    "border: 0px;"
+                "}"
+
+                "QTabWidget::pane"
+                "{"
+                    "padding-bottom: 5px;"
+                    "border: 0px;"
+                "}"
+
+                "QTabBar::tab:selected"
+                "{"
+                    "color: rgb(128, 57, 123);"
+                    "background: rgb(243, 243, 243);"
+                "}"
+
+                "QTabBar::tab:!selected"
+                "{"
+                    "color: rgb(255, 255, 255);"
+                    "background: rgb(128, 57, 123);"
+                "}"
+
+                "QTabBar::tab:!selected:hover"
+                "{"
+                    "color: rgb(255, 255, 255);"
+                    "background: rgb(158, 84, 153);"
+                "}"
+
+                "QComboBox"
+                "{"
+                    "background-color: rgb(255, 255, 255);"
+                "}"
+
+                "QPushButton"
+                "{"
+                    "border: 0px;"
+                "}"
+
+                "QPushButton:hover"
+                "{"
+                    "background: rgb(198, 198, 198);"
+                "}"
+
+            );
+
+//    QDir dir;
+//    QFile file;
+
+//    QString folder = "/css/";
+//    QString fileName = "ribbonButtons.css";
+//    dir.setCurrent(QApplication::applicationDirPath() + folder);
+//    file.setFileName(fileName);
+//    if (file.exists())
+//    {
+//        if (file.open(QIODevice::ReadOnly | QIODevice::Text))
+//        {
+//            QTextStream stream(&file);
+//            QString css = stream.readAll();
+//            ui->boldButton->setStyleSheet(css);
+//            file.close();
+//        }
+//        else
+//        {
+//            std::cout << "Warning: Failed to open CSS file - ribbonButtons.css" << std::endl;
+//        }
+//    }
+//    else
+//    {
+//        std::cout << "Warning: Missing CSS file - ribbonButtons.css" << std::endl;
+//    }
 }
 
 MainWindow::~MainWindow()

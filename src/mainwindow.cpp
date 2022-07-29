@@ -50,7 +50,6 @@ MainWindow::MainWindow(QWidget *parent)
     underline = new bool(false);
     strike = new bool(false);
 
-
     this->ui->ribbonBar->setStyleSheet
             (
                 "QWidget"

@@ -48,6 +48,9 @@ set(PROJECT_SOURCES
         src/tabmainwidget.cpp
         src/container.h
         src/container.cpp
+        src/contextmenu.h
+        src/contextmenu.cpp
+        src/contextmenu.ui
 
         rsc/rsc.qrc
 

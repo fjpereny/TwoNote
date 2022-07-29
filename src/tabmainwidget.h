@@ -20,7 +20,7 @@
 #define TABMAINWIDGET_H
 
 #include <QWidget>
-#include "notetabwidget.h"
+#include "src/contextmenu.h"
 
 class TabMainWidget : public QWidget
 {
@@ -32,15 +32,12 @@ public:
 
 private:
     void mousePressEvent(QMouseEvent *event);
-    void keyPressEvent(QKeyEvent *event);
-    void focusInEvent(QFocusEvent *event);
-    void focusOutEvent(QFocusEvent *event);
-
 
     int *clicked_x;
     int *clicked_y;
     bool *createEnabled;
     QString *createMode;
+    ContextMenu *contextMenu;
 
 private slots:
 

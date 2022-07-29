@@ -30,6 +30,8 @@
 
 FloatTextEdit::FloatTextEdit(QWidget *parent)
 {
+    this->window = qobject_cast<MainWindow*>(QApplication::activeWindow());
+
     this->setParent(parent);
     this->setAttribute(Qt::WA_DeleteOnClose, true);
     this->setAutoFillBackground(true);
@@ -44,8 +46,10 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     this->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
 
+    this->setFont(window->getCurrentFont());
+    this->setCurrentFont(window->getCurrentFont());
+    this->setTextColor(this->window->getCurrentTextColor());
     this->setCursor(Qt::IBeamCursor);
-    this->setupFont();
     this->setText("Blank Note");
     this->selectAll();
     this->setStyleSheet("background-color: rgba(0, 0, 0, 0);");
@@ -58,11 +62,9 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
 
 FloatTextEdit::~FloatTextEdit()
 {
-    QWidget *winWidget = QWidget::window();
-    MainWindow *win = qobject_cast<MainWindow*>(winWidget);
-    if (win->getCurrentObject() == this)
+    if (this->window->getCurrentObject() == this)
     {
-        win->setCurrentObject(nullptr);
+        this->window->setCurrentObject(nullptr);
     }
 
     if (this->parent())
@@ -74,21 +76,14 @@ FloatTextEdit::~FloatTextEdit()
 
 void FloatTextEdit::setupFont()
 {
-    QWidget *winWidget = QWidget::window();
-    MainWindow *win = qobject_cast<MainWindow*>(winWidget);
-    QFont font = this->currentFont();
-    font.setPointSize(win->getFontSize());
-    font.setFamily(win->getFontFamily());
-    font.setBold(win->getBold());
-    font.setItalic(win->getItalic());
-    font.setStrikeOut(false);
-    this->setCurrentFont(font);
-    this->setTextColor(Qt::black);
+    this->setCurrentFont(this->window->getCurrentFont());
+    this->setTextColor(this->window->getCurrentTextColor());
 }
 
 
 void FloatTextEdit::keyPressEvent(QKeyEvent *event)
-{    
+{
+    this->setupFont();
     QTextEdit::keyPressEvent(event);
 
     if (event->key() == Qt::Key_Insert)

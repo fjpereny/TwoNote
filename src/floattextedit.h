@@ -20,6 +20,7 @@
 #define FLOATTEXTEDIT_H
 
 #include <QTextEdit>
+#include <src/mainwindow.h>
 
 class FloatTextEdit : public QTextEdit
 {
@@ -28,7 +29,6 @@ public:
     ~FloatTextEdit();
 
     void setupFont();
-
     bool *selected;
 
 private:
@@ -37,6 +37,8 @@ private:
     void focusOutEvent(QFocusEvent *event);
     void enterEvent(QEvent *event);
     void leaveEvent(QEvent *event);
+
+    MainWindow *window;
 
 signals:
 

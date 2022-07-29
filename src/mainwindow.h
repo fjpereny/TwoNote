@@ -51,6 +51,9 @@ public:
     static MainWindow* getMainWindow();
     Ui::MainWindow* getUi();
 
+    QFont getCurrentFont();
+    QColor getCurrentTextColor();
+
 private slots:
     void on_ribbonBar_currentChanged(int index);
     void on_tabWidget_tabBarDoubleClicked(int index);
@@ -73,5 +76,7 @@ private:
     bool *italic;
     bool *underline;
     bool *strike;
+    QFont *currentFont;
+    QColor *currentTextColor;
 };
 #endif // MAINWINDOW_H

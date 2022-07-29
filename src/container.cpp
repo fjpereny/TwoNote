@@ -299,9 +299,6 @@ void Container::mouseReleaseEvent(QMouseEvent *event)
         this->movePreviewFrame->close();
         this->movePreviewFrame = nullptr;
     }
-
-    QWidget *child = this->findChild<QWidget*>();
-    child->setFocus();
 }
 
 

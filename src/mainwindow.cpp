@@ -43,12 +43,21 @@ MainWindow::MainWindow(QWidget *parent)
     currentContainer = nullptr;
     currentObject = nullptr;
 
-
     // Application States
     bold = new bool(false);
     italic = new bool(false);
     underline = new bool(false);
     strike = new bool(false);
+
+    this->currentFont = new QFont();
+    this->currentFont->setPointSize(this->getFontSize());
+    this->currentFont->setFamily(ui->fontComboBox->currentFont().family());
+    this->currentFont->setBold(*bold);
+    this->currentFont->setItalic(*italic);
+    this->currentFont->setUnderline(*underline);
+    this->currentFont->setStrikeOut(*strike);
+
+    this->currentTextColor = new QColor(Qt::black);
 
     this->ui->ribbonBar->setStyleSheet
             (
@@ -326,21 +335,32 @@ static MainWindow* getMainWindow()
 }
 
 
-void MainWindow::on_fontSizeComboBox_currentIndexChanged(int index)
+void MainWindow::on_fontComboBox_currentFontChanged(const QFont &f)
 {
-    if (this->currentObject)
+    QFont font = *this->currentFont;
+    font.setFamily(ui->fontComboBox->currentFont().family());
+    *this->currentFont = font;
+
+    QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+    if (textEdit)
     {
-        QTextEdit* textEdit = qobject_cast<QTextEdit*>(this->currentObject);
-        if (textEdit)
-        {
-            QFont font = textEdit->currentFont();
-            int fontSize = this->getFontSize();
-            font.setPointSize(fontSize);
-            textEdit->setCurrentFont(font);
-        }
+        textEdit->setCurrentFont(font);
     }
 }
 
+void MainWindow::on_fontSizeComboBox_currentIndexChanged(int index)
+{
+    QFont font = *this->currentFont;
+    int fontSize = this->getFontSize();
+    font.setPointSize(fontSize);
+    *this->currentFont = font;
+
+    QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+    if (textEdit)
+    {
+        textEdit->setCurrentFont(font);
+    }
+}
 
 int MainWindow::getFontSize()
 {
@@ -357,18 +377,13 @@ QString MainWindow::getFontFamily()
 }
 
 
-void MainWindow::on_fontComboBox_currentFontChanged(const QFont &f)
+QFont MainWindow::getCurrentFont()
 {
-    if (this->currentObject)
-    {
-        QTextEdit* textEdit = qobject_cast<QTextEdit*>(this->currentObject);
-        if (textEdit)
-        {
-            QString fontFamily = this->ui->fontComboBox->currentFont().family();
-            QFont font = textEdit->currentFont();
-            font.setFamily(fontFamily);
-            textEdit->setCurrentFont(font);
-        }
-    }
+    return *this->currentFont;
 }
 
+
+QColor MainWindow::getCurrentTextColor()
+{
+    return *this->currentTextColor;
+}

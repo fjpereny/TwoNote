@@ -155,8 +155,21 @@ void MainWindow::on_boldButton_clicked()
 {
     *this->bold = !(*this->bold);
 
-    if (this->currentObject)
+    if (this->currentContainer && this->currentContainer->hasFocus())
     {
+        if (this->currentObject)
+        {
+            QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+            if (textEdit)
+            {
+                QFont font = textEdit->currentFont();
+                font.setBold(this->getBold());
+                textEdit->setCurrentFont(font);
+            }
+        }
+    }
+    else if (this->currentObject)
+    {        
         QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
         if (textEdit)
         {

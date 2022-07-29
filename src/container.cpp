@@ -200,9 +200,25 @@ void Container::mouseMoveEvent(QMouseEvent *event)
     if (this->hasFocus() && this->getMovable())
     {
         int curX = this->pos().x();
-        int curY = this->pos().y();
+        int curY = this->pos().y();        
+        int newX = curX + event->position().x() - *this->clickOffsetX;
+        int newY = curY + event->position().y() - *this->clickOffsetY;
 
-        this->move(curX + event->position().x() - *this->clickOffsetX, curY + event->position().y() - *this->clickOffsetY);
+    //  Snapping position by pixel location
+        int snapPixelSize = 20; // Set to even number to ensure proper rouding (division by 2)
+        int gapX = newX % snapPixelSize;
+        int gapY = newY % snapPixelSize;
+
+        if (gapX < snapPixelSize / 2)
+            newX -= gapX;
+        else
+            newX = newX + snapPixelSize - gapX;
+
+        if (gapY <= snapPixelSize / 2)
+            newY -= gapY;
+        else
+            newY = newY + snapPixelSize - gapY;
+        this->move(newX, newY);
 
         // Move preview position
         if (!this->movePreviewFrame)
@@ -220,7 +236,6 @@ void Container::mouseMoveEvent(QMouseEvent *event)
             this->movePreviewFrame->setFixedWidth(this->width());
             this->movePreviewFrame->setFocusPolicy(Qt::NoFocus);
             this->movePreviewFrame->setFixedHeight(this->height());
-            std::cout << *this->currentPositionX << " " << *this->currentPositionY << std::endl;
             this->movePreviewFrame->move(*this->currentPositionX, *this->currentPositionY);
             this->movePreviewFrame->show();
         }
@@ -276,26 +291,8 @@ void Container::mouseReleaseEvent(QMouseEvent *event)
     this->setMovable(false);
     this->setSizable(false);
 
-//    Snapping position by pixel location
-    int snapPixelSize = 30; // Set to even number to ensure proper rouding (division by 2)
-    int newX, newY, gapX, gapY;
-
-    gapX = this->pos().x() % snapPixelSize;
-    gapY = this->pos().y() % snapPixelSize;
-
-    if (gapX <= snapPixelSize / 2)
-        newX = this->pos().x() - gapX;
-    else
-        newX = this->pos().x() + gapX;
-
-    if (gapY <= snapPixelSize / 2)
-        newY = this->pos().y() - gapY;
-    else
-        newY = this->pos().y() + gapY;
-
-    this->move(newX, newY);
-    *this->currentPositionX = newX;
-    *this->currentPositionY = newY;
+    *this->currentPositionX = this->pos().x();
+    *this->currentPositionY = this->pos().y();
 
     if (this->movePreviewFrame)
     {

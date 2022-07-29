@@ -206,6 +206,7 @@ void MainWindow::on_tabWidget_tabBarClicked(int index)
 void MainWindow::on_boldButton_clicked()
 {
     *this->bold = !(*this->bold);
+    this->currentFont->setBold(*bold);
 
     if (this->currentContainer && this->currentContainer->hasFocus())
     {
@@ -235,6 +236,7 @@ void MainWindow::on_boldButton_clicked()
 void MainWindow::on_italicButton_clicked()
 {
     *this->italic = !(*this->italic);
+    this->currentFont->setItalic(*italic);
 
     if (this->currentObject)
     {
@@ -251,6 +253,7 @@ void MainWindow::on_italicButton_clicked()
 void MainWindow::on_underlineButton_clicked()
 {
     *this->underline = !(*this->underline);
+    this->currentFont->setUnderline(*underline);
 
     if (this->currentObject)
     {
@@ -267,6 +270,7 @@ void MainWindow::on_underlineButton_clicked()
 void MainWindow::on_strikeButton_clicked()
 {
     *this->strike = !(*this->strike);
+    this->currentFont->setStrikeOut(*strike);
 
     if (this->currentObject)
     {

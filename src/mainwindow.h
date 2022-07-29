@@ -41,6 +41,7 @@ public:
     QWidget* getCurrentObject();
 
     int getFontSize();
+    QString getFontFamily();
     bool getBold();
     bool getItalic();
     bool getUnderline();
@@ -59,6 +60,7 @@ private slots:
     void on_underlineButton_clicked();
     void on_strikeButton_clicked();
     void on_fontSizeComboBox_currentIndexChanged(int index);
+    void on_fontComboBox_currentFontChanged(const QFont &f);
 
 private:
     Ui::MainWindow *ui;

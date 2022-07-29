@@ -113,6 +113,12 @@ MainWindow::MainWindow(QWidget *parent)
                 "{"
                     "background: rgb(198, 198, 198);"
                 "}"
+
+                "QFontComboBox"
+                "{"
+                    "color: black;"
+                    "background-color: rgb(255, 255, 255);"
+                "}"
             );
 }
 
@@ -344,3 +350,26 @@ int MainWindow::getFontSize()
     int fontSize = fontSizeText.toInt();
     return fontSize;
 }
+
+
+QString MainWindow::getFontFamily()
+{
+    return this->ui->fontComboBox->currentFont().family();
+}
+
+
+void MainWindow::on_fontComboBox_currentFontChanged(const QFont &f)
+{
+    if (this->currentObject)
+    {
+        QTextEdit* textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        if (textEdit)
+        {
+            QString fontFamily = this->ui->fontComboBox->currentFont().family();
+            QFont font = textEdit->currentFont();
+            font.setFamily(fontFamily);
+            textEdit->setCurrentFont(font);
+        }
+    }
+}
+

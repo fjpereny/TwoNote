@@ -78,7 +78,7 @@ void FloatTextEdit::setupFont()
     MainWindow *win = qobject_cast<MainWindow*>(winWidget);
     QFont font = this->currentFont();
     font.setPointSize(win->getFontSize());
-    font.setFamily("DejaVu Sans");
+    font.setFamily(win->getFontFamily());
     font.setBold(win->getBold());
     font.setItalic(win->getItalic());
     font.setStrikeOut(false);
@@ -95,8 +95,6 @@ void FloatTextEdit::keyPressEvent(QKeyEvent *event)
     {
         this->setOverwriteMode(!this->overwriteMode());
     }
-
-    this->setupFont();
 }
 
 
@@ -148,10 +146,6 @@ void FloatTextEdit::focusOutEvent(QFocusEvent *event)
     }
 
     *selected = false;
-
-    QTextCursor cursor= this->textCursor();
-    cursor.clearSelection();
-    this->setTextCursor(cursor);
 
     Container *parent = qobject_cast<Container*>(this->parent());
     parent->setStyleSheet

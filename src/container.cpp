@@ -22,6 +22,7 @@
 
 #include <iostream>
 #include <QMouseEvent>
+#include <QStyle>
 
 
 Container::Container(QWidget *parent)
@@ -71,6 +72,11 @@ Container::Container(QWidget *parent)
     this->clickPointX = new int(0);
     this->clickPointY = new int(0);
     this->startingWidth = new int;
+
+    this->currentPositionX = new int(this->pos().x());
+    this->currentPositionY = new int(this->pos().y());
+
+    this->movePreviewFrame = nullptr;
 }
 
 
@@ -197,6 +203,27 @@ void Container::mouseMoveEvent(QMouseEvent *event)
         int curY = this->pos().y();
 
         this->move(curX + event->position().x() - *this->clickOffsetX, curY + event->position().y() - *this->clickOffsetY);
+
+        // Move preview position
+        if (!this->movePreviewFrame)
+        {
+            this->movePreviewFrame = new QFrame(this->parentWidget());
+            this->movePreviewFrame->setStyleSheet
+                    (
+                        "border-width : 2px;"
+                        "border-style : solid;"
+                        "border-radius : 0px;"
+                        "border-color : rgba(200, 200, 200, 100);"
+                        "border-top-width : 15px;"
+                        "background-color : none;"
+                    );
+            this->movePreviewFrame->setFixedWidth(this->width());
+            this->movePreviewFrame->setFocusPolicy(Qt::NoFocus);
+            this->movePreviewFrame->setFixedHeight(this->height());
+            std::cout << *this->currentPositionX << " " << *this->currentPositionY << std::endl;
+            this->movePreviewFrame->move(*this->currentPositionX, *this->currentPositionY);
+            this->movePreviewFrame->show();
+        }
     }
     else if (this->hasFocus() && this->getSizable())
     {
@@ -239,6 +266,9 @@ void Container::mousePressEvent(QMouseEvent *event)
         *this->clickPointY = event->globalPosition().y();
         *this->startingWidth = this->width();
     }
+
+    *this->currentPositionX = this->pos().x();
+    *this->currentPositionY = this->pos().y();
 }
 
 void Container::mouseReleaseEvent(QMouseEvent *event)
@@ -264,6 +294,14 @@ void Container::mouseReleaseEvent(QMouseEvent *event)
         newY = this->pos().y() + gapY;
 
     this->move(newX, newY);
+    *this->currentPositionX = newX;
+    *this->currentPositionY = newY;
+
+    if (this->movePreviewFrame)
+    {
+        this->movePreviewFrame->close();
+        this->movePreviewFrame = nullptr;
+    }
 }
 
 

@@ -299,6 +299,12 @@ void Container::mouseReleaseEvent(QMouseEvent *event)
         this->movePreviewFrame->close();
         this->movePreviewFrame = nullptr;
     }
+
+    FloatTextEdit *textEdit = this->findChild<FloatTextEdit*>();
+    if (textEdit)
+    {
+        textEdit->autoResize();
+    }
 }
 
 

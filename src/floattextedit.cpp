@@ -37,8 +37,8 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     this->setAttribute(Qt::WA_DeleteOnClose, true);
     this->setAutoFillBackground(true);
 
-    int marginTop = 2;
-    int marginSides = 10;
+    int marginTop = 15;
+    int marginSides = 15;
     this->setFixedHeight(parent->height() - marginTop);
     this->setFixedWidth(parent->width() - marginSides);
 

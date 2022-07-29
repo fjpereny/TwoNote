@@ -26,6 +26,7 @@
 #include <QKeyEvent>
 #include <QFocusEvent>
 #include <QApplication>
+#include <QScrollBar>
 
 
 FloatTextEdit::FloatTextEdit(QWidget *parent)
@@ -41,9 +42,8 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     this->setFixedHeight(parent->height() - marginTop);
     this->setFixedWidth(parent->width() - marginSides);
 
-    this->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
-    this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    this->setWordWrapMode(QTextOption::NoWrap);
     this->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
 
     this->setFont(window->getCurrentFont());
@@ -57,6 +57,7 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     selected = new bool(false);
 
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::changeParentCursor);
+    QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::autoResize);
 }
 
 
@@ -89,6 +90,31 @@ void FloatTextEdit::keyPressEvent(QKeyEvent *event)
     if (event->key() == Qt::Key_Insert)
     {
         this->setOverwriteMode(!this->overwriteMode());
+    }
+}
+
+
+void FloatTextEdit::autoResize()
+{
+    while (this->horizontalScrollBar()->isVisible())
+    {
+        this->setFixedWidth(this->width() + 2);
+    }
+
+    while (this->verticalScrollBar()->isVisible())
+    {
+        this->setFixedHeight(this->height() + 2);
+    }
+
+    int marginTop = 15;
+    int marginSides = 15;
+    if (this->width() > (this->parentWidget()->width() - marginSides))
+    {
+        this->parentWidget()->setFixedWidth(this->width() + marginSides);
+    }
+    if (this->height() > (this->parentWidget()->height() - marginTop))
+    {
+        this->parentWidget()->setFixedHeight(this->height() + marginTop);
     }
 }
 

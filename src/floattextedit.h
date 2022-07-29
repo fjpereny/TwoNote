@@ -29,6 +29,8 @@ public:
     ~FloatTextEdit();
 
     void setupFont();
+    void autoResize();
+
     bool *selected;
 
 private:

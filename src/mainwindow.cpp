@@ -448,3 +448,20 @@ void MainWindow::on_bulletsButton_clicked()
     }
 }
 
+
+void MainWindow::on_numberingButton_clicked()
+{
+    if (this->currentObject)
+    {
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        if (textEdit)
+        {
+            QTextListFormat::Style style = QTextListFormat::ListDecimal;
+            QTextCursor cursor = textEdit->textCursor();
+            QTextListFormat listFormat;
+            listFormat.setStyle(style);
+            cursor.createList(listFormat);
+        }
+    }
+}
+

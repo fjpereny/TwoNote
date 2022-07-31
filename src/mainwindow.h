@@ -67,6 +67,8 @@ private slots:
     void on_fontComboBox_currentFontChanged(const QFont &f);
     void on_bulletsButton_clicked();
 
+    void on_numberingButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QWidget *currentObject;

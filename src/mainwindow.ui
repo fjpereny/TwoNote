@@ -163,6 +163,9 @@
                     </disabled>
                    </palette>
                   </property>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Paste (Ctrl+V)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Add content on the Clipboard to your document.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>
@@ -376,6 +379,9 @@
                     <property name="focusPolicy">
                      <enum>Qt::NoFocus</enum>
                     </property>
+                    <property name="toolTip">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Format Painter (Ctrl+Shift+C)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Like the look of a particular selection?  You can apply that look to other content in the document.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;To get started:&lt;/p&gt;&lt;p&gt;1. Select content with the formatting you like&lt;/p&gt;&lt;p&gt;2. Click Format Painter&lt;/p&gt;&lt;p&gt;3. Select something else to automatically apply the formatting&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;FYI: To apply the formatting in multiple places, double-click Format Painter.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
                     <property name="text">
                      <string>Format Painter</string>
                     </property>
@@ -388,6 +394,9 @@
                       <width>20</width>
                       <height>20</height>
                      </size>
+                    </property>
+                    <property name="shortcut">
+                     <string>Ctrl+Shift+C</string>
                     </property>
                     <property name="flat">
                      <bool>true</bool>
@@ -441,6 +450,9 @@
                   <height>16777215</height>
                  </size>
                 </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Font&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Pick a new font for your text.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="autoFillBackground">
                  <bool>true</bool>
                 </property>
@@ -474,6 +486,9 @@
                 </property>
                 <property name="focusPolicy">
                  <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Font Size&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Change the size of your text.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="currentText">
                  <string>12 pt</string>
@@ -616,6 +631,9 @@
                 <property name="focusPolicy">
                  <enum>Qt::NoFocus</enum>
                 </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Bullets (Ctrl+.)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Create a bulleted list.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Click the arrow to change the look of the bullet.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="text">
                  <string/>
                 </property>
@@ -629,6 +647,9 @@
                   <height>20</height>
                  </size>
                 </property>
+                <property name="shortcut">
+                 <string>Ctrl+.</string>
+                </property>
                 <property name="flat">
                  <bool>true</bool>
                 </property>
@@ -638,6 +659,9 @@
                <widget class="QPushButton" name="numberingButton">
                 <property name="focusPolicy">
                  <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Numbering (Ctrl+/)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Create a numbered list.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Click the arrow for more numbering formats.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
                  <string/>
@@ -652,6 +676,9 @@
                   <height>20</height>
                  </size>
                 </property>
+                <property name="shortcut">
+                 <string>Ctrl+/</string>
+                </property>
                 <property name="flat">
                  <bool>true</bool>
                 </property>
@@ -665,32 +692,12 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="indentButton">
-                <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="icon">
-                 <iconset resource="../rsc/rsc.qrc">
-                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/indent.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/indent.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="flat">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
                <widget class="QPushButton" name="outdentButton">
                 <property name="focusPolicy">
                  <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Decrease Indent Position (Alt+Shift+Left)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Decrease the indent level of the paragraph.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
                  <string/>
@@ -705,6 +712,38 @@
                   <height>20</height>
                  </size>
                 </property>
+                <property name="shortcut">
+                 <string>Alt+Shift+Left</string>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="indentButton">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Increase Indent Position (Alt+Shift+Right)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Move your paragraph farther away from the margin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../rsc/rsc.qrc">
+                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/indent.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/indent.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="shortcut">
+                 <string>Alt+Shift+Right</string>
+                </property>
                 <property name="flat">
                  <bool>true</bool>
                 </property>
@@ -718,9 +757,15 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_13">
+               <widget class="QPushButton" name="clearFormatButton">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Clear All Formatting (Ctrl+Shift+N)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Remove all formatting from the selection, leaving only the normal, unformatted text.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="text">
                  <string>Clear</string>
+                </property>
+                <property name="shortcut">
+                 <string>Ctrl+Shift+N</string>
                 </property>
                </widget>
               </item>
@@ -732,6 +777,9 @@
                <widget class="QPushButton" name="boldButton">
                 <property name="focusPolicy">
                  <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Bold (Ctrl+B)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Make your text bold.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="styleSheet">
                  <string notr="true"/>
@@ -767,6 +815,9 @@
                 <property name="focusPolicy">
                  <enum>Qt::NoFocus</enum>
                 </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Italic (Ctrl+I)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Italicize your text.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="text">
                  <string/>
                 </property>
@@ -786,6 +837,9 @@
                <widget class="QPushButton" name="underlineButton">
                 <property name="focusPolicy">
                  <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Underline (Ctrl+U)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Underline your text.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
                  <string/>
@@ -807,12 +861,18 @@
                 <property name="focusPolicy">
                  <enum>Qt::NoFocus</enum>
                 </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Strikethrough (Ctrl+-)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Cross something out by drawing a line through it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="text">
                  <string/>
                 </property>
                 <property name="icon">
                  <iconset resource="../rsc/rsc.qrc">
                   <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/strikethrough.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/strikethrough.svg</iconset>
+                </property>
+                <property name="shortcut">
+                 <string>Ctrl+-</string>
                 </property>
                 <property name="flat">
                  <bool>true</bool>
@@ -836,9 +896,12 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_9">
+               <widget class="QPushButton" name="highlightButton">
                 <property name="text">
                  <string>Color</string>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -857,9 +920,22 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_11">
+               <widget class="QPushButton" name="alignButton">
                 <property name="text">
-                 <string>Align</string>
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../rsc/rsc.qrc">
+                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/align-left.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/align-left.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -871,9 +947,25 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_12">
+               <widget class="QPushButton" name="deleteButton">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Delete&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Delete this item.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="text">
-                 <string>Del</string>
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../rsc/rsc.qrc">
+                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/xmark.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/xmark.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>24</width>
+                  <height>24</height>
+                 </size>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>

@@ -19,6 +19,7 @@
 #include "container.h"
 #include "floattextedit.h"
 #include "mainwindow.h"
+#include "ui_mainwindow.h"
 #include "tabmainwidget.h"
 
 #include <iostream>
@@ -150,10 +151,14 @@ void FloatTextEdit::focusInEvent(QFocusEvent *event)
                 "}"
             );
 
+    int curFontSize = this->currentFont().pointSize();
+    QString fontSize = QString::number(curFontSize);
+    QString fontSizeName = fontSize + " pt";
+    win->getUi()->fontSizeComboBox->setCurrentText(fontSizeName);
 
-    QFont font = this->currentFont();
-    font.setPointSize(win->getFontSize());
-    this->setCurrentFont(font);
+    QFont font = win->getCurrentFont();
+    font.setPointSize(curFontSize);
+    win->setCurrentFont(font);
 }
 
 

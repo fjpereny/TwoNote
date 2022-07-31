@@ -51,7 +51,9 @@ public:
     static MainWindow* getMainWindow();
     Ui::MainWindow* getUi();
 
+    void setCurrentFont(QFont font);
     QFont getCurrentFont();
+
     QColor getCurrentTextColor();
 
 private slots:

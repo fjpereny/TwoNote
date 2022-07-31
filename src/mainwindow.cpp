@@ -425,6 +425,12 @@ QString MainWindow::getFontFamily()
 }
 
 
+void MainWindow::setCurrentFont(QFont font)
+{
+    *this->currentFont = font;
+}
+
+
 QFont MainWindow::getCurrentFont()
 {
     return *this->currentFont;

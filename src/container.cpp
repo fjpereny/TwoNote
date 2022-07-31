@@ -19,6 +19,7 @@
 #include "container.h"
 #include "floattextedit.h"
 #include "mainwindow.h"
+#include "ui_mainwindow.h"
 
 #include <iostream>
 #include <QMouseEvent>
@@ -305,6 +306,9 @@ void Container::mouseReleaseEvent(QMouseEvent *event)
     {
         textEdit->autoResize();
     }
+
+    QWidget *childWidget = this->findChild<QWidget*>();
+    childWidget->setFocus();
 }
 
 
@@ -315,6 +319,10 @@ void Container::keyPressEvent(QKeyEvent *event)
         if (event->key() == Qt::Key_Delete || event->key() == Qt::Key_Backspace)
         {
             this->close();
+        }
+        else
+        {
+            this->findChild<QWidget*>()->setFocus();
         }
     }
 }

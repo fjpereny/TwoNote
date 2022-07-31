@@ -14,7 +14,6 @@
  * You should have received a copy of the GNU General Public License along with Foobar.
  * If not, see <https://www.gnu.org/licenses/>.
 */
-
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">

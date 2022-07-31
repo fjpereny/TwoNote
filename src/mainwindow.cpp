@@ -485,7 +485,8 @@ void MainWindow::on_exitButton_clicked()
 void MainWindow::on_printButton_clicked()
 {
     QPdfWriter pdfWriter("test.pdf");
-    pdfWriter.setPageSize(QPageSize::Letter);
+    QPageSize pageSize(QPageSize::A4);
+    pdfWriter.setPageSize(pageSize);
     pdfWriter.newPage();
     pdfWriter.setTitle("Title of Test Document");
     QPainter painter(&pdfWriter);
@@ -509,7 +510,17 @@ void MainWindow::on_printButton_clicked()
                     QTextDocument td;
                     td.setHtml(textEdit->toHtml());
                     td.setDocumentMargin(0);
-                    td.adjustSize();
+                    int pagePixWidth = QApplication::primaryScreen()->geometry().width() / 2;
+                    int pagePixHeight = 0;
+                    if (pageSize == QPageSize::Letter)
+                    {
+                           pagePixHeight = pagePixWidth * 11 / 8.5;
+                    }
+                    else if (pageSize == QPageSize::A4)
+                    {
+                        pagePixHeight = pagePixWidth * 297 / 210;
+                    }
+                    td.setPageSize(QSize(pagePixWidth, pagePixHeight));
                     td.drawContents(&painter);
                     std::cout << textEdit->toHtml().toStdString() << std::endl;
                 }

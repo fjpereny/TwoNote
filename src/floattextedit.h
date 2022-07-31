@@ -20,7 +20,7 @@
 #define FLOATTEXTEDIT_H
 
 #include <QTextEdit>
-#include <src/mainwindow.h>
+#include <mainwindow.h>
 
 class FloatTextEdit : public QTextEdit
 {

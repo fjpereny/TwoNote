@@ -16,8 +16,8 @@
 */
 
 
-#include "src/floattextedit.h"
-#include "src/notetabwidget.h"
+#include "floattextedit.h"
+#include "notetabwidget.h"
 
 #include <QMouseEvent>
 #include <QTextEdit>

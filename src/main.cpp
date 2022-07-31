@@ -16,7 +16,7 @@
 */
 
 
-#include "src/mainwindow.h"
+#include "mainwindow.h"
 
 #include <QApplication>
 #include <QLocale>

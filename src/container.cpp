@@ -16,9 +16,9 @@
 */
 
 
-#include "src/container.h"
-#include "src/floattextedit.h"
-#include "src/mainwindow.h"
+#include "container.h"
+#include "floattextedit.h"
+#include "mainwindow.h"
 
 #include <iostream>
 #include <QMouseEvent>

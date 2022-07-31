@@ -16,10 +16,10 @@
 */
 
 
-#include "src/container.h"
-#include "src/floattextedit.h"
-#include "src/mainwindow.h"
-#include "src/tabmainwidget.h"
+#include "container.h"
+#include "floattextedit.h"
+#include "mainwindow.h"
+#include "tabmainwidget.h"
 
 #include <iostream>
 #include <QObject>

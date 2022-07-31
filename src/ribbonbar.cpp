@@ -16,7 +16,7 @@
 */
 
 
-#include "src/ribbonbar.h"
+#include "ribbonbar.h"
 #include <QObject>
 #include <QWidget>
 

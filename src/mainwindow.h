@@ -21,8 +21,8 @@
 
 #include <QMainWindow>
 #include <QString>
-#include "src/container.h"
-#include "src/contextmenu.h"
+#include "container.h"
+#include "contextmenu.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

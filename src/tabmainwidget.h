@@ -20,7 +20,7 @@
 #define TABMAINWIDGET_H
 
 #include <QWidget>
-#include "src/contextmenu.h"
+#include "contextmenu.h"
 
 class TabMainWidget : public QWidget
 {

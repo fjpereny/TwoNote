@@ -69,6 +69,10 @@ private slots:
 
     void on_numberingButton_clicked();
 
+    void on_exitButton_clicked();
+
+    void on_printButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QWidget *currentObject;

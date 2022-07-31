@@ -109,7 +109,112 @@
        <attribute name="title">
         <string>File</string>
        </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_8"/>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="QPushButton" name="printButton">
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="ButtonText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="ButtonText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>231</red>
+                <green>231</green>
+                <blue>231</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="ButtonText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="127">
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="text">
+           <string>Print</string>
+          </property>
+          <property name="icon">
+           <iconset resource="rsc/rsc.qrc">
+            <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/print.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/print.svg</iconset>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="exitButton">
+          <property name="palette">
+           <palette>
+            <active>
+             <colorrole role="ButtonText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>0</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </active>
+            <inactive>
+             <colorrole role="ButtonText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>231</red>
+                <green>231</green>
+                <blue>231</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </inactive>
+            <disabled>
+             <colorrole role="ButtonText">
+              <brush brushstyle="SolidPattern">
+               <color alpha="127">
+                <red>255</red>
+                <green>255</green>
+                <blue>255</blue>
+               </color>
+              </brush>
+             </colorrole>
+            </disabled>
+           </palette>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="text">
+           <string>Exit</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="homeTab">
        <attribute name="title">
@@ -170,7 +275,7 @@
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="../rsc/rsc.qrc">
+                   <iconset resource="rsc/rsc.qrc">
                     <normaloff>:/icons/fontawesome/regular/fontawesome-free-6.1.2-desktop/svgs/regular/paste.svg</normaloff>:/icons/fontawesome/regular/fontawesome-free-6.1.2-desktop/svgs/regular/paste.svg</iconset>
                   </property>
                   <property name="iconSize">
@@ -246,7 +351,7 @@
                      <string>Cut</string>
                     </property>
                     <property name="icon">
-                     <iconset resource="../rsc/rsc.qrc">
+                     <iconset resource="rsc/rsc.qrc">
                       <normaloff>:/icons/feather/feather/scissors.svg</normaloff>:/icons/feather/feather/scissors.svg</iconset>
                     </property>
                     <property name="iconSize">
@@ -316,7 +421,7 @@
                      <string>Copy</string>
                     </property>
                     <property name="icon">
-                     <iconset resource="../rsc/rsc.qrc">
+                     <iconset resource="rsc/rsc.qrc">
                       <normaloff>:/icons/feather/feather/copy.svg</normaloff>:/icons/feather/feather/copy.svg</iconset>
                     </property>
                     <property name="iconSize">
@@ -386,7 +491,7 @@
                      <string>Format Painter</string>
                     </property>
                     <property name="icon">
-                     <iconset resource="../rsc/rsc.qrc">
+                     <iconset resource="rsc/rsc.qrc">
                       <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/brush.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/brush.svg</iconset>
                     </property>
                     <property name="iconSize">
@@ -638,7 +743,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../rsc/rsc.qrc">
+                 <iconset resource="rsc/rsc.qrc">
                   <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/list-ul.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/list-ul.svg</iconset>
                 </property>
                 <property name="iconSize">
@@ -667,7 +772,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../rsc/rsc.qrc">
+                 <iconset resource="rsc/rsc.qrc">
                   <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/list-ol.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/list-ol.svg</iconset>
                 </property>
                 <property name="iconSize">
@@ -703,7 +808,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../rsc/rsc.qrc">
+                 <iconset resource="rsc/rsc.qrc">
                   <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/outdent.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/outdent.svg</iconset>
                 </property>
                 <property name="iconSize">
@@ -732,7 +837,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../rsc/rsc.qrc">
+                 <iconset resource="rsc/rsc.qrc">
                   <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/indent.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/indent.svg</iconset>
                 </property>
                 <property name="iconSize">
@@ -788,7 +893,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../rsc/rsc.qrc">
+                 <iconset resource="rsc/rsc.qrc">
                   <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/bold.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/bold.svg</iconset>
                 </property>
                 <property name="iconSize">
@@ -822,7 +927,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../rsc/rsc.qrc">
+                 <iconset resource="rsc/rsc.qrc">
                   <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/italic.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/italic.svg</iconset>
                 </property>
                 <property name="shortcut">
@@ -845,7 +950,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../rsc/rsc.qrc">
+                 <iconset resource="rsc/rsc.qrc">
                   <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/underline.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/underline.svg</iconset>
                 </property>
                 <property name="shortcut">
@@ -868,7 +973,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../rsc/rsc.qrc">
+                 <iconset resource="rsc/rsc.qrc">
                   <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/strikethrough.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/strikethrough.svg</iconset>
                 </property>
                 <property name="shortcut">
@@ -928,7 +1033,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../rsc/rsc.qrc">
+                 <iconset resource="rsc/rsc.qrc">
                   <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/align-left.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/align-left.svg</iconset>
                 </property>
                 <property name="iconSize">
@@ -958,7 +1063,7 @@
                  <string/>
                 </property>
                 <property name="icon">
-                 <iconset resource="../rsc/rsc.qrc">
+                 <iconset resource="rsc/rsc.qrc">
                   <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/xmark.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/xmark.svg</iconset>
                 </property>
                 <property name="iconSize">
@@ -1595,7 +1700,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../rsc/rsc.qrc"/>
+  <include location="rsc/rsc.qrc"/>
  </resources>
  <connections/>
 </ui>

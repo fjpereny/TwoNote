@@ -33,6 +33,8 @@
 #include <QFile>
 #include <QDir>
 #include <QTextStream>
+#include <QPdfWriter>
+#include <QPainter>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -461,6 +463,48 @@ void MainWindow::on_numberingButton_clicked()
             QTextListFormat listFormat;
             listFormat.setStyle(style);
             cursor.createList(listFormat);
+        }
+    }
+}
+
+
+void MainWindow::on_exitButton_clicked()
+{
+    this->close();
+}
+
+
+void MainWindow::on_printButton_clicked()
+{
+    QPdfWriter pdfWriter("test.pdf");
+    pdfWriter.setPageSize(QPageSize::Letter);
+    pdfWriter.newPage();
+    pdfWriter.setTitle("Title of Test Document");
+
+    QPainter painter(&pdfWriter);
+
+    TabMainWidget *tabMainWidget = ui->tabWidget->findChild<TabMainWidget*>();
+    if (tabMainWidget)
+    {
+        std::cout << "Tab Main Widget Found" << std::endl;
+
+        QObjectList children = tabMainWidget->children();
+        for (int i = 0; i < children.count(); ++i)
+        {
+            Container *container = qobject_cast<Container*>(children[i]);
+            if (container)
+            {
+                std::cout << "Container Found" << std::endl;
+                FloatTextEdit *textEdit = container->findChild<FloatTextEdit*>();
+                if (textEdit)
+                {
+                    std::cout << "TextEdit Found" << std::endl;
+                    painter.translate(textEdit->pos());
+                    QTextDocument td;
+                    td.setHtml(textEdit->toHtml());
+                    td.drawContents(&painter);
+                }
+            }
         }
     }
 }

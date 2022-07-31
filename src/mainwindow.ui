@@ -710,6 +710,9 @@
                  <iconset resource="../rsc/rsc.qrc">
                   <normaloff>:/icons/feather/feather/italic.svg</normaloff>:/icons/feather/feather/italic.svg</iconset>
                 </property>
+                <property name="shortcut">
+                 <string>Ctrl+I</string>
+                </property>
                 <property name="flat">
                  <bool>true</bool>
                 </property>
@@ -726,6 +729,9 @@
                 <property name="icon">
                  <iconset resource="../rsc/rsc.qrc">
                   <normaloff>:/icons/feather/feather/underline.svg</normaloff>:/icons/feather/feather/underline.svg</iconset>
+                </property>
+                <property name="shortcut">
+                 <string>Ctrl+U</string>
                 </property>
                 <property name="flat">
                  <bool>true</bool>

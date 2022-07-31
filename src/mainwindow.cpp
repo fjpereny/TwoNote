@@ -34,6 +34,7 @@
 #include <QDir>
 #include <QTextStream>
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -206,7 +207,7 @@ void MainWindow::on_tabWidget_tabBarClicked(int index)
 void MainWindow::on_boldButton_clicked()
 {
     *this->bold = !(*this->bold);
-    this->currentFont->setBold(*bold);
+    this->currentFont->setBold(*this->bold);
 
     if (this->currentContainer && this->currentContainer->hasFocus())
     {
@@ -236,15 +237,28 @@ void MainWindow::on_boldButton_clicked()
 void MainWindow::on_italicButton_clicked()
 {
     *this->italic = !(*this->italic);
-    this->currentFont->setItalic(*italic);
+    this->currentFont->setItalic(*this->italic);
 
-    if (this->currentObject)
+    if (this->currentContainer && this->currentContainer->hasFocus())
+    {
+        if (this->currentObject)
+        {
+            QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+            if (textEdit)
+            {
+                QFont font = textEdit->currentFont();
+                font.setItalic(*this->italic);
+                textEdit->setCurrentFont(font);
+            }
+        }
+    }
+    else if (this->currentObject)
     {
         QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
         if (textEdit)
         {
             QFont font = textEdit->currentFont();
-            font.setItalic(*italic);
+            font.setItalic(*this->italic);
             textEdit->setCurrentFont(font);
         }
     }
@@ -253,15 +267,28 @@ void MainWindow::on_italicButton_clicked()
 void MainWindow::on_underlineButton_clicked()
 {
     *this->underline = !(*this->underline);
-    this->currentFont->setUnderline(*underline);
+    this->currentFont->setUnderline(*this->underline);
 
-    if (this->currentObject)
+    if (this->currentContainer && this->currentContainer->hasFocus())
+    {
+        if (this->currentObject)
+        {
+            QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+            if (textEdit)
+            {
+                QFont font = textEdit->currentFont();
+                font.setUnderline(*this->underline);
+                textEdit->setCurrentFont(font);
+            }
+        }
+    }
+    else if (this->currentObject)
     {
         QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
         if (textEdit)
         {
             QFont font = textEdit->currentFont();
-            font.setUnderline(*underline);
+            font.setUnderline(*this->underline);
             textEdit->setCurrentFont(font);
         }
     }
@@ -270,15 +297,28 @@ void MainWindow::on_underlineButton_clicked()
 void MainWindow::on_strikeButton_clicked()
 {
     *this->strike = !(*this->strike);
-    this->currentFont->setStrikeOut(*strike);
+    this->currentFont->setStrikeOut(*this->strike);
 
-    if (this->currentObject)
+    if (this->currentContainer && this->currentContainer->hasFocus())
+    {
+        if (this->currentObject)
+        {
+            QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+            if (textEdit)
+            {
+                QFont font = textEdit->currentFont();
+                font.setStrikeOut(*this->strike);
+                textEdit->setCurrentFont(font);
+            }
+        }
+    }
+    else if (this->currentObject)
     {
         QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
         if (textEdit)
         {
             QFont font = textEdit->currentFont();
-            font.setStrikeOut(*strike);
+            font.setStrikeOut(*this->strike);
             textEdit->setCurrentFont(font);
         }
     }

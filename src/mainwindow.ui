@@ -612,16 +612,48 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_5">
+               <widget class="QPushButton" name="bulletsButton">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
                 <property name="text">
-                 <string>Bullets</string>
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../rsc/rsc.qrc">
+                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/list-ul.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/list-ul.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_6">
+               <widget class="QPushButton" name="numberingButton">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
                 <property name="text">
-                 <string>Numbering</string>
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../rsc/rsc.qrc">
+                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/list-ol.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/list-ol.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -633,16 +665,48 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_7">
+               <widget class="QPushButton" name="indentButton">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
                 <property name="text">
-                 <string>Decr. Indent</string>
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../rsc/rsc.qrc">
+                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/indent.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/indent.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_8">
+               <widget class="QPushButton" name="outdentButton">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
                 <property name="text">
-                 <string>Incr. Indent</string>
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../rsc/rsc.qrc">
+                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/outdent.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/outdent.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -677,12 +741,12 @@
                 </property>
                 <property name="icon">
                  <iconset resource="../rsc/rsc.qrc">
-                  <normaloff>:/icons/feather/feather/bold.svg</normaloff>:/icons/feather/feather/bold.svg</iconset>
+                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/bold.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/bold.svg</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
-                  <width>12</width>
-                  <height>12</height>
+                  <width>16</width>
+                  <height>16</height>
                  </size>
                 </property>
                 <property name="shortcut">
@@ -708,7 +772,7 @@
                 </property>
                 <property name="icon">
                  <iconset resource="../rsc/rsc.qrc">
-                  <normaloff>:/icons/feather/feather/italic.svg</normaloff>:/icons/feather/feather/italic.svg</iconset>
+                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/italic.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/italic.svg</iconset>
                 </property>
                 <property name="shortcut">
                  <string>Ctrl+I</string>
@@ -728,7 +792,7 @@
                 </property>
                 <property name="icon">
                  <iconset resource="../rsc/rsc.qrc">
-                  <normaloff>:/icons/feather/feather/underline.svg</normaloff>:/icons/feather/feather/underline.svg</iconset>
+                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/underline.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/underline.svg</iconset>
                 </property>
                 <property name="shortcut">
                  <string>Ctrl+U</string>

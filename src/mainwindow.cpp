@@ -431,3 +431,20 @@ QColor MainWindow::getCurrentTextColor()
 {
     return *this->currentTextColor;
 }
+
+void MainWindow::on_bulletsButton_clicked()
+{
+    if (this->currentObject)
+    {
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        if (textEdit)
+        {
+            QTextListFormat::Style style = QTextListFormat::ListCircle;
+            QTextCursor cursor = textEdit->textCursor();
+            QTextListFormat listFormat;
+            listFormat.setStyle(style);
+            cursor.createList(listFormat);
+        }
+    }
+}
+

@@ -65,6 +65,7 @@ private slots:
     void on_strikeButton_clicked();
     void on_fontSizeComboBox_currentIndexChanged(int index);
     void on_fontComboBox_currentFontChanged(const QFont &f);
+    void on_bulletsButton_clicked();
 
 private:
     Ui::MainWindow *ui;

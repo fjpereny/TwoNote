@@ -35,6 +35,8 @@
 #include <QTextStream>
 #include <QPdfWriter>
 #include <QPainter>
+#include <QDesktopServices>
+#include <QAbstractTextDocumentLayout>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -480,32 +482,35 @@ void MainWindow::on_printButton_clicked()
     pdfWriter.setPageSize(QPageSize::Letter);
     pdfWriter.newPage();
     pdfWriter.setTitle("Title of Test Document");
-
     QPainter painter(&pdfWriter);
 
     TabMainWidget *tabMainWidget = ui->tabWidget->findChild<TabMainWidget*>();
     if (tabMainWidget)
     {
-        std::cout << "Tab Main Widget Found" << std::endl;
-
         QObjectList children = tabMainWidget->children();
         for (int i = 0; i < children.count(); ++i)
         {
             Container *container = qobject_cast<Container*>(children[i]);
             if (container)
             {
-                std::cout << "Container Found" << std::endl;
                 FloatTextEdit *textEdit = container->findChild<FloatTextEdit*>();
                 if (textEdit)
                 {
-                    std::cout << "TextEdit Found" << std::endl;
-                    painter.translate(textEdit->pos());
+                    painter.resetTransform();
+                    painter.scale(10, 10);
+                    painter.translate(container->pos());
+
                     QTextDocument td;
                     td.setHtml(textEdit->toHtml());
+                    td.setDocumentMargin(0);
+                    td.adjustSize();
                     td.drawContents(&painter);
+                    std::cout << textEdit->toHtml().toStdString() << std::endl;
                 }
             }
         }
     }
+    QUrl url("test.pdf");
+    QDesktopServices::openUrl(url);
 }
 

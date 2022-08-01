@@ -74,6 +74,7 @@ Container::Container(QWidget *parent)
     this->clickPointX = new int(0);
     this->clickPointY = new int(0);
     this->startingWidth = new int;
+    this->startingHeight = new int;
 
     this->currentPositionX = new int(this->pos().x());
     this->currentPositionY = new int(this->pos().y());
@@ -179,19 +180,31 @@ void Container::focusOutEvent(QFocusEvent *event)
 
 
 void Container::mouseMoveEvent(QMouseEvent *event)
-{
+{    
+    QWidget *child = this->findChild<QWidget*>();
+    FloatImage *floatImage = qobject_cast<FloatImage*>(child);
+
     int x, y;
     x = event->position().x();
     y = event->position().y();
 
-    int grabSizeV = 15;
-    int grabSizeH = 5;
+    int grabSizeV = 10;
+    int grabSizeH = 10;
     int minVPixels = grabSizeV;
     int maxHPixels = this->width() - grabSizeH;
+    int maxVPixels = this->height() - grabSizeV;
 
     if (y <= minVPixels)
     {
-           this->setCursor(Qt::SizeAllCursor);
+        this->setCursor(Qt::SizeAllCursor);
+    }    
+    else if (y >= maxVPixels && x >= maxHPixels)
+    {
+        this->setCursor(Qt::SizeFDiagCursor);
+    }
+    else if (y >= maxVPixels)
+    {
+        this->setCursor(Qt::SizeVerCursor);
     }
     else if (x >= maxHPixels)
     {
@@ -259,6 +272,18 @@ void Container::mouseMoveEvent(QMouseEvent *event)
         {
             child->setFixedWidth(newWidth - 15);
         }
+
+        FloatImage *floatImage = qobject_cast<FloatImage*>(child);
+        if (floatImage)
+        {
+            int moveY = event->globalPosition().y() - *this->clickPointY;
+            int newHeight = *this->startingHeight + moveY;
+            this->setFixedHeight(newHeight);
+            if (child)
+            {
+                child->setFixedHeight(newHeight - 30);
+            }
+        }
     }
 }
 
@@ -285,6 +310,7 @@ void Container::mousePressEvent(QMouseEvent *event)
         *this->clickPointX = event->globalPosition().x();
         *this->clickPointY = event->globalPosition().y();
         *this->startingWidth = this->width();
+        *this->startingHeight = this->height();
     }
 
     *this->currentPositionX = this->pos().x();

@@ -49,6 +49,7 @@ private:
     int *clickPointX;
     int *clickPointY;
     int *startingWidth;
+    int *startingHeight;
     int *currentPositionX;
     int *currentPositionY;
     QFrame *movePreviewFrame;

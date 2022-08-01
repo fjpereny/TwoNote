@@ -306,9 +306,6 @@ void Container::mouseReleaseEvent(QMouseEvent *event)
     {
         textEdit->autoResize();
     }
-
-    QWidget *childWidget = this->findChild<QWidget*>();
-    childWidget->setFocus();
 }
 
 

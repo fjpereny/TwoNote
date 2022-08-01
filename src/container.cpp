@@ -18,6 +18,7 @@
 
 #include "container.h"
 #include "floattextedit.h"
+#include "floatimage.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -256,7 +257,7 @@ void Container::mouseMoveEvent(QMouseEvent *event)
         QWidget *child = this->findChild<QWidget*>();
         if (child)
         {
-            child->setFixedWidth(newWidth - grabSizeH);
+            child->setFixedWidth(newWidth - 15);
         }
     }
 }

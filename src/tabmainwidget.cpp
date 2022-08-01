@@ -18,6 +18,7 @@
 
 #include "tabmainwidget.h"
 #include "floattextedit.h"
+#include "floatimage.h"
 #include "notetabwidget.h"
 #include "container.h"
 
@@ -35,7 +36,8 @@ TabMainWidget::TabMainWidget(QWidget *parent)
     clicked_x = nullptr;
     clicked_y = nullptr;
     createEnabled = new bool(true);
-    createMode = new QString("TextEdit");
+//    createMode = new QString("TextEdit");
+    createMode = new QString("FloatImage");
 
     contextMenu = new ContextMenu(this);
     contextMenu->hide();
@@ -77,6 +79,15 @@ void TabMainWidget::mousePressEvent(QMouseEvent *event)
                     newContainerLayout->addWidget(newTextEdit);
                     newTextEdit->show();
                     newTextEdit->setFocus();
+                }
+
+                else if(*createMode == "FloatImage")
+                {
+                    FloatImage *floatImage = new FloatImage(newContainer);
+                    newContainerLayout->addWidget(floatImage);
+                    floatImage->setImage("test.jpg");
+                    floatImage->show();
+                    floatImage->setFocus();
                 }
             }
         }

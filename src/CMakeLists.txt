@@ -51,6 +51,8 @@ set(PROJECT_SOURCES
         contextmenu.h
         contextmenu.cpp
         contextmenu.ui
+        floatimage.h
+        floatimage.cpp
 
         rsc/rsc.qrc
 

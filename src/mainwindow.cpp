@@ -20,6 +20,7 @@
 #include "ui_mainwindow.h"
 #include "tabmainwidget.h"
 #include "floattextedit.h"
+#include "floatimage.h"
 
 #include <iostream>
 #include <QDialog>

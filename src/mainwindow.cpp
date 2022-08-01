@@ -537,3 +537,16 @@ void MainWindow::on_printButton_clicked()
     QDesktopServices::openUrl(url);
 }
 
+
+void MainWindow::on_deleteButton_clicked()
+{
+    if (this->currentContainer)
+    {
+        this->currentContainer->close();
+    }
+    else if (this->currentObject)
+    {
+        this->currentObject->close();
+    }
+}
+

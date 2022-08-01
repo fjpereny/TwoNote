@@ -72,6 +72,8 @@ private slots:
     void on_exitButton_clicked();
     void on_printButton_clicked();
 
+    void on_deleteButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QWidget *currentObject;

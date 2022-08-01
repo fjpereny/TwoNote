@@ -85,9 +85,12 @@ Container::~Container()
 {    
     QWidget *winWidget = QWidget::window();
     MainWindow *win = qobject_cast<MainWindow*>(winWidget);
-    if (win->getCurrentContainer() == this)
+    if (win)
     {
-        win->setCurrentContainer(nullptr);
+        if (win->getCurrentContainer() == this)
+        {
+            win->setCurrentContainer(nullptr);
+        }
     }
 }
 

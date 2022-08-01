@@ -365,7 +365,14 @@ void MainWindow::setCurrentContainer(Container *container)
 
 Container* MainWindow::getCurrentContainer()
 {
-    return this->currentContainer;
+    if (this->currentContainer)
+    {
+        return this->currentContainer;
+    }
+    else
+    {
+        return nullptr;
+    }
 }
 
 void MainWindow::setCurrentObject(QWidget *object)
@@ -375,7 +382,14 @@ void MainWindow::setCurrentObject(QWidget *object)
 
 QWidget* MainWindow::getCurrentObject()
 {
-    return this->currentObject;
+    if (this->currentObject)
+    {
+        return this->currentObject;
+    }
+    else
+    {
+        return nullptr;
+    }
 }
 
 

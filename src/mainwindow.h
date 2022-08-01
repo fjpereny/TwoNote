@@ -74,6 +74,10 @@ private slots:
 
     void on_deleteButton_clicked();
 
+    void on_clearFormatButton_clicked();
+
+    void on_copyButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QWidget *currentObject;

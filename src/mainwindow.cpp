@@ -37,6 +37,8 @@
 #include <QPainter>
 #include <QDesktopServices>
 #include <QAbstractTextDocumentLayout>
+#include <QClipboard>
+#include <QMimeData>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -547,6 +549,27 @@ void MainWindow::on_deleteButton_clicked()
     else if (this->currentObject)
     {
         this->currentObject->close();
+    }
+}
+
+
+void MainWindow::on_clearFormatButton_clicked()
+{
+
+}
+
+
+void MainWindow::on_copyButton_clicked()
+{
+    if (this->currentContainer && this->currentObject)
+    {
+        const QTextEdit *textEdit = qobject_cast<QTextEdit*>(currentObject);
+        QClipboard *clipboard = QApplication::clipboard();
+
+//        QMimeData richText = QMimeData();
+//        richText.setHtml(textEdit->toHtml());
+//        clipboard->clear();
+//        clipboard->setMimeData(&richText);
     }
 }
 

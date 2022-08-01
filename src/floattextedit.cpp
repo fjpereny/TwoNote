@@ -59,6 +59,8 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
 
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::changeParentCursor);
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::autoResize);
+
+    this->autoResize();
 }
 
 

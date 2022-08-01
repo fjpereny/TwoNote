@@ -1172,6 +1172,33 @@
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_9">
           <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QToolButton" name="toDoTagButton">
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tag as To Do&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>To Do Tag</string>
+              </property>
+              <property name="icon">
+               <iconset resource="rsc/rsc.qrc">
+                <normaloff>:/icons/fontawesome/regular/fontawesome-free-6.1.2-desktop/svgs/regular/square-check.svg</normaloff>:/icons/fontawesome/regular/fontawesome-free-6.1.2-desktop/svgs/regular/square-check.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>36</width>
+                <height>36</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
            <widget class="QLabel" name="label_4">
             <property name="text">
              <string>Tags</string>

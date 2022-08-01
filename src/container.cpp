@@ -198,11 +198,11 @@ void Container::mouseMoveEvent(QMouseEvent *event)
     {
         this->setCursor(Qt::SizeAllCursor);
     }    
-    else if (y >= maxVPixels && x >= maxHPixels)
+    else if (floatImage && y >= maxVPixels && x >= maxHPixels)
     {
         this->setCursor(Qt::SizeFDiagCursor);
     }
-    else if (y >= maxVPixels)
+    else if (floatImage && y >= maxVPixels)
     {
         this->setCursor(Qt::SizeVerCursor);
     }

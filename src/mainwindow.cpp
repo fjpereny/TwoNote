@@ -73,6 +73,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->currentTextColor = new QColor(Qt::black);
 
+    this->formatPainterFont = nullptr;
+
     this->ui->ribbonBar->setStyleSheet
             (
                 "QWidget"
@@ -635,3 +637,26 @@ void MainWindow::on_outdentButton_clicked()
     }
 }
 
+
+void MainWindow::on_formatPainterButton_clicked()
+{
+    if (currentObject)
+    {
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(currentObject);
+        if(textEdit)
+        {
+            if (formatPainterFont)
+            {
+                delete formatPainterFont;
+            }
+            formatPainterFont = new QFont(textEdit->currentFont());
+        }
+
+    }
+}
+
+
+QFont MainWindow::getFormatPainterFont()
+{
+    return *this->formatPainterFont;
+}

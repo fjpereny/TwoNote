@@ -55,6 +55,7 @@ public:
     void setCurrentFont(QFont font);
     QFont getCurrentFont();
     QColor getCurrentTextColor();
+    QFont getFormatPainterFont();
 
 private slots:
     void keyPressEvent(QKeyEvent *event);
@@ -77,6 +78,7 @@ private slots:
     void on_copyButton_clicked();
     void on_indentButton_clicked();
     void on_outdentButton_clicked();
+    void on_formatPainterButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -92,5 +94,6 @@ private:
     bool *strike;
     QFont *currentFont;
     QColor *currentTextColor;
+    QFont *formatPainterFont;
 };
 #endif // MAINWINDOW_H

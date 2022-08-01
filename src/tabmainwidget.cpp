@@ -36,8 +36,8 @@ TabMainWidget::TabMainWidget(QWidget *parent)
     clicked_x = nullptr;
     clicked_y = nullptr;
     createEnabled = new bool(true);
-//    createMode = new QString("TextEdit");
-    createMode = new QString("FloatImage");
+    createMode = new QString("TextEdit");
+//    createMode = new QString("FloatImage");
 
     contextMenu = new ContextMenu(this);
     contextMenu->hide();

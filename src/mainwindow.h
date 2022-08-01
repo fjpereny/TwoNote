@@ -21,6 +21,7 @@
 
 #include <QMainWindow>
 #include <QString>
+#include <QTextDocument>
 #include "container.h"
 #include "contextmenu.h"
 
@@ -71,15 +72,15 @@ private slots:
     void on_numberingButton_clicked();
     void on_exitButton_clicked();
     void on_printButton_clicked();
-
     void on_deleteButton_clicked();
-
     void on_clearFormatButton_clicked();
-
     void on_copyButton_clicked();
+    void on_indentButton_clicked();
+    void on_outdentButton_clicked();
 
 private:
     Ui::MainWindow *ui;
+    QTextDocument *document;
     QWidget *currentObject;
     Container *currentContainer;
     QWidget *copiedObject;

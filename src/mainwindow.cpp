@@ -39,6 +39,8 @@
 #include <QAbstractTextDocumentLayout>
 #include <QClipboard>
 #include <QMimeData>
+#include <QTextCursor>
+#include <QTextDocument>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -46,6 +48,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    this->document = new QTextDocument();
+    document->setIndentWidth(10);
 
     currentContainer = nullptr;
     currentObject = nullptr;
@@ -584,6 +589,37 @@ void MainWindow::on_copyButton_clicked()
 //        richText.setHtml(textEdit->toHtml());
 //        clipboard->clear();
 //        clipboard->setMimeData(&richText);
+    }
+}
+
+
+void MainWindow::on_indentButton_clicked()
+{
+    if (this->currentObject)
+    {
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        QTextCursor cursor = textEdit->textCursor();
+        QTextBlockFormat format = cursor.blockFormat();
+        format.setTextIndent(format.indent() + 1);
+        cursor.setBlockFormat(format);
+        textEdit->setTextCursor(cursor);
+    }
+}
+
+
+void MainWindow::on_outdentButton_clicked()
+{
+    if (this->currentObject)
+    {
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        QTextCursor cursor = textEdit->textCursor();
+        QTextBlockFormat format = cursor.blockFormat();
+        if (format.indent() >= 0)
+        {
+            format.setTextIndent(format.indent() - 1);
+            cursor.setBlockFormat(format);
+            textEdit->setTextCursor(cursor);
+        }
     }
 }
 

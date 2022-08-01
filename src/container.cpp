@@ -313,10 +313,16 @@ void Container::keyPressEvent(QKeyEvent *event)
 {
     if (this->hasFocus())
     {
-        if (event->key() == Qt::Key_Delete || event->key() == Qt::Key_Backspace)
+        if(event->key() == Qt::Key_C && (QGuiApplication::keyboardModifiers() & Qt::ControlModifier))
+        {
+            std::cout << "copy" << std::endl;
+        }
+
+        else if (event->key() == Qt::Key_Delete || event->key() == Qt::Key_Backspace)
         {
             this->close();
         }
+
         else
         {
             this->findChild<QWidget*>()->setFocus();

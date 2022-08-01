@@ -53,10 +53,10 @@ public:
 
     void setCurrentFont(QFont font);
     QFont getCurrentFont();
-
     QColor getCurrentTextColor();
 
 private slots:
+    void keyPressEvent(QKeyEvent *event);
     void on_ribbonBar_currentChanged(int index);
     void on_tabWidget_tabBarDoubleClicked(int index);
     void setTabText();
@@ -68,17 +68,15 @@ private slots:
     void on_fontSizeComboBox_currentIndexChanged(int index);
     void on_fontComboBox_currentFontChanged(const QFont &f);
     void on_bulletsButton_clicked();
-
     void on_numberingButton_clicked();
-
     void on_exitButton_clicked();
-
     void on_printButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     QWidget *currentObject;
     Container *currentContainer;
+    QWidget *copiedObject;
 
     // Application States
     bool *bold;

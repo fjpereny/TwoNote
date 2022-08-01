@@ -85,7 +85,10 @@ void FloatTextEdit::setupFont()
 
 void FloatTextEdit::keyPressEvent(QKeyEvent *event)
 {
-    this->setupFont();
+    if (event->modifiers() != Qt::CTRL)
+    {
+        this->setupFont();
+    }
     QTextEdit::keyPressEvent(event);
 
     if (event->key() == Qt::Key_Insert)
@@ -164,7 +167,7 @@ void FloatTextEdit::focusInEvent(QFocusEvent *event)
 
 void FloatTextEdit::focusOutEvent(QFocusEvent *event)
 {
-    if (this->toPlainText() == "" || this->toPlainText() == "Blank Note")
+    if (this->toPlainText() == "")
     {        
         Container *parent = qobject_cast<Container*>(this->parent());
         if (!parent->hasFocus())
@@ -196,6 +199,28 @@ void FloatTextEdit::focusOutEvent(QFocusEvent *event)
                     "background-color : none;"
                 "}"
             );
+
+    QWidget *focusedWidget = QApplication::focusWidget();
+    if (focusedWidget)
+    {
+        Container *container = qobject_cast<Container*>(focusedWidget);
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(focusedWidget);
+        if (container)
+        {
+            if (container != this->parent())
+            {
+                QTextCursor cursor = this->textCursor();
+                cursor.clearSelection();
+                this->setTextCursor(cursor);
+            }
+        }
+        else if (textEdit)
+        {
+            QTextCursor cursor = this->textCursor();
+            cursor.clearSelection();
+            this->setTextCursor(cursor);
+        }
+    }
 }
 
 

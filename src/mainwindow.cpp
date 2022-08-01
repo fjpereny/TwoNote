@@ -47,6 +47,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     currentContainer = nullptr;
     currentObject = nullptr;
+    copiedObject = nullptr;
 
     // Application States
     bold = new bool(false);
@@ -148,6 +149,12 @@ MainWindow::~MainWindow()
 Ui::MainWindow* MainWindow::getUi()
 {
     return this->ui;
+}
+
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    QMainWindow::keyPressEvent(event);
 }
 
 
@@ -522,7 +529,6 @@ void MainWindow::on_printButton_clicked()
                     }
                     td.setPageSize(QSize(pagePixWidth, pagePixHeight));
                     td.drawContents(&painter);
-                    std::cout << textEdit->toHtml().toStdString() << std::endl;
                 }
             }
         }

@@ -552,6 +552,17 @@ void MainWindow::on_printButton_clicked()
                     td.setPageSize(QSize(pagePixWidth, pagePixHeight));
                     td.drawContents(&painter);
                 }
+
+                FloatImage *floatImage = container->findChild<FloatImage*>();
+                if (floatImage)
+                {
+                    QImage img = floatImage->getImage();
+                    img = img.scaled(floatImage->size());
+                    painter.resetTransform();
+                    painter.scale(10, 10);
+                    painter.translate(container->pos());
+                    painter.drawImage(floatImage->pos(), img);
+                }
             }
         }
     }

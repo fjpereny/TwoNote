@@ -43,6 +43,7 @@
 #include <QTextCursor>
 #include <QTextDocument>
 #include <QFontDatabase>
+#include <QTextList>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -477,18 +478,23 @@ QColor MainWindow::getCurrentTextColor()
     return *this->currentTextColor;
 }
 
+
 void MainWindow::on_bulletsButton_clicked()
 {
+    // Bullet style code to go here...
+    QTextListFormat::Style style = QTextListFormat::Style::ListUpperAlpha;
+
     if (this->currentObject)
     {
         QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
         if (textEdit)
-        {
-            QTextListFormat::Style style = QTextListFormat::ListCircle;
+        {    
             QTextCursor cursor = textEdit->textCursor();
             QTextListFormat listFormat;
+            listFormat.setIndent(1);
             listFormat.setStyle(style);
-            cursor.createList(listFormat);
+            QTextList *list = cursor.createList(listFormat);
+            list->setParent(textEdit);
         }
     }
 }

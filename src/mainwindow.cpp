@@ -42,6 +42,7 @@
 #include <QMimeData>
 #include <QTextCursor>
 #include <QTextDocument>
+#include <QFontDatabase>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -53,15 +54,15 @@ MainWindow::MainWindow(QWidget *parent)
     this->document = new QTextDocument();
     document->setIndentWidth(10);
 
-    currentContainer = nullptr;
-    currentObject = nullptr;
-    copiedObject = nullptr;
+    this->currentContainer = nullptr;
+    this->currentObject = nullptr;
+    this->copiedObject = nullptr;
 
     // Application States
-    bold = new bool(false);
-    italic = new bool(false);
-    underline = new bool(false);
-    strike = new bool(false);
+    this->bold = new bool(false);
+    this->italic = new bool(false);
+    this->underline = new bool(false);
+    this->strike = new bool(false);
 
     this->currentFont = new QFont();
     this->currentFont->setPointSize(this->getFontSize());
@@ -148,11 +149,14 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    delete ui;
-    delete bold;
-    delete italic;
-    delete underline;
-    delete strike;
+    delete this->ui;
+    delete this->bold;
+    delete this->italic;
+    delete this->underline;
+    delete this->strike;
+    delete this->document;
+    delete this->currentFont;
+    delete this->currentTextColor;
 }
 
 

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1011</width>
+    <width>1029</width>
     <height>643</height>
    </rect>
   </property>
@@ -582,6 +582,12 @@
                 <property name="frame">
                  <bool>false</bool>
                 </property>
+                <property name="writingSystem">
+                 <enum>QFontDatabase::Latin</enum>
+                </property>
+                <property name="fontFilters">
+                 <set>QFontComboBox::AllFonts</set>
+                </property>
                 <property name="currentFont">
                  <font>
                   <family>Noto Sans</family>
@@ -1020,15 +1026,22 @@
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="highlightButton">
-                <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+               <widget class="QToolButton" name="highlightButton_2">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Text Highlight Color (Ctrl+Alt+H)&lt;/p&gt;&lt;p&gt;Make your text pop by highlighting it in a bright color.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
-                 <string>Color</string>
+                 <string/>
                 </property>
-                <property name="flat">
-                 <bool>true</bool>
+                <property name="icon">
+                 <iconset resource="rsc/rsc.qrc">
+                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/highlighter.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/highlighter.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>24</width>
+                  <height>24</height>
+                 </size>
                 </property>
                </widget>
               </item>

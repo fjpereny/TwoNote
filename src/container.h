@@ -21,18 +21,24 @@
 #include <QWidget>
 #include <QFrame>
 
+
+//! Visible frame for all objects contained on the note page.
+/*!
+ *   The container acts as a frame and allows the user to move, resize and control the object
+ *   that it contains.
+*/
 class Container : public QFrame
 {
     Q_OBJECT
 
 public:
-    explicit Container(QWidget *parent = nullptr);
-    ~Container();
+    Container(QWidget *parent = nullptr);           //!< Default donstructor
+    ~Container();                                   //!< Default destructor.
 
-    void setMovable(bool);
-    bool getMovable();
-    void setSizable(bool);
-    bool getSizable();
+    void setMovable(bool);                          //!< Set this container as movable / immovable.
+    bool getMovable();                              //!< Check if this container is currently movable.
+    void setSizable(bool);                          //!< Set this container as resizable / fixed size.
+    bool getSizable();                              //!< Check if this container is currently resizable.
 
 private:
     void focusInEvent(QFocusEvent *event);

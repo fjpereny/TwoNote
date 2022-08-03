@@ -108,6 +108,11 @@ bool Container::getMovable()
 }
 
 
+/*!
+ * \brief Container::setSizable
+ * \param bool b
+ * \sa Container::getSizable
+ */
 void Container::setSizable(bool b)
 {
     *this->isSizable = b;

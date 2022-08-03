@@ -93,6 +93,14 @@ void FloatTextEdit::keyPressEvent(QKeyEvent *event)
         this->setOverwriteMode(!this->overwriteMode());
         this->cursorSizeChange();
     }
+    else if (event->key() == Qt::Key_Escape)
+    {
+        QTextCursor textCursor = this->textCursor();
+        textCursor.clearSelection();
+        this->setTextCursor(textCursor);
+        this->clearFocus();
+        this->parentWidget()->clearFocus();
+    }
     else
     {
         QTextEdit::keyPressEvent(event);
@@ -118,6 +126,7 @@ void FloatTextEdit::cursorSizeChange()
     {
         this->setCursorWidth(1);
     }
+    this->update();
 }
 
 

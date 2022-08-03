@@ -20,6 +20,7 @@ var class_container =
     [ "currentPositionY", "class_container.html#a5559a39ec4a633b66bb7e2ea8773b9f6", null ],
     [ "isMovable", "class_container.html#ad0cfec8462c9a244627dad983b01976b", null ],
     [ "isSizable", "class_container.html#a212b9a586cfacb445a375ad1f69e1317", null ],
+    [ "mainWindow", "class_container.html#ad3f7dd2fd5f4e549231dbf5e88b7efdf", null ],
     [ "movePreviewFrame", "class_container.html#a1277e79a5daf078d865808cbd486c70c", null ],
     [ "startingHeight", "class_container.html#ad396b153672f7523b8fea06906a0c05a", null ],
     [ "startingWidth", "class_container.html#ab0d718d69d2ec2f1e32bdb280d39893a", null ]

@@ -27,6 +27,7 @@ class MainWindow;
 
 //! Visible frame for all objects contained on the note page.
 /*!
+ * \image html Container.png
  *   The container acts as a frame and allows the user to move, resize and control the object
  *   that it contains.
 */

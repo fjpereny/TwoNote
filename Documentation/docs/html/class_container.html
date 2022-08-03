@@ -201,6 +201,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a212b9a586cfacb445a375ad1f69e1317"><td class="memItemLeft" align="right" valign="top">bool *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a212b9a586cfacb445a375ad1f69e1317">isSizable</a></td></tr>
 <tr class="memdesc:a212b9a586cfacb445a375ad1f69e1317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles <a class="el" href="class_container.html" title="Visible frame for all objects contained on the note page.">Container</a> resizable or fixed.  <a href="class_container.html#a212b9a586cfacb445a375ad1f69e1317">More...</a><br /></td></tr>
 <tr class="separator:a212b9a586cfacb445a375ad1f69e1317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3f7dd2fd5f4e549231dbf5e88b7efdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_main_window.html">MainWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ad3f7dd2fd5f4e549231dbf5e88b7efdf">mainWindow</a></td></tr>
+<tr class="memdesc:ad3f7dd2fd5f4e549231dbf5e88b7efdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to the <a class="el" href="class_main_window.html">MainWindow</a> object of this application instance.  <a href="class_container.html#ad3f7dd2fd5f4e549231dbf5e88b7efdf">More...</a><br /></td></tr>
+<tr class="separator:ad3f7dd2fd5f4e549231dbf5e88b7efdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1277e79a5daf078d865808cbd486c70c"><td class="memItemLeft" align="right" valign="top">QFrame *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a1277e79a5daf078d865808cbd486c70c">movePreviewFrame</a></td></tr>
 <tr class="memdesc:a1277e79a5daf078d865808cbd486c70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A QFrame object used for movement and resizing preview purposes.  <a href="class_container.html#a1277e79a5daf078d865808cbd486c70c">More...</a><br /></td></tr>
 <tr class="separator:a1277e79a5daf078d865808cbd486c70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -213,7 +216,10 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Visible frame for all objects contained on the note page. </p>
-<p >The container acts as a frame and allows the user to move, resize and control the object that it contains. </p>
+<div class="image">
+<img src="Container.png" alt=""/>
+</div>
+<p> The container acts as a frame and allows the user to move, resize and control the object that it contains. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aea1e18bd9a946bdbf633cc9c5f5ef8dd" name="aea1e18bd9a946bdbf633cc9c5f5ef8dd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aea1e18bd9a946bdbf633cc9c5f5ef8dd">&#9670;&nbsp;</a></span>Container()</h2>
@@ -760,6 +766,31 @@ Private Attributes</h2></td></tr>
 
 <p>Toggles <a class="el" href="class_container.html" title="Visible frame for all objects contained on the note page.">Container</a> resizable or fixed. </p>
 <p >True if this container is sizable, false if fixed size. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_container.html#ac298cd4d49912581a326608005a69dc5" title="Set this Container as resizable during a mouse move event.">Container::setSizable</a>, <a class="el" href="class_container.html#af0db4a54a06b143d143b602a1105a53b" title="Check if this Container is currently resizable by a mouse move event.">Container::getSizable</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad3f7dd2fd5f4e549231dbf5e88b7efdf" name="ad3f7dd2fd5f4e549231dbf5e88b7efdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3f7dd2fd5f4e549231dbf5e88b7efdf">&#9670;&nbsp;</a></span>mainWindow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_main_window.html">MainWindow</a>* Container::mainWindow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A pointer to the <a class="el" href="class_main_window.html">MainWindow</a> object of this application instance. </p>
+<p >This is used to access the <a class="el" href="class_main_window.html">MainWindow</a> instance and allows this <a class="el" href="class_container.html" title="Visible frame for all objects contained on the note page.">Container</a> to access public methods, variables and other GUI objects of the application. </p>
 
 </div>
 </div>

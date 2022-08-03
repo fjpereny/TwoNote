@@ -44,7 +44,6 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
 
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     this->setWordWrapMode(QTextOption::NoWrap);
-//    this->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
 
     this->setFont(window->getCurrentFont());
     this->setCurrentFont(window->getCurrentFont());
@@ -99,6 +98,7 @@ void FloatTextEdit::keyPressEvent(QKeyEvent *event)
         this->setTextCursor(textCursor);
         this->clearFocus();
         this->parentWidget()->clearFocus();
+        this->setCursorWidth(0);
     }
     else
     {
@@ -265,13 +265,13 @@ void FloatTextEdit::focusOutEvent(QFocusEvent *event)
 
 void FloatTextEdit::enterEvent(QEvent *event)
 {
-
+    this->cursorSizeChange();
 }
 
 
 void FloatTextEdit::leaveEvent(QEvent *event)
 {
-
+    this->setCursorWidth(0);
 }
 
 
@@ -280,5 +280,4 @@ void FloatTextEdit::changeParentCursor()
     Container *parent = qobject_cast<Container*>(this->parent());
     parent->setCursor(Qt::IBeamCursor);
 }
-
 

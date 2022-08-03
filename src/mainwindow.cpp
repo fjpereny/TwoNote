@@ -44,6 +44,8 @@
 #include <QTextDocument>
 #include <QFontDatabase>
 #include <QTextList>
+#include <QScrollArea>
+#include <QSizePolicy>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -221,12 +223,31 @@ void MainWindow::on_tabWidget_tabBarClicked(int index)
            return;
     }
 
-    QWidget *newPage = new QWidget();
-    QVBoxLayout *layout = new QVBoxLayout(newPage);
-    newPage->setLayout(layout);
-    TabMainWidget *tabWidget = new TabMainWidget(newPage);
-    layout->addWidget(tabWidget);
-    this->ui->tabWidget->insertTab(lastTabIndex, newPage, "New Section");
+    QWidget *newTab = new QWidget(this);
+    QVBoxLayout *tabLayout = new QVBoxLayout(newTab);
+    QScrollArea *scrollArea = new QScrollArea(newTab);
+    QVBoxLayout *scrollAreaLayout = new QVBoxLayout(scrollArea);
+    TabMainWidget *tabWidget = new TabMainWidget(scrollArea);
+
+    newTab->setLayout(tabLayout);
+    tabLayout->addWidget(scrollArea);
+    scrollArea->setLayout(scrollAreaLayout);
+    scrollAreaLayout->addWidget(tabWidget);
+
+
+    tabLayout->setContentsMargins(0, 0, 0, 0);
+    scrollAreaLayout->setContentsMargins(0, 0, 0, 0);
+
+    newTab->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    scrollArea->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    tabWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+
+    this->ui->tabWidget->insertTab(lastTabIndex, newTab, "New Section");
+
+    tabWidget->show();
 }
 
 

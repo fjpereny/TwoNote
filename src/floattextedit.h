@@ -44,10 +44,12 @@ public:
      */
     ~FloatTextEdit();
 
-    void setupFont();
+    //! Resizes this object based on the contents (text size).
+    /*!
+     * \brief This function is used to automatically resize and enlarge this widget to
+     * match the contents as the user types, pastes or modifies data contained within.
+     */
     void autoResize();
-
-    bool *selected;
 
 private:
     void keyPressEvent(QKeyEvent *event);
@@ -56,12 +58,13 @@ private:
     void enterEvent(QEvent *event);
     void leaveEvent(QEvent *event);
 
-    void cursorSizeChange();
-    MainWindow *window;
+    //! Sets the current font to the selected font of the MainWindow
+    /*!
+     * \brief This is used to keep the current font matching the options selected in the
+     * MainWindow (Font Family, Color, etc.).
+     */
+    void setupFont();
 
-signals:
-
-private slots:
     //! Changes the parent Container mouse cursor to IBeam cursor.
     /*!
      * \brief If the mouse is hovering the Container during a text change event (typing)
@@ -70,6 +73,24 @@ private slots:
      * \sa FloatTextEdit::cursorSizeChange()
      */
     void changeParentCursor();
+
+    //! Changes the cursor with during overwrite mode (insert key pressed)
+    /*!
+     * \brief Changes the thickness of the text cursor if the insert key is pressed and overwrite
+     * mode is initiated.  The cursor thickness will match the thickness of the QFontMetric for the
+     * next character.  If at the end of the line, the cursor thickness will match the average
+     * character thickness for the current font.
+     * \sa FloatTextEdit::changeParentCursor()
+     */
+    void cursorSizeChange();
+
+
+    bool *selected;
+    MainWindow *window;
+
+signals:
+
+private slots:
 };
 
 #endif // FLOATTEXTEDIT_H

@@ -591,7 +591,6 @@
                 <property name="currentFont">
                  <font>
                   <family>Noto Sans</family>
-                  <bold>false</bold>
                  </font>
                 </property>
                </widget>

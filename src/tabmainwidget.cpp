@@ -26,12 +26,13 @@
 #include <QHBoxLayout>
 #include <QMouseEvent>
 #include <QWidget>
+#include <QSizePolicy>
 
 TabMainWidget::TabMainWidget(QWidget *parent)
     : QWidget{parent}
 {
-    this->setParent(parent);
     this->setCursor(Qt::IBeamCursor);
+    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     clicked_x = nullptr;
     clicked_y = nullptr;

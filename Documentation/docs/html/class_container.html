@@ -140,13 +140,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae9f5d07bfc3defda274aa06091c19f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="class_container.html#ae9f5d07bfc3defda274aa06091c19f56">More...</a><br /></td></tr>
 <tr class="separator:ae9f5d07bfc3defda274aa06091c19f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41860d5394eaaeeee1288253c6b97304"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#a41860d5394eaaeeee1288253c6b97304">setMovable</a> (bool)</td></tr>
-<tr class="memdesc:a41860d5394eaaeeee1288253c6b97304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this container as movable / immovable.  <a href="class_container.html#a41860d5394eaaeeee1288253c6b97304">More...</a><br /></td></tr>
+<tr class="memdesc:a41860d5394eaaeeee1288253c6b97304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this container as movable or immovable.  <a href="class_container.html#a41860d5394eaaeeee1288253c6b97304">More...</a><br /></td></tr>
 <tr class="separator:a41860d5394eaaeeee1288253c6b97304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2855c7bf5211e88a153b90a69c0af54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#aa2855c7bf5211e88a153b90a69c0af54">getMovable</a> ()</td></tr>
 <tr class="memdesc:aa2855c7bf5211e88a153b90a69c0af54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this container is currently movable.  <a href="class_container.html#aa2855c7bf5211e88a153b90a69c0af54">More...</a><br /></td></tr>
 <tr class="separator:aa2855c7bf5211e88a153b90a69c0af54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac298cd4d49912581a326608005a69dc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#ac298cd4d49912581a326608005a69dc5">setSizable</a> (bool)</td></tr>
-<tr class="memdesc:ac298cd4d49912581a326608005a69dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this container as resizable / fixed size.  <a href="class_container.html#ac298cd4d49912581a326608005a69dc5">More...</a><br /></td></tr>
+<tr class="memdesc:ac298cd4d49912581a326608005a69dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this container as resizable or fixed size.  <a href="class_container.html#ac298cd4d49912581a326608005a69dc5">More...</a><br /></td></tr>
 <tr class="separator:ac298cd4d49912581a326608005a69dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0db4a54a06b143d143b602a1105a53b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_container.html#af0db4a54a06b143d143b602a1105a53b">getSizable</a> ()</td></tr>
 <tr class="memdesc:af0db4a54a06b143d143b602a1105a53b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this container is currently resizable.  <a href="class_container.html#af0db4a54a06b143d143b602a1105a53b">More...</a><br /></td></tr>
@@ -231,6 +231,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if this container is currently resizable. </p>
+<p ><a class="el" href="class_container.html#af0db4a54a06b143d143b602a1105a53b" title="Check if this container is currently resizable.">Container::getSizable</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if this container is currently sizable and false if fixed-size. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_container.html#ac298cd4d49912581a326608005a69dc5" title="Set this container as resizable or fixed size.">Container::setSizable</a> </dd></dl>
 
 </div>
 </div>
@@ -250,7 +253,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set this container as movable / immovable. </p>
+<p>Set this container as movable or immovable. </p>
 
 </div>
 </div>
@@ -270,11 +273,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set this container as resizable / fixed size. </p>
-<p ><a class="el" href="class_container.html#ac298cd4d49912581a326608005a69dc5" title="Set this container as resizable / fixed size.">Container::setSizable</a>.</p>
+<p>Set this container as resizable or fixed size. </p>
+<p ><a class="el" href="class_container.html#ac298cd4d49912581a326608005a69dc5" title="Set this container as resizable or fixed size.">Container::setSizable</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bool</td><td>b </td></tr>
+    <tr><td class="paramname">bool</td><td>b - True if resizable, false if fixed-size. </td></tr>
   </table>
   </dd>
 </dl>

@@ -35,9 +35,9 @@ public:
     Container(QWidget *parent = nullptr);           //!< Default donstructor
     ~Container();                                   //!< Default destructor.
 
-    void setMovable(bool);                          //!< Set this container as movable / immovable.
+    void setMovable(bool);                          //!< Set this container as movable or immovable.
     bool getMovable();                              //!< Check if this container is currently movable.
-    void setSizable(bool);                          //!< Set this container as resizable / fixed size.
+    void setSizable(bool);                          //!< Set this container as resizable or fixed size.
     bool getSizable();                              //!< Check if this container is currently resizable.
 
 private:

@@ -110,7 +110,7 @@ bool Container::getMovable()
 
 /*!
  * \brief Container::setSizable
- * \param bool b
+ * \param bool b - True if resizable, false if fixed-size.
  * \sa Container::getSizable
  */
 void Container::setSizable(bool b)
@@ -118,6 +118,11 @@ void Container::setSizable(bool b)
     *this->isSizable = b;
 }
 
+/*!
+ * \brief Container::getSizable
+ * \return Returns true if this container is currently sizable and false if fixed-size.
+ * \sa Container::setSizable
+ */
 bool Container::getSizable()
 {
     return *this->isSizable;

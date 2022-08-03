@@ -35,11 +35,13 @@ public:
 
 private:
     void keyPressEvent(QKeyEvent *event);
+    void cursorPositionChanged();
     void focusInEvent(QFocusEvent *event);
     void focusOutEvent(QFocusEvent *event);
     void enterEvent(QEvent *event);
     void leaveEvent(QEvent *event);
 
+    void cursorSizeChange();
     MainWindow *window;
 
 signals:

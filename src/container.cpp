@@ -35,8 +35,6 @@ Container::Container(QWidget *parent)
 
     this->setMinimumWidth(200);
     this->setMinimumHeight(100);
-    this->setMaximumWidth(16777215);
-    this->setMaximumHeight(16777215);
 
     this->setStyleSheet
             (
@@ -392,16 +390,18 @@ void Container::keyPressEvent(QKeyEvent *event)
 {
     if (this->hasFocus())
     {
-        if(event->key() == Qt::Key_C && (QGuiApplication::keyboardModifiers() & Qt::ControlModifier))
+        if (event->key() == Qt::Key_Escape)
+        {
+            this->clearFocus();
+        }
+        else if(event->key() == Qt::Key_C && (QGuiApplication::keyboardModifiers() & Qt::ControlModifier))
         {
             std::cout << "copy" << std::endl;
         }
-
         else if (event->key() == Qt::Key_Delete || event->key() == Qt::Key_Backspace)
         {
             this->close();
         }
-
         else
         {
             this->findChild<QWidget*>()->setFocus();

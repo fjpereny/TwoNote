@@ -59,6 +59,7 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
 
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::changeParentCursor);
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::autoResize);
+    QObject::connect(this, &QTextEdit::cursorPositionChanged, this, &FloatTextEdit::cursorSizeChange);
 
     this->autoResize();
 }
@@ -87,15 +88,35 @@ void FloatTextEdit::setupFont()
 
 void FloatTextEdit::keyPressEvent(QKeyEvent *event)
 {
-    if (event->modifiers() != Qt::CTRL)
-    {
-        this->setupFont();
-    }
-    QTextEdit::keyPressEvent(event);
-
     if (event->key() == Qt::Key_Insert)
     {
         this->setOverwriteMode(!this->overwriteMode());
+        this->cursorSizeChange();
+    }
+    else
+    {
+        QTextEdit::keyPressEvent(event);
+    }
+}
+
+
+void FloatTextEdit::cursorSizeChange()
+{
+    if (this->overwriteMode())
+    {
+        QFontMetrics metrics(this->currentFont());
+        int curPos = this->textCursor().position();
+        QString curText = this->toPlainText();
+        if (curPos >= 0 && curPos < curText.length())
+        {
+            QChar curChar = curText[curPos];
+            int curCharWidth = metrics.boundingRect(curChar).width();
+            this->setCursorWidth(curCharWidth);
+        }
+    }
+    else
+    {
+        this->setCursorWidth(1);
     }
 }
 

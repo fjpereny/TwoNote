@@ -141,10 +141,6 @@ bool Container::getSizable()
 }
 
 
-/*!
- * \brief Container::focusInEvent
- * \param event
- */
 void Container::focusInEvent(QFocusEvent *event)
 {
     QWidget *winWidget = QWidget::window();
@@ -178,10 +174,6 @@ void Container::focusInEvent(QFocusEvent *event)
 }
 
 
-/*!
- * \brief Container::focusOutEvent
- * \param event
- */
 void Container::focusOutEvent(QFocusEvent *event)
 {
     this->setStyleSheet
@@ -209,10 +201,6 @@ void Container::focusOutEvent(QFocusEvent *event)
 }
 
 
-/*!
- * \brief Container::mouseMoveEvent
- * \param event
- */
 void Container::mouseMoveEvent(QMouseEvent *event)
 {    
     QWidget *child = this->findChild<QWidget*>();
@@ -322,10 +310,6 @@ void Container::mouseMoveEvent(QMouseEvent *event)
 }
 
 
-/*!
- * \brief Container::mousePressEvent
- * \param event
- */
 void Container::mousePressEvent(QMouseEvent *event)
 {
     int x, y;
@@ -356,10 +340,6 @@ void Container::mousePressEvent(QMouseEvent *event)
 }
 
 
-/*!
- * \brief Container::mouseReleaseEvent
- * \param event
- */
 void Container::mouseReleaseEvent(QMouseEvent *event)
 {
     this->setMovable(false);
@@ -382,10 +362,6 @@ void Container::mouseReleaseEvent(QMouseEvent *event)
 }
 
 
-/*!
- * \brief Container::keyPressEvent
- * \param event
- */
 void Container::keyPressEvent(QKeyEvent *event)
 {
     if (this->hasFocus())

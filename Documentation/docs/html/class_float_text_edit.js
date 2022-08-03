@@ -4,6 +4,8 @@ var class_float_text_edit =
     [ "~FloatTextEdit", "class_float_text_edit.html#abcd1162a7293be64d2da7a18a92bf1b1", null ],
     [ "autoResize", "class_float_text_edit.html#a1b8e0106a207a7d6c7e7c8fd0a4ab278", null ],
     [ "changeParentCursor", "class_float_text_edit.html#a8e8788d6eafd160bdf6f36546e5795b3", null ],
+    [ "cursorPositionChanged", "class_float_text_edit.html#a772e3d77b4258222cb596dba48a4d7c6", null ],
+    [ "cursorSizeChange", "class_float_text_edit.html#a1fd1e1b7579d8be1706510c24b289786", null ],
     [ "enterEvent", "class_float_text_edit.html#ad70834e9b38928a57f48b10863d55ce2", null ],
     [ "focusInEvent", "class_float_text_edit.html#a771a3bf4bd134b21729471649661f62b", null ],
     [ "focusOutEvent", "class_float_text_edit.html#a6ec717a53458986d853ff002cac1e6a0", null ],

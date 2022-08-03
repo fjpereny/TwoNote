@@ -19,7 +19,6 @@
 #include "container.h"
 #include "floattextedit.h"
 #include "floatimage.h"
-#include "mainwindow.h"
 #include "ui_mainwindow.h"
 
 #include <iostream>
@@ -77,18 +76,44 @@ Container::Container(QWidget *parent)
     this->currentPositionY = new int(this->pos().y());
 
     this->movePreviewFrame = nullptr;
+
+    QWidget *winWidget = QWidget::window();
+    MainWindow *window = qobject_cast<MainWindow*>(winWidget);
+    if (window)
+    {
+        this->mainWindow = window;
+    }
+    else
+    {
+        std::cerr << "Error: Container::Container() could not get pointer to MainWindow.\n"
+                     "\tthis->mainWindow set to nullptr and may have unexpected consequences.";
+        this->mainWindow = nullptr;
+    }
 }
 
 
 Container::~Container()
-{    
-    QWidget *winWidget = QWidget::window();
-    MainWindow *win = qobject_cast<MainWindow*>(winWidget);
-    if (win)
+{
+    delete this->isMovable;
+    delete this->isSizable;
+    delete this->clickOffsetX;
+    delete this->clickOffsetY;
+    delete this->clickPointX;
+    delete this->clickPointY;
+    delete this->startingWidth;
+    delete this->startingHeight;
+    delete this->currentPositionX;
+    delete this->currentPositionY;
+    if (this->movePreviewFrame)
     {
-        if (win->getCurrentContainer() == this)
+        delete this->movePreviewFrame;
+    }
+
+    if (mainWindow)
+    {
+        if (mainWindow->getCurrentContainer() == this)
         {
-            win->setCurrentContainer(nullptr);
+            mainWindow->setCurrentContainer(nullptr);
         }
     }
 }

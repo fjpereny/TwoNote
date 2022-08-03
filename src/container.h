@@ -18,9 +18,12 @@
 #ifndef CONTAINER_H
 #define CONTAINER_H
 
+
 #include <QWidget>
 #include <QFrame>
 
+
+class MainWindow;
 
 //! Visible frame for all objects contained on the note page.
 /*!
@@ -171,6 +174,14 @@ private:
      *
      */
     QFrame *movePreviewFrame;
+
+    //! A pointer to the MainWindow object of this application instance.
+    /*!
+     * \brief This is used to access the MainWindow instance and allows this Container to access
+     * public methods, variables and other GUI objects of the application.
+     *
+     */
+    MainWindow *mainWindow;
 
 private slots:
 

@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['_7econtainer_0',['~Container',['../class_container.html#ae9f5d07bfc3defda274aa06091c19f56',1,'Container']]],
-  ['_7econtextmenu_1',['~ContextMenu',['../class_context_menu.html#a0ddd00b5e23fb9d89ad3cabae38aecf9',1,'ContextMenu']]],
-  ['_7efloatimage_2',['~FloatImage',['../class_float_image.html#a2eb8d8b1fdb7a2fd6bf98c5399216df2',1,'FloatImage']]],
-  ['_7efloattextedit_3',['~FloatTextEdit',['../class_float_text_edit.html#abcd1162a7293be64d2da7a18a92bf1b1',1,'FloatTextEdit']]],
-  ['_7emainwindow_4',['~MainWindow',['../class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
-  ['_7enotetabwidget_5',['~NoteTabWidget',['../class_note_tab_widget.html#a84e6ec956117c0f41035b6ae6822840b',1,'NoteTabWidget']]],
-  ['_7eribbonbar_6',['~RibbonBar',['../class_ribbon_bar.html#a3fcede422ef8d5768251b0bbb819ada4',1,'RibbonBar']]],
-  ['_7etabmainwidget_7',['~TabMainWidget',['../class_tab_main_widget.html#a61e1f278e653c11a28a534c2b59b8575',1,'TabMainWidget']]]
+  ['setcurrentcontainer_0',['setCurrentContainer',['../class_main_window.html#af72ad12e0d6d76b0418f2333046af0ad',1,'MainWindow']]],
+  ['setcurrentfont_1',['setCurrentFont',['../class_main_window.html#afce291f81b1a23cac0e1afb41b511036',1,'MainWindow']]],
+  ['setcurrentobject_2',['setCurrentObject',['../class_main_window.html#aae598087336e47e3c54b9014054878d8',1,'MainWindow']]],
+  ['setimage_3',['setImage',['../class_float_image.html#aa8798f8affd75a1f687829684949ca1a',1,'FloatImage']]],
+  ['setmovable_4',['setMovable',['../class_container.html#a41860d5394eaaeeee1288253c6b97304',1,'Container']]],
+  ['setsizable_5',['setSizable',['../class_container.html#ac298cd4d49912581a326608005a69dc5',1,'Container']]],
+  ['settabtext_6',['setTabText',['../class_main_window.html#a5fbe2e3517df99702a6cfd19716545b5',1,'MainWindow']]],
+  ['setupfont_7',['setupFont',['../class_float_text_edit.html#aac803b004d5cab0567e92c636c65e4c2',1,'FloatTextEdit']]],
+  ['staticfunc_8',['staticfunc',['../class_my_library_1_1_example.html#a8c3ea5ce33b9e1fada7ff46eab0956a7',1,'MyLibrary::Example']]]
 ];

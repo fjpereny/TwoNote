@@ -1,5 +1,22 @@
 var searchData=
 [
-  ['tabmainwidget_0',['TabMainWidget',['../class_tab_main_widget.html#a2bcb27977f48671f8dd59820a208764f',1,'TabMainWidget']]],
-  ['test_1',['test',['../class_my_library_1_1_example.html#a1c0046b0674eb4cad09c5d3e943912b8',1,'MyLibrary::Example']]]
+  ['on_5fboldbutton_5fclicked_0',['on_boldButton_clicked',['../class_main_window.html#a2ae0c6540c5d994370162e5866e25c7d',1,'MainWindow']]],
+  ['on_5fbulletsbutton_5fclicked_1',['on_bulletsButton_clicked',['../class_main_window.html#a0f33dd18ab1914d8cdebc6f80b2c9963',1,'MainWindow']]],
+  ['on_5fclearformatbutton_5fclicked_2',['on_clearFormatButton_clicked',['../class_main_window.html#aa66eff3d9d6ff5a48287058a43d175ad',1,'MainWindow']]],
+  ['on_5fcopybutton_5fclicked_3',['on_copyButton_clicked',['../class_main_window.html#a69c50210f1969c6b24efac9c441b27cd',1,'MainWindow']]],
+  ['on_5fdeletebutton_5fclicked_4',['on_deleteButton_clicked',['../class_main_window.html#ac70a65e0bdf1b517e947b0bd0161987e',1,'MainWindow']]],
+  ['on_5fexitbutton_5fclicked_5',['on_exitButton_clicked',['../class_main_window.html#afcbbbc80001065310d2cd6221c5be55c',1,'MainWindow']]],
+  ['on_5ffontcombobox_5fcurrentfontchanged_6',['on_fontComboBox_currentFontChanged',['../class_main_window.html#ad34944b0fab5c11a60ef398810144472',1,'MainWindow']]],
+  ['on_5ffontsizecombobox_5fcurrentindexchanged_7',['on_fontSizeComboBox_currentIndexChanged',['../class_main_window.html#a7d0db4385e19389b12c15c6bf7287f54',1,'MainWindow']]],
+  ['on_5fformatpainterbutton_5fclicked_8',['on_formatPainterButton_clicked',['../class_main_window.html#a7a00126168c14212096588f4c700413b',1,'MainWindow']]],
+  ['on_5findentbutton_5fclicked_9',['on_indentButton_clicked',['../class_main_window.html#abde65b7861b1186bd6a14a947fb6f33c',1,'MainWindow']]],
+  ['on_5fitalicbutton_5fclicked_10',['on_italicButton_clicked',['../class_main_window.html#a7bd4b1ba173bc96edf0f836150200d6a',1,'MainWindow']]],
+  ['on_5fnumberingbutton_5fclicked_11',['on_numberingButton_clicked',['../class_main_window.html#aded055c9d6f66aa9509eb0c75e4ab237',1,'MainWindow']]],
+  ['on_5foutdentbutton_5fclicked_12',['on_outdentButton_clicked',['../class_main_window.html#aec9bd4ccdbfe918e23db96ef9d1de968',1,'MainWindow']]],
+  ['on_5fprintbutton_5fclicked_13',['on_printButton_clicked',['../class_main_window.html#a76df88cbffc836dbfc0e6c1a656f6665',1,'MainWindow']]],
+  ['on_5fribbonbar_5fcurrentchanged_14',['on_ribbonBar_currentChanged',['../class_main_window.html#a67dd7ba54d3dd5a5dc441b7fbd3d2f4f',1,'MainWindow']]],
+  ['on_5fstrikebutton_5fclicked_15',['on_strikeButton_clicked',['../class_main_window.html#aa02776590767eaaf123f3030b4a11125',1,'MainWindow']]],
+  ['on_5ftabwidget_5ftabbarclicked_16',['on_tabWidget_tabBarClicked',['../class_main_window.html#a738c75b6db1208e2378a539403c6aff9',1,'MainWindow']]],
+  ['on_5ftabwidget_5ftabbardoubleclicked_17',['on_tabWidget_tabBarDoubleClicked',['../class_main_window.html#ac793cedc7deec4682aea8c253bb55fdb',1,'MainWindow']]],
+  ['on_5funderlinebutton_5fclicked_18',['on_underlineButton_clicked',['../class_main_window.html#a7ec0846415eb8900c642493462794f83',1,'MainWindow']]]
 ];

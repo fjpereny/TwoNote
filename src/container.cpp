@@ -30,17 +30,14 @@
 Container::Container(QWidget *parent)
     : QFrame{parent}
 {
-    this->setParent(parent);
     this->setAttribute(Qt::WA_DeleteOnClose, true);
-
     this->setFocusPolicy(Qt::ClickFocus);
+    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     this->setMinimumWidth(200);
     this->setMinimumHeight(100);
     this->setMaximumWidth(16777215);
     this->setMaximumHeight(16777215);
-
-    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     this->setStyleSheet
             (
@@ -102,33 +99,29 @@ void Container::setMovable(bool b)
     *this->isMovable = b;
 }
 
+
 bool Container::getMovable()
 {
     return *this->isMovable;
 }
 
 
-/*!
- * \brief Container::setSizable
- * \param bool b - True if resizable, false if fixed-size.
- * \sa Container::getSizable
- */
 void Container::setSizable(bool b)
 {
     *this->isSizable = b;
 }
 
-/*!
- * \brief Container::getSizable
- * \return Returns true if this container is currently sizable and false if fixed-size.
- * \sa Container::setSizable
- */
+
 bool Container::getSizable()
 {
     return *this->isSizable;
 }
 
 
+/*!
+ * \brief Container::focusInEvent
+ * \param event
+ */
 void Container::focusInEvent(QFocusEvent *event)
 {
     QWidget *winWidget = QWidget::window();
@@ -162,6 +155,10 @@ void Container::focusInEvent(QFocusEvent *event)
 }
 
 
+/*!
+ * \brief Container::focusOutEvent
+ * \param event
+ */
 void Container::focusOutEvent(QFocusEvent *event)
 {
     this->setStyleSheet
@@ -189,6 +186,10 @@ void Container::focusOutEvent(QFocusEvent *event)
 }
 
 
+/*!
+ * \brief Container::mouseMoveEvent
+ * \param event
+ */
 void Container::mouseMoveEvent(QMouseEvent *event)
 {    
     QWidget *child = this->findChild<QWidget*>();
@@ -298,6 +299,10 @@ void Container::mouseMoveEvent(QMouseEvent *event)
 }
 
 
+/*!
+ * \brief Container::mousePressEvent
+ * \param event
+ */
 void Container::mousePressEvent(QMouseEvent *event)
 {
     int x, y;
@@ -327,6 +332,11 @@ void Container::mousePressEvent(QMouseEvent *event)
     *this->currentPositionY = this->pos().y();
 }
 
+
+/*!
+ * \brief Container::mouseReleaseEvent
+ * \param event
+ */
 void Container::mouseReleaseEvent(QMouseEvent *event)
 {
     this->setMovable(false);
@@ -349,6 +359,10 @@ void Container::mouseReleaseEvent(QMouseEvent *event)
 }
 
 
+/*!
+ * \brief Container::keyPressEvent
+ * \param event
+ */
 void Container::keyPressEvent(QKeyEvent *event)
 {
     if (this->hasFocus())

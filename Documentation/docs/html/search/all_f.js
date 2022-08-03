@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['_7econtainer_0',['~Container',['../class_container.html#ae9f5d07bfc3defda274aa06091c19f56',1,'Container']]],
-  ['_7econtextmenu_1',['~ContextMenu',['../class_context_menu.html#a0ddd00b5e23fb9d89ad3cabae38aecf9',1,'ContextMenu']]],
-  ['_7efloatimage_2',['~FloatImage',['../class_float_image.html#a2eb8d8b1fdb7a2fd6bf98c5399216df2',1,'FloatImage']]],
-  ['_7efloattextedit_3',['~FloatTextEdit',['../class_float_text_edit.html#abcd1162a7293be64d2da7a18a92bf1b1',1,'FloatTextEdit']]],
-  ['_7emainwindow_4',['~MainWindow',['../class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
-  ['_7enotetabwidget_5',['~NoteTabWidget',['../class_note_tab_widget.html#a84e6ec956117c0f41035b6ae6822840b',1,'NoteTabWidget']]],
-  ['_7eribbonbar_6',['~RibbonBar',['../class_ribbon_bar.html#a3fcede422ef8d5768251b0bbb819ada4',1,'RibbonBar']]],
-  ['_7etabmainwidget_7',['~TabMainWidget',['../class_tab_main_widget.html#a61e1f278e653c11a28a534c2b59b8575',1,'TabMainWidget']]]
+  ['tabmainwidget_0',['TabMainWidget',['../class_tab_main_widget.html',1,'TabMainWidget'],['../class_tab_main_widget.html#a2bcb27977f48671f8dd59820a208764f',1,'TabMainWidget::TabMainWidget()']]],
+  ['tabmainwidget_2ecpp_1',['tabmainwidget.cpp',['../tabmainwidget_8cpp.html',1,'']]],
+  ['tabmainwidget_2eh_2',['tabmainwidget.h',['../tabmainwidget_8h.html',1,'']]],
+  ['test_3',['test',['../class_my_library_1_1_example.html#a1c0046b0674eb4cad09c5d3e943912b8',1,'MyLibrary::Example']]],
+  ['todo_20list_4',['Todo List',['../todo.html',1,'']]],
+  ['twonote_5',['TwoNote',['../index.html',1,'']]]
 ];

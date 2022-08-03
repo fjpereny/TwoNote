@@ -1,19 +1,7 @@
 var searchData=
 [
-  ['getbold_0',['getBold',['../class_main_window.html#a2b356ca9ad1aae313d9a8feb52ca0f44',1,'MainWindow']]],
-  ['getcurrentcontainer_1',['getCurrentContainer',['../class_main_window.html#aded587978c36216a60383a1b16232075',1,'MainWindow']]],
-  ['getcurrentfont_2',['getCurrentFont',['../class_main_window.html#a68f48d320f54357b40db809cc11ecf14',1,'MainWindow']]],
-  ['getcurrentobject_3',['getCurrentObject',['../class_main_window.html#a092739a230ab52a5fa13ace474f7463c',1,'MainWindow']]],
-  ['getcurrenttextcolor_4',['getCurrentTextColor',['../class_main_window.html#a82b92bc7507a18f553d9355402863ecb',1,'MainWindow']]],
-  ['getfontfamily_5',['getFontFamily',['../class_main_window.html#a5874041efe5cdca71365656758073ba3',1,'MainWindow']]],
-  ['getfontsize_6',['getFontSize',['../class_main_window.html#a5fe769c0a1caa88e709a4e1c6cf6570d',1,'MainWindow']]],
-  ['getformatpainterfont_7',['getFormatPainterFont',['../class_main_window.html#a4500298da3b3aabd29343706d9533305',1,'MainWindow']]],
-  ['getimage_8',['getImage',['../class_float_image.html#ac0fc7f4ea661747b7db8daab89908a3b',1,'FloatImage']]],
-  ['getitalic_9',['getItalic',['../class_main_window.html#ad1bf9241b53cc57c3363fa9df3e25fde',1,'MainWindow']]],
-  ['getmainwindow_10',['getMainWindow',['../class_main_window.html#aa20cbe884b40d86a11787495d0314478',1,'MainWindow']]],
-  ['getmovable_11',['getMovable',['../class_container.html#aa2855c7bf5211e88a153b90a69c0af54',1,'Container']]],
-  ['getsizable_12',['getSizable',['../class_container.html#af0db4a54a06b143d143b602a1105a53b',1,'Container']]],
-  ['getstrike_13',['getStrike',['../class_main_window.html#a756535a319a1c14007de50f81be349c4',1,'MainWindow']]],
-  ['getui_14',['getUi',['../class_main_window.html#ae560f8c66af6bc7dc502df5b9de25d40',1,'MainWindow']]],
-  ['getunderline_15',['getUnderline',['../class_main_window.html#a1eac58954919237524ee566d98501b66',1,'MainWindow']]]
+  ['floatimage_0',['FloatImage',['../class_float_image.html#a41722913275746da3bc6f79f00c938c7',1,'FloatImage']]],
+  ['floattextedit_1',['FloatTextEdit',['../class_float_text_edit.html#ac9e120ea88704889a5046b3ab568f6ac',1,'FloatTextEdit']]],
+  ['focusinevent_2',['focusInEvent',['../class_container.html#a48186a8d594e43379f812934baf7cc1f',1,'Container::focusInEvent()'],['../class_context_menu.html#a92c13ea49119b7990c8c693ed21bd8f0',1,'ContextMenu::focusInEvent()'],['../class_float_text_edit.html#a771a3bf4bd134b21729471649661f62b',1,'FloatTextEdit::focusInEvent()']]],
+  ['focusoutevent_3',['focusOutEvent',['../class_container.html#ac57cf086a081d360edc34ce505c66bd7',1,'Container::focusOutEvent()'],['../class_float_text_edit.html#a6ec717a53458986d853ff002cac1e6a0',1,'FloatTextEdit::focusOutEvent()']]]
 ];

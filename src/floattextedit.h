@@ -22,10 +22,26 @@
 #include <QTextEdit>
 #include <mainwindow.h>
 
+
+//! Floating rich text editor.
+/*!
+ *  Rich text editor for writing notes contained within a Container.
+*/
 class FloatTextEdit : public QTextEdit
 {
 public:
+    //! Default constructor.
+    /*!
+     * \brief FloatTextEdit::FloatTextEdit
+     * \param parent
+     */
     FloatTextEdit(QWidget *parent = nullptr);
+
+    //! Default destructor.
+    /*!
+     * \brief FloatTextEdit::~FloatTextEdit
+     * \param parent
+     */
     ~FloatTextEdit();
 
     void setupFont();
@@ -35,7 +51,6 @@ public:
 
 private:
     void keyPressEvent(QKeyEvent *event);
-    void cursorPositionChanged();
     void focusInEvent(QFocusEvent *event);
     void focusOutEvent(QFocusEvent *event);
     void enterEvent(QEvent *event);
@@ -46,8 +61,14 @@ private:
 
 signals:
 
-
 private slots:
+    //! Changes the parent Container mouse cursor to IBeam cursor.
+    /*!
+     * \brief If the mouse is hovering the Container during a text change event (typing)
+     * the cursor will change to an IBeam style cursor to reflect the user is actively typing.
+     * This also makes the mouse pointer less distracting while typing.
+     * \sa FloatTextEdit::cursorSizeChange()
+     */
     void changeParentCursor();
 };
 

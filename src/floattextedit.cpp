@@ -34,7 +34,6 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
 {
     this->window = qobject_cast<MainWindow*>(QApplication::activeWindow());
 
-    this->setParent(parent);
     this->setAttribute(Qt::WA_DeleteOnClose, true);
     this->setAutoFillBackground(true);
 
@@ -45,7 +44,7 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
 
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     this->setWordWrapMode(QTextOption::NoWrap);
-    this->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
+//    this->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
 
     this->setFont(window->getCurrentFont());
     this->setCurrentFont(window->getCurrentFont());
@@ -61,7 +60,7 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::autoResize);
     QObject::connect(this, &QTextEdit::cursorPositionChanged, this, &FloatTextEdit::cursorSizeChange);
 
-    this->autoResize();
+//    this->autoResize();
 }
 
 
@@ -115,12 +114,17 @@ void FloatTextEdit::cursorSizeChange()
         QFontMetrics metrics(this->currentFont());
         int curPos = this->textCursor().position();
         QString curText = this->toPlainText();
+        int curCharWidth;
         if (curPos >= 0 && curPos < curText.length())
         {
             QChar curChar = curText[curPos];
-            int curCharWidth = metrics.boundingRect(curChar).width();
-            this->setCursorWidth(curCharWidth);
+            curCharWidth = metrics.boundingRect(curChar).width();
         }
+        else
+        {
+            curCharWidth = metrics.averageCharWidth();
+        }
+        this->setCursorWidth(curCharWidth);
     }
     else
     {
@@ -144,9 +148,12 @@ void FloatTextEdit::autoResize()
 
     int marginTop = 15;
     int marginSides = 15;
-    if (this->width() > (this->parentWidget()->width() - marginSides))
+    if (this->width())
     {
-        this->parentWidget()->setFixedWidth(this->width() + marginSides);
+        if (this->width() > (this->parentWidget()->width() - marginSides))
+        {
+            this->parentWidget()->setFixedWidth(this->width() + marginSides);
+        }
     }
     if (this->height() > (this->parentWidget()->height() - marginTop))
     {

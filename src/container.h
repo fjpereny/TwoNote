@@ -22,7 +22,6 @@
 #include <QWidget>
 #include <QFrame>
 
-
 class MainWindow;
 
 //! Visible frame for all objects contained on the note page.

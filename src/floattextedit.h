@@ -20,7 +20,7 @@
 #define FLOATTEXTEDIT_H
 
 #include <QTextEdit>
-#include <mainwindow.h>
+#include "mainwindow.h"
 
 
 //! Floating rich text editor.

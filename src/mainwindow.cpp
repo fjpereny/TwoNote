@@ -148,6 +148,22 @@ MainWindow::MainWindow(QWidget *parent)
                     "background-color: rgb(255, 255, 255);"
                 "}"
             );
+
+    QListWidgetItem *item0 = this->ui->styleListWidget->item(0);
+    QFont font0;
+    font0.setFamily("Sans Serif");
+    font0.setPointSize(16);
+    item0->setFont(font0);
+    item0->setBackground(QColor::fromRgb(255, 255, 255));
+    item0->setForeground(QColor::fromRgb(30, 70, 121));
+
+    QListWidgetItem *item1 = this->ui->styleListWidget->item(1);
+    QFont font1;
+    font1.setFamily("Sans Serif");
+    font1.setPointSize(14);
+    item1->setFont(font1);
+    item1->setBackground(QColor::fromRgb(255, 255, 255));
+    item1->setForeground(QColor::fromRgb(46, 117, 181));
 }
 
 MainWindow::~MainWindow()
@@ -625,16 +641,16 @@ void MainWindow::on_clearFormatButton_clicked()
 
 void MainWindow::on_copyButton_clicked()
 {
-    if (this->currentContainer && this->currentObject)
-    {
-        const QTextEdit *textEdit = qobject_cast<QTextEdit*>(currentObject);
-        QClipboard *clipboard = QApplication::clipboard();
+//    if (this->currentContainer && this->currentObject)
+//    {
+//        const QTextEdit *textEdit = qobject_cast<QTextEdit*>(currentObject);
+//        QClipboard *clipboard = QApplication::clipboard();
 
 //        QMimeData richText = QMimeData();
 //        richText.setHtml(textEdit->toHtml());
 //        clipboard->clear();
 //        clipboard->setMimeData(&richText);
-    }
+//    }
 }
 
 
@@ -691,3 +707,20 @@ QFont MainWindow::getFormatPainterFont()
 {
     return *this->formatPainterFont;
 }
+
+void MainWindow::on_styleListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
+{
+    QFont newFont(current->font());
+    if (currentObject)
+    {
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(currentObject);
+        if(textEdit)
+        {
+            textEdit->setCurrentFont(newFont);
+            textEdit->setTextColor(current->foreground().color());
+            textEdit->setTextBackgroundColor(current->background().color());
+        }
+
+    }
+}
+

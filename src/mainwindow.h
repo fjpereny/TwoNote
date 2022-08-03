@@ -21,6 +21,7 @@
 
 #include <QMainWindow>
 #include <QString>
+#include <QListWidget>
 #include <QTextDocument>
 #include "container.h"
 #include "contextmenu.h"
@@ -79,6 +80,7 @@ private slots:
     void on_indentButton_clicked();
     void on_outdentButton_clicked();
     void on_formatPainterButton_clicked();
+    void on_styleListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 
 private:
     Ui::MainWindow *ui;

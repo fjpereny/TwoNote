@@ -19,7 +19,7 @@
 #include "container.h"
 #include "floattextedit.h"
 #include "floatimage.h"
-#include "ui_mainwindow.h"
+#include "mainwindow.h"
 
 #include <iostream>
 #include <QMouseEvent>
@@ -370,10 +370,10 @@ void Container::keyPressEvent(QKeyEvent *event)
         {
             this->clearFocus();
         }
-        else if(event->key() == Qt::Key_C && (QGuiApplication::keyboardModifiers() & Qt::ControlModifier))
-        {
-            std::cout << "copy" << std::endl;
-        }
+//        else if(event->key() == Qt::Key_C && (QGuiApplication::keyboardModifiers() & Qt::ControlModifier))
+//        {
+//            std::cout << "copy" << std::endl;
+//        }
         else if (event->key() == Qt::Key_Delete || event->key() == Qt::Key_Backspace)
         {
             this->close();

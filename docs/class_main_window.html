@@ -1,0 +1,1671 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.5"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>TwoNote: MainWindow Class Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/jothepro/doxygen-awesome-css" class="github-corner" title="View source on GitHub" target="_blank">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">TwoNote
+   </div>
+   <div id="projectbrief">A familiar note taking application.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.5 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_main_window.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="class_main_window-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">MainWindow Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for MainWindow:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_main_window__inherit__graph.svg" width="127" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a996c5a2b6f77944776856f08ec30858d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="separator:a996c5a2b6f77944776856f08ec30858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a> ()</td></tr>
+<tr class="separator:ae98d00a93bc118200eeef9f9bba1dba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b356ca9ad1aae313d9a8feb52ca0f44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a2b356ca9ad1aae313d9a8feb52ca0f44">getBold</a> ()</td></tr>
+<tr class="separator:a2b356ca9ad1aae313d9a8feb52ca0f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aded587978c36216a60383a1b16232075"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_container.html">Container</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aded587978c36216a60383a1b16232075">getCurrentContainer</a> ()</td></tr>
+<tr class="separator:aded587978c36216a60383a1b16232075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68f48d320f54357b40db809cc11ecf14"><td class="memItemLeft" align="right" valign="top">QFont&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a68f48d320f54357b40db809cc11ecf14">getCurrentFont</a> ()</td></tr>
+<tr class="separator:a68f48d320f54357b40db809cc11ecf14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092739a230ab52a5fa13ace474f7463c"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a092739a230ab52a5fa13ace474f7463c">getCurrentObject</a> ()</td></tr>
+<tr class="separator:a092739a230ab52a5fa13ace474f7463c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b92bc7507a18f553d9355402863ecb"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a82b92bc7507a18f553d9355402863ecb">getCurrentTextColor</a> ()</td></tr>
+<tr class="separator:a82b92bc7507a18f553d9355402863ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5874041efe5cdca71365656758073ba3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a5874041efe5cdca71365656758073ba3">getFontFamily</a> ()</td></tr>
+<tr class="separator:a5874041efe5cdca71365656758073ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe769c0a1caa88e709a4e1c6cf6570d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a5fe769c0a1caa88e709a4e1c6cf6570d">getFontSize</a> ()</td></tr>
+<tr class="separator:a5fe769c0a1caa88e709a4e1c6cf6570d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4500298da3b3aabd29343706d9533305"><td class="memItemLeft" align="right" valign="top">QFont&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a4500298da3b3aabd29343706d9533305">getFormatPainterFont</a> ()</td></tr>
+<tr class="separator:a4500298da3b3aabd29343706d9533305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1bf9241b53cc57c3363fa9df3e25fde"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ad1bf9241b53cc57c3363fa9df3e25fde">getItalic</a> ()</td></tr>
+<tr class="separator:ad1bf9241b53cc57c3363fa9df3e25fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a756535a319a1c14007de50f81be349c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a756535a319a1c14007de50f81be349c4">getStrike</a> ()</td></tr>
+<tr class="separator:a756535a319a1c14007de50f81be349c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae560f8c66af6bc7dc502df5b9de25d40"><td class="memItemLeft" align="right" valign="top">Ui::MainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae560f8c66af6bc7dc502df5b9de25d40">getUi</a> ()</td></tr>
+<tr class="separator:ae560f8c66af6bc7dc502df5b9de25d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eac58954919237524ee566d98501b66"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a1eac58954919237524ee566d98501b66">getUnderline</a> ()</td></tr>
+<tr class="separator:a1eac58954919237524ee566d98501b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af72ad12e0d6d76b0418f2333046af0ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af72ad12e0d6d76b0418f2333046af0ad">setCurrentContainer</a> (<a class="el" href="class_container.html">Container</a> *container=nullptr)</td></tr>
+<tr class="separator:af72ad12e0d6d76b0418f2333046af0ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afce291f81b1a23cac0e1afb41b511036"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#afce291f81b1a23cac0e1afb41b511036">setCurrentFont</a> (QFont font)</td></tr>
+<tr class="separator:afce291f81b1a23cac0e1afb41b511036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae598087336e47e3c54b9014054878d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aae598087336e47e3c54b9014054878d8">setCurrentObject</a> (QWidget *object=nullptr)</td></tr>
+<tr class="separator:aae598087336e47e3c54b9014054878d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aa20cbe884b40d86a11787495d0314478"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_main_window.html">MainWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa20cbe884b40d86a11787495d0314478">getMainWindow</a> ()</td></tr>
+<tr class="separator:aa20cbe884b40d86a11787495d0314478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a74ec40de9904fe5abe2794e183b979b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a74ec40de9904fe5abe2794e183b979b9">changeStyle</a> (QListWidgetItem *current)</td></tr>
+<tr class="separator:a74ec40de9904fe5abe2794e183b979b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c4f542263838b9ecd06eae839a42a34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9c4f542263838b9ecd06eae839a42a34">keyPressEvent</a> (QKeyEvent *event)</td></tr>
+<tr class="separator:a9c4f542263838b9ecd06eae839a42a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae0c6540c5d994370162e5866e25c7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a2ae0c6540c5d994370162e5866e25c7d">on_boldButton_clicked</a> ()</td></tr>
+<tr class="separator:a2ae0c6540c5d994370162e5866e25c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f33dd18ab1914d8cdebc6f80b2c9963"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0f33dd18ab1914d8cdebc6f80b2c9963">on_bulletsButton_clicked</a> ()</td></tr>
+<tr class="separator:a0f33dd18ab1914d8cdebc6f80b2c9963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa66eff3d9d6ff5a48287058a43d175ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa66eff3d9d6ff5a48287058a43d175ad">on_clearFormatButton_clicked</a> ()</td></tr>
+<tr class="separator:aa66eff3d9d6ff5a48287058a43d175ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69c50210f1969c6b24efac9c441b27cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a69c50210f1969c6b24efac9c441b27cd">on_copyButton_clicked</a> ()</td></tr>
+<tr class="separator:a69c50210f1969c6b24efac9c441b27cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70a65e0bdf1b517e947b0bd0161987e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac70a65e0bdf1b517e947b0bd0161987e">on_deleteButton_clicked</a> ()</td></tr>
+<tr class="separator:ac70a65e0bdf1b517e947b0bd0161987e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcbbbc80001065310d2cd6221c5be55c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#afcbbbc80001065310d2cd6221c5be55c">on_exitButton_clicked</a> ()</td></tr>
+<tr class="separator:afcbbbc80001065310d2cd6221c5be55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3efdedea9c88d7fc146b5534d76812ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3efdedea9c88d7fc146b5534d76812ee">on_expandFontColorButton_clicked</a> ()</td></tr>
+<tr class="separator:a3efdedea9c88d7fc146b5534d76812ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac13e209cd62efaef2a8f9472aba8437d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac13e209cd62efaef2a8f9472aba8437d">on_fontColorButton_clicked</a> ()</td></tr>
+<tr class="separator:ac13e209cd62efaef2a8f9472aba8437d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad34944b0fab5c11a60ef398810144472"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ad34944b0fab5c11a60ef398810144472">on_fontComboBox_currentFontChanged</a> (const QFont &amp;f)</td></tr>
+<tr class="separator:ad34944b0fab5c11a60ef398810144472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d0db4385e19389b12c15c6bf7287f54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7d0db4385e19389b12c15c6bf7287f54">on_fontSizeComboBox_currentIndexChanged</a> (int index)</td></tr>
+<tr class="separator:a7d0db4385e19389b12c15c6bf7287f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a00126168c14212096588f4c700413b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7a00126168c14212096588f4c700413b">on_formatPainterButton_clicked</a> ()</td></tr>
+<tr class="separator:a7a00126168c14212096588f4c700413b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abde65b7861b1186bd6a14a947fb6f33c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#abde65b7861b1186bd6a14a947fb6f33c">on_indentButton_clicked</a> ()</td></tr>
+<tr class="separator:abde65b7861b1186bd6a14a947fb6f33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bd4b1ba173bc96edf0f836150200d6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7bd4b1ba173bc96edf0f836150200d6a">on_italicButton_clicked</a> ()</td></tr>
+<tr class="separator:a7bd4b1ba173bc96edf0f836150200d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aded055c9d6f66aa9509eb0c75e4ab237"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aded055c9d6f66aa9509eb0c75e4ab237">on_numberingButton_clicked</a> ()</td></tr>
+<tr class="separator:aded055c9d6f66aa9509eb0c75e4ab237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9bd4ccdbfe918e23db96ef9d1de968"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aec9bd4ccdbfe918e23db96ef9d1de968">on_outdentButton_clicked</a> ()</td></tr>
+<tr class="separator:aec9bd4ccdbfe918e23db96ef9d1de968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76df88cbffc836dbfc0e6c1a656f6665"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a76df88cbffc836dbfc0e6c1a656f6665">on_printButton_clicked</a> ()</td></tr>
+<tr class="separator:a76df88cbffc836dbfc0e6c1a656f6665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67dd7ba54d3dd5a5dc441b7fbd3d2f4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a67dd7ba54d3dd5a5dc441b7fbd3d2f4f">on_ribbonBar_currentChanged</a> (int index)</td></tr>
+<tr class="separator:a67dd7ba54d3dd5a5dc441b7fbd3d2f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa02776590767eaaf123f3030b4a11125"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa02776590767eaaf123f3030b4a11125">on_strikeButton_clicked</a> ()</td></tr>
+<tr class="separator:aa02776590767eaaf123f3030b4a11125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae673b66bfe99292cc002f48982e2dfe1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae673b66bfe99292cc002f48982e2dfe1">on_styleListWidget_currentItemChanged</a> (QListWidgetItem *current, QListWidgetItem *previous)</td></tr>
+<tr class="separator:ae673b66bfe99292cc002f48982e2dfe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb4a86427c3c7f5e5442f3a59e21e50d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#acb4a86427c3c7f5e5442f3a59e21e50d">on_styleListWidget_itemClicked</a> (QListWidgetItem *item)</td></tr>
+<tr class="separator:acb4a86427c3c7f5e5442f3a59e21e50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a738c75b6db1208e2378a539403c6aff9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a738c75b6db1208e2378a539403c6aff9">on_tabWidget_tabBarClicked</a> (int index)</td></tr>
+<tr class="separator:a738c75b6db1208e2378a539403c6aff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac793cedc7deec4682aea8c253bb55fdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac793cedc7deec4682aea8c253bb55fdb">on_tabWidget_tabBarDoubleClicked</a> (int index)</td></tr>
+<tr class="separator:ac793cedc7deec4682aea8c253bb55fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec0846415eb8900c642493462794f83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7ec0846415eb8900c642493462794f83">on_underlineButton_clicked</a> ()</td></tr>
+<tr class="separator:a7ec0846415eb8900c642493462794f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fbe2e3517df99702a6cfd19716545b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a5fbe2e3517df99702a6cfd19716545b5">setTabText</a> ()</td></tr>
+<tr class="separator:a5fbe2e3517df99702a6cfd19716545b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa10dc4728b58c0dfef8289b9c227f65d"><td class="memItemLeft" align="right" valign="top">QColor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa10dc4728b58c0dfef8289b9c227f65d">backgroundColorDialogColor</a></td></tr>
+<tr class="separator:aa10dc4728b58c0dfef8289b9c227f65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac96985da8eea96f7ae717f8825cf37f6"><td class="memItemLeft" align="right" valign="top">bool *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac96985da8eea96f7ae717f8825cf37f6">bold</a></td></tr>
+<tr class="separator:ac96985da8eea96f7ae717f8825cf37f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a111396cd5a7487ca3e7a0d9415305f14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_color_drop_down_menu.html">ColorDropDownMenu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a111396cd5a7487ca3e7a0d9415305f14">colorDropDown</a></td></tr>
+<tr class="separator:a111396cd5a7487ca3e7a0d9415305f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a355949e22681fd6d3550fee4be5f4e29"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a355949e22681fd6d3550fee4be5f4e29">copiedObject</a></td></tr>
+<tr class="separator:a355949e22681fd6d3550fee4be5f4e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a046235578850b2e8ff6f2fd513269c39"><td class="memItemLeft" align="right" valign="top">QColor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a046235578850b2e8ff6f2fd513269c39">currentBackgroundColor</a></td></tr>
+<tr class="separator:a046235578850b2e8ff6f2fd513269c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3f50141079fa13239d223733bd419c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_container.html">Container</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#af3f50141079fa13239d223733bd419c2">currentContainer</a></td></tr>
+<tr class="separator:af3f50141079fa13239d223733bd419c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7e9d2b9d1da3d128477885e8f9abea8"><td class="memItemLeft" align="right" valign="top">QFont *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac7e9d2b9d1da3d128477885e8f9abea8">currentFont</a></td></tr>
+<tr class="separator:ac7e9d2b9d1da3d128477885e8f9abea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64024f71e097237100a4af364d5ca652"><td class="memItemLeft" align="right" valign="top">QColor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a64024f71e097237100a4af364d5ca652">currentHighlightColor</a></td></tr>
+<tr class="separator:a64024f71e097237100a4af364d5ca652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa99407ef48a6b97e203a74c651e90fae"><td class="memItemLeft" align="right" valign="top">QWidget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa99407ef48a6b97e203a74c651e90fae">currentObject</a></td></tr>
+<tr class="separator:aa99407ef48a6b97e203a74c651e90fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0e5509aa041728d6c25c062752cb92c"><td class="memItemLeft" align="right" valign="top">QColor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae0e5509aa041728d6c25c062752cb92c">currentTextColor</a></td></tr>
+<tr class="separator:ae0e5509aa041728d6c25c062752cb92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab386c8b6ef22531815c5a3e3167efea1"><td class="memItemLeft" align="right" valign="top">QTextDocument *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ab386c8b6ef22531815c5a3e3167efea1">document</a></td></tr>
+<tr class="separator:ab386c8b6ef22531815c5a3e3167efea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7892ccf4a4b6c06184e85eba3c0daa78"><td class="memItemLeft" align="right" valign="top">QFont *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7892ccf4a4b6c06184e85eba3c0daa78">formatPainterFont</a></td></tr>
+<tr class="separator:a7892ccf4a4b6c06184e85eba3c0daa78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a784cefd217a08e730507b2bf1edd622d"><td class="memItemLeft" align="right" valign="top">QColor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a784cefd217a08e730507b2bf1edd622d">highlighColorDialogColor</a></td></tr>
+<tr class="separator:a784cefd217a08e730507b2bf1edd622d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b045e9f942145d3508a5d9754f3c5f2"><td class="memItemLeft" align="right" valign="top">bool *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a2b045e9f942145d3508a5d9754f3c5f2">italic</a></td></tr>
+<tr class="separator:a2b045e9f942145d3508a5d9754f3c5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab276c6146be6cb25eed934ad23e200cf"><td class="memItemLeft" align="right" valign="top">bool *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ab276c6146be6cb25eed934ad23e200cf">strike</a></td></tr>
+<tr class="separator:ab276c6146be6cb25eed934ad23e200cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc5c2865faa8a33a889efd0d28033aed"><td class="memItemLeft" align="right" valign="top">QColor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#acc5c2865faa8a33a889efd0d28033aed">textColorDialogColor</a></td></tr>
+<tr class="separator:acc5c2865faa8a33a889efd0d28033aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35466a70ed47252a0191168126a352a5"><td class="memItemLeft" align="right" valign="top">Ui::MainWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a></td></tr>
+<tr class="separator:a35466a70ed47252a0191168126a352a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ebaf99c69e9f206142c69e57cf44ebd"><td class="memItemLeft" align="right" valign="top">bool *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8ebaf99c69e9f206142c69e57cf44ebd">underline</a></td></tr>
+<tr class="separator:a8ebaf99c69e9f206142c69e57cf44ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a996c5a2b6f77944776856f08ec30858d" name="a996c5a2b6f77944776856f08ec30858d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a996c5a2b6f77944776856f08ec30858d">&#9670;&nbsp;</a></span>MainWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_main_window.html">MainWindow::MainWindow</a> </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae98d00a93bc118200eeef9f9bba1dba7" name="ae98d00a93bc118200eeef9f9bba1dba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae98d00a93bc118200eeef9f9bba1dba7">&#9670;&nbsp;</a></span>~MainWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainWindow::~MainWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a74ec40de9904fe5abe2794e183b979b9" name="a74ec40de9904fe5abe2794e183b979b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74ec40de9904fe5abe2794e183b979b9">&#9670;&nbsp;</a></span>changeStyle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::changeStyle </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>current</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b356ca9ad1aae313d9a8feb52ca0f44" name="a2b356ca9ad1aae313d9a8feb52ca0f44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b356ca9ad1aae313d9a8feb52ca0f44">&#9670;&nbsp;</a></span>getBold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MainWindow::getBold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aded587978c36216a60383a1b16232075" name="aded587978c36216a60383a1b16232075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aded587978c36216a60383a1b16232075">&#9670;&nbsp;</a></span>getCurrentContainer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_container.html">Container</a> * MainWindow::getCurrentContainer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68f48d320f54357b40db809cc11ecf14" name="a68f48d320f54357b40db809cc11ecf14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68f48d320f54357b40db809cc11ecf14">&#9670;&nbsp;</a></span>getCurrentFont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFont MainWindow::getCurrentFont </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a092739a230ab52a5fa13ace474f7463c" name="a092739a230ab52a5fa13ace474f7463c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a092739a230ab52a5fa13ace474f7463c">&#9670;&nbsp;</a></span>getCurrentObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget * MainWindow::getCurrentObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82b92bc7507a18f553d9355402863ecb" name="a82b92bc7507a18f553d9355402863ecb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b92bc7507a18f553d9355402863ecb">&#9670;&nbsp;</a></span>getCurrentTextColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor MainWindow::getCurrentTextColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5874041efe5cdca71365656758073ba3" name="a5874041efe5cdca71365656758073ba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5874041efe5cdca71365656758073ba3">&#9670;&nbsp;</a></span>getFontFamily()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString MainWindow::getFontFamily </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5fe769c0a1caa88e709a4e1c6cf6570d" name="a5fe769c0a1caa88e709a4e1c6cf6570d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe769c0a1caa88e709a4e1c6cf6570d">&#9670;&nbsp;</a></span>getFontSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MainWindow::getFontSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4500298da3b3aabd29343706d9533305" name="a4500298da3b3aabd29343706d9533305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4500298da3b3aabd29343706d9533305">&#9670;&nbsp;</a></span>getFormatPainterFont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFont MainWindow::getFormatPainterFont </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1bf9241b53cc57c3363fa9df3e25fde" name="ad1bf9241b53cc57c3363fa9df3e25fde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1bf9241b53cc57c3363fa9df3e25fde">&#9670;&nbsp;</a></span>getItalic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MainWindow::getItalic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa20cbe884b40d86a11787495d0314478" name="aa20cbe884b40d86a11787495d0314478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa20cbe884b40d86a11787495d0314478">&#9670;&nbsp;</a></span>getMainWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_main_window.html">MainWindow</a> * MainWindow::getMainWindow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a756535a319a1c14007de50f81be349c4" name="a756535a319a1c14007de50f81be349c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a756535a319a1c14007de50f81be349c4">&#9670;&nbsp;</a></span>getStrike()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MainWindow::getStrike </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae560f8c66af6bc7dc502df5b9de25d40" name="ae560f8c66af6bc7dc502df5b9de25d40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae560f8c66af6bc7dc502df5b9de25d40">&#9670;&nbsp;</a></span>getUi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::MainWindow * MainWindow::getUi </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1eac58954919237524ee566d98501b66" name="a1eac58954919237524ee566d98501b66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eac58954919237524ee566d98501b66">&#9670;&nbsp;</a></span>getUnderline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MainWindow::getUnderline </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c4f542263838b9ecd06eae839a42a34" name="a9c4f542263838b9ecd06eae839a42a34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c4f542263838b9ecd06eae839a42a34">&#9670;&nbsp;</a></span>keyPressEvent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ae0c6540c5d994370162e5866e25c7d" name="a2ae0c6540c5d994370162e5866e25c7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae0c6540c5d994370162e5866e25c7d">&#9670;&nbsp;</a></span>on_boldButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_boldButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f33dd18ab1914d8cdebc6f80b2c9963" name="a0f33dd18ab1914d8cdebc6f80b2c9963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f33dd18ab1914d8cdebc6f80b2c9963">&#9670;&nbsp;</a></span>on_bulletsButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_bulletsButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa66eff3d9d6ff5a48287058a43d175ad" name="aa66eff3d9d6ff5a48287058a43d175ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa66eff3d9d6ff5a48287058a43d175ad">&#9670;&nbsp;</a></span>on_clearFormatButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_clearFormatButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69c50210f1969c6b24efac9c441b27cd" name="a69c50210f1969c6b24efac9c441b27cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69c50210f1969c6b24efac9c441b27cd">&#9670;&nbsp;</a></span>on_copyButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_copyButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac70a65e0bdf1b517e947b0bd0161987e" name="ac70a65e0bdf1b517e947b0bd0161987e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70a65e0bdf1b517e947b0bd0161987e">&#9670;&nbsp;</a></span>on_deleteButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_deleteButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afcbbbc80001065310d2cd6221c5be55c" name="afcbbbc80001065310d2cd6221c5be55c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcbbbc80001065310d2cd6221c5be55c">&#9670;&nbsp;</a></span>on_exitButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_exitButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3efdedea9c88d7fc146b5534d76812ee" name="a3efdedea9c88d7fc146b5534d76812ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3efdedea9c88d7fc146b5534d76812ee">&#9670;&nbsp;</a></span>on_expandFontColorButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_expandFontColorButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac13e209cd62efaef2a8f9472aba8437d" name="ac13e209cd62efaef2a8f9472aba8437d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac13e209cd62efaef2a8f9472aba8437d">&#9670;&nbsp;</a></span>on_fontColorButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_fontColorButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad34944b0fab5c11a60ef398810144472" name="ad34944b0fab5c11a60ef398810144472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad34944b0fab5c11a60ef398810144472">&#9670;&nbsp;</a></span>on_fontComboBox_currentFontChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_fontComboBox_currentFontChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QFont &amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d0db4385e19389b12c15c6bf7287f54" name="a7d0db4385e19389b12c15c6bf7287f54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d0db4385e19389b12c15c6bf7287f54">&#9670;&nbsp;</a></span>on_fontSizeComboBox_currentIndexChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_fontSizeComboBox_currentIndexChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a00126168c14212096588f4c700413b" name="a7a00126168c14212096588f4c700413b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a00126168c14212096588f4c700413b">&#9670;&nbsp;</a></span>on_formatPainterButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_formatPainterButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abde65b7861b1186bd6a14a947fb6f33c" name="abde65b7861b1186bd6a14a947fb6f33c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abde65b7861b1186bd6a14a947fb6f33c">&#9670;&nbsp;</a></span>on_indentButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_indentButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7bd4b1ba173bc96edf0f836150200d6a" name="a7bd4b1ba173bc96edf0f836150200d6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bd4b1ba173bc96edf0f836150200d6a">&#9670;&nbsp;</a></span>on_italicButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_italicButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aded055c9d6f66aa9509eb0c75e4ab237" name="aded055c9d6f66aa9509eb0c75e4ab237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aded055c9d6f66aa9509eb0c75e4ab237">&#9670;&nbsp;</a></span>on_numberingButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_numberingButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec9bd4ccdbfe918e23db96ef9d1de968" name="aec9bd4ccdbfe918e23db96ef9d1de968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec9bd4ccdbfe918e23db96ef9d1de968">&#9670;&nbsp;</a></span>on_outdentButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_outdentButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76df88cbffc836dbfc0e6c1a656f6665" name="a76df88cbffc836dbfc0e6c1a656f6665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76df88cbffc836dbfc0e6c1a656f6665">&#9670;&nbsp;</a></span>on_printButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_printButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67dd7ba54d3dd5a5dc441b7fbd3d2f4f" name="a67dd7ba54d3dd5a5dc441b7fbd3d2f4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67dd7ba54d3dd5a5dc441b7fbd3d2f4f">&#9670;&nbsp;</a></span>on_ribbonBar_currentChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_ribbonBar_currentChanged </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa02776590767eaaf123f3030b4a11125" name="aa02776590767eaaf123f3030b4a11125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa02776590767eaaf123f3030b4a11125">&#9670;&nbsp;</a></span>on_strikeButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_strikeButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae673b66bfe99292cc002f48982e2dfe1" name="ae673b66bfe99292cc002f48982e2dfe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae673b66bfe99292cc002f48982e2dfe1">&#9670;&nbsp;</a></span>on_styleListWidget_currentItemChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_styleListWidget_currentItemChanged </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>current</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>previous</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb4a86427c3c7f5e5442f3a59e21e50d" name="acb4a86427c3c7f5e5442f3a59e21e50d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb4a86427c3c7f5e5442f3a59e21e50d">&#9670;&nbsp;</a></span>on_styleListWidget_itemClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_styleListWidget_itemClicked </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a738c75b6db1208e2378a539403c6aff9" name="a738c75b6db1208e2378a539403c6aff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a738c75b6db1208e2378a539403c6aff9">&#9670;&nbsp;</a></span>on_tabWidget_tabBarClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_tabWidget_tabBarClicked </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac793cedc7deec4682aea8c253bb55fdb" name="ac793cedc7deec4682aea8c253bb55fdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac793cedc7deec4682aea8c253bb55fdb">&#9670;&nbsp;</a></span>on_tabWidget_tabBarDoubleClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_tabWidget_tabBarDoubleClicked </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ec0846415eb8900c642493462794f83" name="a7ec0846415eb8900c642493462794f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ec0846415eb8900c642493462794f83">&#9670;&nbsp;</a></span>on_underlineButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_underlineButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af72ad12e0d6d76b0418f2333046af0ad" name="af72ad12e0d6d76b0418f2333046af0ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af72ad12e0d6d76b0418f2333046af0ad">&#9670;&nbsp;</a></span>setCurrentContainer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::setCurrentContainer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_container.html">Container</a> *&#160;</td>
+          <td class="paramname"><em>container</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afce291f81b1a23cac0e1afb41b511036" name="afce291f81b1a23cac0e1afb41b511036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afce291f81b1a23cac0e1afb41b511036">&#9670;&nbsp;</a></span>setCurrentFont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::setCurrentFont </td>
+          <td>(</td>
+          <td class="paramtype">QFont&#160;</td>
+          <td class="paramname"><em>font</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aae598087336e47e3c54b9014054878d8" name="aae598087336e47e3c54b9014054878d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae598087336e47e3c54b9014054878d8">&#9670;&nbsp;</a></span>setCurrentObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::setCurrentObject </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>object</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5fbe2e3517df99702a6cfd19716545b5" name="a5fbe2e3517df99702a6cfd19716545b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fbe2e3517df99702a6cfd19716545b5">&#9670;&nbsp;</a></span>setTabText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::setTabText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa10dc4728b58c0dfef8289b9c227f65d" name="aa10dc4728b58c0dfef8289b9c227f65d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa10dc4728b58c0dfef8289b9c227f65d">&#9670;&nbsp;</a></span>backgroundColorDialogColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor* MainWindow::backgroundColorDialogColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac96985da8eea96f7ae717f8825cf37f6" name="ac96985da8eea96f7ae717f8825cf37f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac96985da8eea96f7ae717f8825cf37f6">&#9670;&nbsp;</a></span>bold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool* MainWindow::bold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a111396cd5a7487ca3e7a0d9415305f14" name="a111396cd5a7487ca3e7a0d9415305f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a111396cd5a7487ca3e7a0d9415305f14">&#9670;&nbsp;</a></span>colorDropDown</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_color_drop_down_menu.html">ColorDropDownMenu</a>* MainWindow::colorDropDown</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a355949e22681fd6d3550fee4be5f4e29" name="a355949e22681fd6d3550fee4be5f4e29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a355949e22681fd6d3550fee4be5f4e29">&#9670;&nbsp;</a></span>copiedObject</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget* MainWindow::copiedObject</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a046235578850b2e8ff6f2fd513269c39" name="a046235578850b2e8ff6f2fd513269c39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a046235578850b2e8ff6f2fd513269c39">&#9670;&nbsp;</a></span>currentBackgroundColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor* MainWindow::currentBackgroundColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af3f50141079fa13239d223733bd419c2" name="af3f50141079fa13239d223733bd419c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3f50141079fa13239d223733bd419c2">&#9670;&nbsp;</a></span>currentContainer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_container.html">Container</a>* MainWindow::currentContainer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac7e9d2b9d1da3d128477885e8f9abea8" name="ac7e9d2b9d1da3d128477885e8f9abea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7e9d2b9d1da3d128477885e8f9abea8">&#9670;&nbsp;</a></span>currentFont</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFont* MainWindow::currentFont</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64024f71e097237100a4af364d5ca652" name="a64024f71e097237100a4af364d5ca652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64024f71e097237100a4af364d5ca652">&#9670;&nbsp;</a></span>currentHighlightColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor* MainWindow::currentHighlightColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa99407ef48a6b97e203a74c651e90fae" name="aa99407ef48a6b97e203a74c651e90fae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa99407ef48a6b97e203a74c651e90fae">&#9670;&nbsp;</a></span>currentObject</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QWidget* MainWindow::currentObject</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0e5509aa041728d6c25c062752cb92c" name="ae0e5509aa041728d6c25c062752cb92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e5509aa041728d6c25c062752cb92c">&#9670;&nbsp;</a></span>currentTextColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor* MainWindow::currentTextColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab386c8b6ef22531815c5a3e3167efea1" name="ab386c8b6ef22531815c5a3e3167efea1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab386c8b6ef22531815c5a3e3167efea1">&#9670;&nbsp;</a></span>document</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTextDocument* MainWindow::document</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7892ccf4a4b6c06184e85eba3c0daa78" name="a7892ccf4a4b6c06184e85eba3c0daa78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7892ccf4a4b6c06184e85eba3c0daa78">&#9670;&nbsp;</a></span>formatPainterFont</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFont* MainWindow::formatPainterFont</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a784cefd217a08e730507b2bf1edd622d" name="a784cefd217a08e730507b2bf1edd622d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a784cefd217a08e730507b2bf1edd622d">&#9670;&nbsp;</a></span>highlighColorDialogColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor* MainWindow::highlighColorDialogColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b045e9f942145d3508a5d9754f3c5f2" name="a2b045e9f942145d3508a5d9754f3c5f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b045e9f942145d3508a5d9754f3c5f2">&#9670;&nbsp;</a></span>italic</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool* MainWindow::italic</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab276c6146be6cb25eed934ad23e200cf" name="ab276c6146be6cb25eed934ad23e200cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab276c6146be6cb25eed934ad23e200cf">&#9670;&nbsp;</a></span>strike</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool* MainWindow::strike</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc5c2865faa8a33a889efd0d28033aed" name="acc5c2865faa8a33a889efd0d28033aed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc5c2865faa8a33a889efd0d28033aed">&#9670;&nbsp;</a></span>textColorDialogColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor* MainWindow::textColorDialogColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a35466a70ed47252a0191168126a352a5" name="a35466a70ed47252a0191168126a352a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35466a70ed47252a0191168126a352a5">&#9670;&nbsp;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ui::MainWindow* MainWindow::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ebaf99c69e9f206142c69e57cf44ebd" name="a8ebaf99c69e9f206142c69e57cf44ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ebaf99c69e9f206142c69e57cf44ebd">&#9670;&nbsp;</a></span>underline</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool* MainWindow::underline</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
+<li><a class="el" href="mainwindow_8cpp.html">mainwindow.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_main_window.html">MainWindow</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+  </ul>
+</div>
+</body>
+</html>

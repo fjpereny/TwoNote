@@ -150,7 +150,7 @@ MainWindow::MainWindow(QWidget *parent)
                 "}"
             );
 
-
+    // Heading 1
     QListWidgetItem *item0 = this->ui->styleListWidget->item(0);
     QFont font0;
     font0.setFamily("Sans Serif");
@@ -159,6 +159,7 @@ MainWindow::MainWindow(QWidget *parent)
     item0->setBackground(QColor::fromRgb(255, 255, 255));
     item0->setForeground(QColor::fromRgb(30, 70, 121));
 
+    // Heading 2
     QListWidgetItem *item1 = this->ui->styleListWidget->item(1);
     QFont font1;
     font1.setFamily("Noto Sans");
@@ -167,6 +168,7 @@ MainWindow::MainWindow(QWidget *parent)
     item1->setBackground(QColor::fromRgb(255, 255, 255));
     item1->setForeground(QColor::fromRgb(46, 117, 181));
 
+    // Heading 3
     QListWidgetItem *item2 = this->ui->styleListWidget->item(2);
     QFont font2;
     font2.setFamily("Noto Sans");
@@ -175,6 +177,7 @@ MainWindow::MainWindow(QWidget *parent)
     item2->setBackground(QColor::fromRgb(255, 255, 255));
     item2->setForeground(QColor::fromRgb(91, 155, 213));
 
+    // Heading 4
     QListWidgetItem *item3 = this->ui->styleListWidget->item(3);
     QFont font3;
     font3.setFamily("Noto Sans");
@@ -184,6 +187,7 @@ MainWindow::MainWindow(QWidget *parent)
     item3->setBackground(QColor::fromRgb(255, 255, 255));
     item3->setForeground(QColor::fromRgb(91, 155, 213));
 
+    //Heading 5
     QListWidgetItem *item4 = this->ui->styleListWidget->item(4);
     QFont font4;
     font4.setFamily("Noto Sans");
@@ -192,6 +196,7 @@ MainWindow::MainWindow(QWidget *parent)
     item4->setBackground(QColor::fromRgb(255, 255, 255));
     item4->setForeground(QColor::fromRgb(46, 117, 181));
 
+    //Heading 6
     QListWidgetItem *item5 = this->ui->styleListWidget->item(5);
     QFont font5;
     font5.setFamily("Noto Sans");
@@ -201,6 +206,7 @@ MainWindow::MainWindow(QWidget *parent)
     item5->setBackground(QColor::fromRgb(255, 255, 255));
     item5->setForeground(QColor::fromRgb(46, 117, 181));
 
+    //Page Title
     QListWidgetItem *item6 = this->ui->styleListWidget->item(6);
     QFont font6;
     font6.setFamily("Noto Sans Light");
@@ -208,6 +214,43 @@ MainWindow::MainWindow(QWidget *parent)
     item6->setFont(font6);
     item6->setBackground(QColor::fromRgb(255, 255, 255));
     item6->setForeground(QColor::fromRgb(0, 0, 0));
+
+    // Citation
+    QListWidgetItem *item7 = this->ui->styleListWidget->item(7);
+    QFont font7;
+    font7.setFamily("Noto Sans");
+    font7.setPointSize(9);
+    item7->setFont(font7);
+    item7->setBackground(QColor::fromRgb(255, 255, 255));
+    item7->setForeground(QColor::fromRgb(89, 89, 89));
+
+    // Quote
+    QListWidgetItem *item8 = this->ui->styleListWidget->item(8);
+    QFont font8;
+    font8.setFamily("Noto Sans");
+    font8.setItalic(true);
+    font8.setPointSize(11);
+    item8->setFont(font8);
+    item8->setBackground(QColor::fromRgb(255, 255, 255));
+    item8->setForeground(QColor::fromRgb(89, 89, 89));
+
+    // Code
+    QListWidgetItem *item9 = this->ui->styleListWidget->item(9);
+    QFont font9;
+    font9.setFamily("Noto Mono");
+    font9.setPointSize(11);
+    item9->setFont(font9);
+    item9->setBackground(QColor::fromRgb(255, 255, 255));
+    item9->setForeground(QColor::fromRgb(0, 0, 0));
+
+    // Normal
+    QListWidgetItem *item10 = this->ui->styleListWidget->item(10);
+    QFont font10;
+    font10.setFamily("Noto Sans");
+    font10.setPointSize(11);
+    item10->setFont(font10);
+    item10->setBackground(QColor::fromRgb(255, 255, 255));
+    item10->setForeground(QColor::fromRgb(0, 0, 0));
 }
 
 MainWindow::~MainWindow()
@@ -683,7 +726,8 @@ void MainWindow::on_deleteButton_clicked()
 
 void MainWindow::on_clearFormatButton_clicked()
 {
-
+    QListWidgetItem * normalTextItem = this->ui->styleListWidget->item(10);
+    this->ui->styleListWidget->setCurrentItem(normalTextItem);
 }
 
 

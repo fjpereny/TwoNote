@@ -28,6 +28,7 @@
 #include <QFocusEvent>
 #include <QApplication>
 #include <QScrollBar>
+#include <QTextList>
 
 
 FloatTextEdit::FloatTextEdit(QWidget *parent)
@@ -99,6 +100,32 @@ void FloatTextEdit::keyPressEvent(QKeyEvent *event)
         this->clearFocus();
         this->parentWidget()->clearFocus();
         this->setCursorWidth(0);
+    }
+    else if (event->key() == Qt::Key_Tab)
+    {
+        QTextCursor cursor = this->textCursor();
+        if (cursor.currentList())
+        {
+            QTextListFormat format = cursor.currentList()->format();
+            format.setIndent(format.indent() + 1);
+            cursor.createList(format);
+        }
+        else
+        {
+            QTextListFormat listFormat;
+            listFormat.setStyle(QTextListFormat::ListStyleUndefined);
+            cursor.createList(listFormat);
+        }
+    }
+    else if (event->key() == Qt::Key_Backtab)
+    {
+        QTextCursor cursor = this->textCursor();
+        QTextListFormat format = cursor.currentList()->format();
+        if (format.indent() > 0)
+        {
+            format.setIndent(format.indent() - 1);
+        }
+        cursor.createList(format);
     }
     else
     {

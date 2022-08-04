@@ -18,36 +18,52 @@
 
 #include "colordropdownmenu.h"
 #include "mainwindow.h"
+#include "colorwell.h"
 #include <QGridLayout>
 #include <QFrame>
 #include <QSizePolicy>
 #include <QApplication>
+#include <QLabel>
 
 ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     : QFrame(parent)
 {
     this->mainWindow = qobject_cast<MainWindow*>(QApplication::activeWindow());
 
-    this->setFixedWidth(200);
-    this->setFixedHeight(500);
+    this->setFixedWidth(250);
+    this->setFixedHeight(400);
     this->setAutoFillBackground(true);
+    this->setStyleSheet
+            (
+                "ColorDropDownMenu"
+                "{"
+                "color: rgb(0, 0, 0);"
+                "background-color: rgb(255, 255, 255);"
+                "border-width : 1px;"
+                "border-style : solid;"
+                "border-radius : 0px;"
+                "border-color : rgb(0, 0, 0);"
+                "}"
 
-    QPalette palette;
-    palette = parent->palette();
-    palette.setBrush(QPalette::Window, Qt::white);
-    this->setPalette(palette);
+                "QLabel"
+                "{"
+                "color: rgb(0, 0, 0);"
+                "}"
+            );
 
-    QGridLayout layout;
-    QFrame frameAutomatic;
-    frameAutomatic.setFixedSize(20, 20);
-    frameAutomatic.setAutoFillBackground(true);
-    QFrame frameStandard;
-    frameStandard.setFixedSize(20, 20);
-    frameStandard.setAutoFillBackground(true);
+    QGridLayout *layout = new QGridLayout(this);
+    this->setLayout(layout);
 
-    palette.setBrush(QPalette::Window, Qt::black);
-    frameAutomatic.setPalette(palette);
-    layout.addWidget(&frameAutomatic, 0, 0, Qt::AlignCenter);
+    ColorWell *automatic = new ColorWell(this, Qt::black);
+    automatic->setFixedSize(30, 30);
+    layout->addWidget(automatic, 0, 0);
+
+    QLabel *automaticText = new QLabel(this);
+    automaticText->setText("Automatic");
+    layout->addWidget(automaticText, 0, 1);
+
+    ColorWell *blue = new ColorWell(this, Qt::blue);
+    layout->addWidget(blue, 1, 1);
 }
 
 
@@ -57,7 +73,7 @@ ColorDropDownMenu::~ColorDropDownMenu()
 }
 
 
-void ColorDropDownMenu::focusOutEvent(QFocusEvent *event)
+void ColorDropDownMenu::leaveEvent(QEvent *event)
 {
     this->hide();
 }

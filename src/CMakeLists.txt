@@ -55,6 +55,8 @@ set(PROJECT_SOURCES
         floatimage.cpp
         colordropdownmenu.h
         colordropdownmenu.cpp
+        colorwell.h
+        colorwell.cpp
 
         rsc/rsc.qrc
 

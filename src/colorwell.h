@@ -16,34 +16,27 @@
 */
 
 
-#ifndef COLORDROPDOWNMENU_H
-#define COLORDROPDOWNMENU_H
+#ifndef COLORWELL_H
+#define COLORWELL_H
 
-
-#include <QWidget>
 #include <QFrame>
+#include <QObject>
+#include <QWidget>
 
-
-class MainWindow;
-
-
-
-class ColorDropDownMenu : public QFrame
+class ColorWell : public QFrame
 {
     Q_OBJECT
 
 public:
-    ColorDropDownMenu(QWidget *parent = nullptr);
-    ~ColorDropDownMenu();
+    ColorWell(QWidget *parent = nullptr, const QColor &color = Qt::white);
+    ~ColorWell();
+
+    void setColor(const QColor &color);
+    QColor getColor();
 
 private:
+    QColor *color;
 
-    MainWindow *mainWindow;
-
-signals:
-
-private slots:
-    void leaveEvent(QEvent *event);
 };
 
-#endif // COLORDROPDOWNMENU_H
+#endif // COLORWELL_H

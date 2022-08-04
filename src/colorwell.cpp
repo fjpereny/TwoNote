@@ -16,34 +16,37 @@
 */
 
 
-#ifndef COLORDROPDOWNMENU_H
-#define COLORDROPDOWNMENU_H
+#include "colorwell.h"
+#include <QSizePolicy>
 
 
-#include <QWidget>
-#include <QFrame>
-
-
-class MainWindow;
-
-
-
-class ColorDropDownMenu : public QFrame
+ColorWell::ColorWell(QWidget *parent, const QColor &color)
 {
-    Q_OBJECT
+    this->color = new QColor(color);
+    this->setAutoFillBackground(true);
+    this->setBackgroundRole(QPalette::Window);
+    this->setFixedSize(20, 20);
+    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-public:
-    ColorDropDownMenu(QWidget *parent = nullptr);
-    ~ColorDropDownMenu();
+    QPalette palette;
+    palette.setBrush(QPalette::Window, color);
+    this->setPalette(palette);
+}
 
-private:
 
-    MainWindow *mainWindow;
+ColorWell::~ColorWell()
+{
+    delete this->color;
+}
 
-signals:
 
-private slots:
-    void leaveEvent(QEvent *event);
-};
+void ColorWell::setColor(const QColor &color)
+{
+    *this->color = color;
+}
 
-#endif // COLORDROPDOWNMENU_H
+
+QColor ColorWell::getColor()
+{
+    return *this->color;
+}

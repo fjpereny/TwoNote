@@ -1112,6 +1112,9 @@
                     <pointsize>5</pointsize>
                    </font>
                   </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
                   <property name="text">
                    <string>▼</string>
                   </property>

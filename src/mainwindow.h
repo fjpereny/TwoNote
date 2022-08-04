@@ -23,6 +23,7 @@
 #include <QString>
 #include <QListWidget>
 #include <QTextDocument>
+#include <QColorDialog>
 #include "container.h"
 #include "contextmenu.h"
 
@@ -84,6 +85,7 @@ private slots:
     void changeStyle(QListWidgetItem *current);
     void on_styleListWidget_itemClicked(QListWidgetItem *item);
     void on_fontColorButton_clicked();
+    void on_expandFontColorButton_clicked();
 
 private:
 
@@ -107,5 +109,6 @@ private:
     QColor *textColorDialogColor;
     QColor *backgroundColorDialogColor;
     QColor *highlighColorDialogColor;
+
 };
 #endif // MAINWINDOW_H

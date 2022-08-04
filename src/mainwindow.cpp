@@ -47,6 +47,7 @@
 #include <QScrollArea>
 #include <QSizePolicy>
 #include <QScrollBar>
+#include <QColorDialog>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -861,12 +862,33 @@ void MainWindow::changeStyle(QListWidgetItem *current)
 void MainWindow::on_fontColorButton_clicked()
 {
     *this->currentTextColor = *this->textColorDialogColor;
-    if (currentObject)
+    if (this->currentObject)
     {
-        QTextEdit *textEdit = qobject_cast<QTextEdit*>(currentObject);
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
         if(textEdit)
         {
             textEdit->setTextColor(*this->textColorDialogColor);
+        }
+    }
+}
+
+
+void MainWindow::on_expandFontColorButton_clicked()
+{
+    QColor newColor = QColorDialog::getColor(*this->textColorDialogColor, this,"Select Font Color");
+    *this->currentTextColor = newColor;
+    *this->textColorDialogColor = newColor;
+
+    QPalette palette = this->ui->fontColorButton->palette();
+    palette.setColor(QPalette::Text, newColor);
+    this->ui->fontColorButton->setPalette(palette);
+
+    if (this->currentObject)
+    {
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+        if(textEdit)
+        {
+            textEdit->setTextColor(newColor);
         }
     }
 }

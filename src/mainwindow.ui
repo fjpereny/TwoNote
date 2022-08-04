@@ -1025,7 +1025,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QToolButton" name="highlightButton_2">
+               <widget class="QToolButton" name="highlightButton">
                 <property name="toolTip">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Text Highlight Color (Ctrl+Alt+H)&lt;/p&gt;&lt;p&gt;Make your text pop by highlighting it in a bright color.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
@@ -1045,24 +1045,79 @@
                </widget>
               </item>
               <item>
-               <widget class="QToolButton" name="fontColorButton">
-                <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
+               <layout class="QHBoxLayout" name="horizontalLayout_13">
+                <property name="spacing">
+                 <number>0</number>
                 </property>
-                <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Font Color&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Change the color of your text.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <property name="autoFillBackground">
-                 <bool>false</bool>
-                </property>
-                <property name="text">
-                 <string notr="true"/>
-                </property>
-                <property name="icon">
-                 <iconset resource="rsc/rsc.qrc">
-                  <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/a.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/a.svg</iconset>
-                </property>
-               </widget>
+                <item>
+                 <widget class="QToolButton" name="fontColorButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Font Color&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Change the color of your text.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
+                  <property name="text">
+                   <string notr="true"/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="rsc/rsc.qrc">
+                    <normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/a.svg</normaloff>:/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/a.svg</iconset>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QToolButton" name="expandFontColorButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>15</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>15</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>5</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>▼</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </item>
               <item>
                <widget class="Line" name="line_3">
@@ -1620,29 +1675,6 @@
         </item>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_10">
-          <item>
-           <widget class="QPushButton" name="emailPageButton">
-            <property name="focusPolicy">
-             <enum>Qt::NoFocus</enum>
-            </property>
-            <property name="text">
-             <string>Email Page</string>
-            </property>
-            <property name="icon">
-             <iconset resource="rsc/rsc.qrc">
-              <normaloff>:/icons/fontawesome/regular/fontawesome-free-6.1.2-desktop/svgs/regular/envelope-open.svg</normaloff>:/icons/fontawesome/regular/fontawesome-free-6.1.2-desktop/svgs/regular/envelope-open.svg</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>32</width>
-              <height>32</height>
-             </size>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
           <item>
            <widget class="QLabel" name="label_5">
             <property name="text">

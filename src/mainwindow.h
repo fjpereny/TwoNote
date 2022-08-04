@@ -82,8 +82,8 @@ private slots:
     void on_formatPainterButton_clicked();
     void on_styleListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
     void changeStyle(QListWidgetItem *current);
-
     void on_styleListWidget_itemClicked(QListWidgetItem *item);
+    void on_fontColorButton_clicked();
 
 private:
 
@@ -93,13 +93,19 @@ private:
     Container *currentContainer;
     QWidget *copiedObject;
 
-    // Application States
     bool *bold;
     bool *italic;
     bool *underline;
     bool *strike;
+
     QFont *currentFont;
-    QColor *currentTextColor;
     QFont *formatPainterFont;
+
+    QColor *currentTextColor;
+    QColor *currentBackgroundColor;
+    QColor *currentHighlightColor;
+    QColor *textColorDialogColor;
+    QColor *backgroundColorDialogColor;
+    QColor *highlighColorDialogColor;
 };
 #endif // MAINWINDOW_H

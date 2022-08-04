@@ -77,6 +77,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->currentFont->setStrikeOut(*strike);
 
     this->currentTextColor = new QColor(Qt::black);
+    this->textColorDialogColor = new QColor(Qt::black);
 
     this->formatPainterFont = nullptr;
 
@@ -149,6 +150,10 @@ MainWindow::MainWindow(QWidget *parent)
                     "background-color: rgb(255, 255, 255);"
                 "}"
             );
+
+
+    this->ui->toDoTagButton->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextUnderIcon);
+    this->ui->fontColorButton->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextUnderIcon);
 
     // Heading 1
     QListWidgetItem *item0 = this->ui->styleListWidget->item(0);
@@ -799,7 +804,8 @@ void MainWindow::on_formatPainterButton_clicked()
                 delete formatPainterFont;
             }
             formatPainterFont = new QFont(textEdit->currentFont());
-        }    }
+        }
+    }
 }
 
 
@@ -849,5 +855,19 @@ void MainWindow::changeStyle(QListWidgetItem *current)
     *this->underline = current->font().underline();
     *this->strike = current->font().strikeOut();
     *this->currentTextColor = current->foreground().color();
+}
+
+
+void MainWindow::on_fontColorButton_clicked()
+{
+    *this->currentTextColor = *this->textColorDialogColor;
+    if (currentObject)
+    {
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(currentObject);
+        if(textEdit)
+        {
+            textEdit->setTextColor(*this->textColorDialogColor);
+        }
+    }
 }
 

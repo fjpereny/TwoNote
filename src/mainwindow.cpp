@@ -46,6 +46,7 @@
 #include <QTextList>
 #include <QScrollArea>
 #include <QSizePolicy>
+#include <QScrollBar>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -149,6 +150,7 @@ MainWindow::MainWindow(QWidget *parent)
                 "}"
             );
 
+
     QListWidgetItem *item0 = this->ui->styleListWidget->item(0);
     QFont font0;
     font0.setFamily("Sans Serif");
@@ -159,11 +161,53 @@ MainWindow::MainWindow(QWidget *parent)
 
     QListWidgetItem *item1 = this->ui->styleListWidget->item(1);
     QFont font1;
-    font1.setFamily("Sans Serif");
+    font1.setFamily("Noto Sans");
     font1.setPointSize(14);
     item1->setFont(font1);
     item1->setBackground(QColor::fromRgb(255, 255, 255));
     item1->setForeground(QColor::fromRgb(46, 117, 181));
+
+    QListWidgetItem *item2 = this->ui->styleListWidget->item(2);
+    QFont font2;
+    font2.setFamily("Noto Sans");
+    font2.setPointSize(12);
+    item2->setFont(font2);
+    item2->setBackground(QColor::fromRgb(255, 255, 255));
+    item2->setForeground(QColor::fromRgb(91, 155, 213));
+
+    QListWidgetItem *item3 = this->ui->styleListWidget->item(3);
+    QFont font3;
+    font3.setFamily("Noto Sans");
+    font3.setItalic(true);
+    font3.setPointSize(12);
+    item3->setFont(font3);
+    item3->setBackground(QColor::fromRgb(255, 255, 255));
+    item3->setForeground(QColor::fromRgb(91, 155, 213));
+
+    QListWidgetItem *item4 = this->ui->styleListWidget->item(4);
+    QFont font4;
+    font4.setFamily("Noto Sans");
+    font4.setPointSize(11);
+    item4->setFont(font4);
+    item4->setBackground(QColor::fromRgb(255, 255, 255));
+    item4->setForeground(QColor::fromRgb(46, 117, 181));
+
+    QListWidgetItem *item5 = this->ui->styleListWidget->item(5);
+    QFont font5;
+    font5.setFamily("Noto Sans");
+    font5.setItalic(true);
+    font5.setPointSize(11);
+    item5->setFont(font5);
+    item5->setBackground(QColor::fromRgb(255, 255, 255));
+    item5->setForeground(QColor::fromRgb(46, 117, 181));
+
+    QListWidgetItem *item6 = this->ui->styleListWidget->item(6);
+    QFont font6;
+    font6.setFamily("Noto Sans Light");
+    font6.setPointSize(20);
+    item6->setFont(font6);
+    item6->setBackground(QColor::fromRgb(255, 255, 255));
+    item6->setForeground(QColor::fromRgb(0, 0, 0));
 }
 
 MainWindow::~MainWindow()
@@ -458,6 +502,8 @@ static MainWindow* getMainWindow()
 
 void MainWindow::on_fontComboBox_currentFontChanged(const QFont &f)
 {
+    this->ui->styleListWidget->clearSelection();
+
     QFont font = *this->currentFont;
     font.setFamily(ui->fontComboBox->currentFont().family());
     *this->currentFont = font;
@@ -471,6 +517,8 @@ void MainWindow::on_fontComboBox_currentFontChanged(const QFont &f)
 
 void MainWindow::on_fontSizeComboBox_currentIndexChanged(int index)
 {
+    this->ui->styleListWidget->clearSelection();
+
     QFont font = *this->currentFont;
     int fontSize = this->getFontSize();
     font.setPointSize(fontSize);
@@ -697,9 +745,7 @@ void MainWindow::on_formatPainterButton_clicked()
                 delete formatPainterFont;
             }
             formatPainterFont = new QFont(textEdit->currentFont());
-        }
-
-    }
+        }    }
 }
 
 
@@ -709,6 +755,18 @@ QFont MainWindow::getFormatPainterFont()
 }
 
 void MainWindow::on_styleListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
+{
+    this->changeStyle(current);
+
+}
+
+void MainWindow::on_styleListWidget_itemClicked(QListWidgetItem *item)
+{
+    this->changeStyle(item);
+    item->setSelected(true);
+}
+
+void MainWindow::changeStyle(QListWidgetItem *current)
 {
     const QFont newFont(current->font());
     this->ui->fontComboBox->setCurrentFont(newFont);
@@ -727,7 +785,12 @@ void MainWindow::on_styleListWidget_currentItemChanged(QListWidgetItem *current,
             textEdit->setTextColor(current->foreground().color());
             textEdit->setTextBackgroundColor(current->background().color());
         }
-
     }
+
+    *this->bold = current->font().bold();
+    *this->italic = current->font().italic();
+    *this->underline = current->font().underline();
+    *this->strike = current->font().strikeOut();
+    *this->currentTextColor = current->foreground().color();
 }
 

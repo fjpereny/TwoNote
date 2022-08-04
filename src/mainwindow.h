@@ -81,8 +81,12 @@ private slots:
     void on_outdentButton_clicked();
     void on_formatPainterButton_clicked();
     void on_styleListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
+    void changeStyle(QListWidgetItem *current);
+
+    void on_styleListWidget_itemClicked(QListWidgetItem *item);
 
 private:
+
     Ui::MainWindow *ui;
     QTextDocument *document;
     QWidget *currentObject;

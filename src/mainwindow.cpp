@@ -880,23 +880,6 @@ void MainWindow::on_fontColorButton_clicked()
 
 void MainWindow::on_expandFontColorButton_clicked()
 {
-//    QColor newColor = QColorDialog::getColor(*this->textColorDialogColor, this,"Select Font Color", QColorDialog::DontUseNativeDialog);
-//    *this->currentTextColor = newColor;
-//    *this->textColorDialogColor = newColor;
-
-//    QPalette palette = this->ui->fontColorButton->palette();
-//    palette.setColor(QPalette::Text, newColor);
-//    this->ui->fontColorButton->setPalette(palette);
-
-//    if (this->currentObject)
-//    {
-//        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
-//        if(textEdit)
-//        {
-//            textEdit->setTextColor(newColor);
-//        }
-//    }
-
     const int x = this->ui->fontColorButton->pos().x();
     const int y = this->ui->fontColorButton->pos().y() + 2 * this->ui->fontColorButton->height();
     this->colorDropDown->move(x, y);

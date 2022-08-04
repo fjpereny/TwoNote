@@ -44,6 +44,7 @@ signals:
 
 private slots:
     void leaveEvent(QEvent *event);
+    void openColorDialog();
 };
 
 #endif // COLORDROPDOWNMENU_H

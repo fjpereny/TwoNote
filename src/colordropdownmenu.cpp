@@ -24,6 +24,8 @@
 #include <QSizePolicy>
 #include <QApplication>
 #include <QLabel>
+#include <QPushButton>
+#include <QTextEdit>
 
 ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     : QFrame(parent)
@@ -65,6 +67,11 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     ColorWell *blue = new ColorWell(this, Qt::blue);
     blue->setColor(Qt::red);
     layout->addWidget(blue, 1, 1);
+
+    QPushButton *colorDialogButton = new QPushButton(this);
+    colorDialogButton->setText("Other Colors");
+    layout->addWidget(colorDialogButton, 5, 0, 1, 5);
+    QObject::connect(colorDialogButton, SIGNAL(clicked()), this, SLOT(openColorDialog()));
 }
 
 
@@ -77,4 +84,16 @@ ColorDropDownMenu::~ColorDropDownMenu()
 void ColorDropDownMenu::leaveEvent(QEvent *event)
 {
     this->hide();
+}
+
+
+void ColorDropDownMenu::openColorDialog()
+{
+    QColor newColor = QColorDialog::getColor
+            (
+                Qt::white,
+                this,
+                "Select Font Color",
+                QColorDialog::DontUseNativeDialog
+            );
 }

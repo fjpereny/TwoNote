@@ -26,6 +26,7 @@
 #include <QColorDialog>
 #include "container.h"
 #include "contextmenu.h"
+#include "colordropdownmenu.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -109,6 +110,8 @@ private:
     QColor *textColorDialogColor;
     QColor *backgroundColorDialogColor;
     QColor *highlighColorDialogColor;
+
+    ColorDropDownMenu *colorDropDown;
 
 };
 #endif // MAINWINDOW_H

@@ -21,6 +21,7 @@
 #include "tabmainwidget.h"
 #include "floattextedit.h"
 #include "floatimage.h"
+#include "colordropdownmenu.h"
 
 #include <iostream>
 #include <QDialog>
@@ -79,6 +80,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->currentTextColor = new QColor(Qt::black);
     this->textColorDialogColor = new QColor(Qt::black);
+
+    this->colorDropDown = new ColorDropDownMenu(this);
+    colorDropDown->hide();
 
     this->formatPainterFont = nullptr;
 
@@ -270,6 +274,7 @@ MainWindow::~MainWindow()
     delete this->document;
     delete this->currentFont;
     delete this->currentTextColor;
+    delete this->colorDropDown;
 }
 
 
@@ -875,21 +880,26 @@ void MainWindow::on_fontColorButton_clicked()
 
 void MainWindow::on_expandFontColorButton_clicked()
 {
-    QColor newColor = QColorDialog::getColor(*this->textColorDialogColor, this,"Select Font Color");
-    *this->currentTextColor = newColor;
-    *this->textColorDialogColor = newColor;
+//    QColor newColor = QColorDialog::getColor(*this->textColorDialogColor, this,"Select Font Color", QColorDialog::DontUseNativeDialog);
+//    *this->currentTextColor = newColor;
+//    *this->textColorDialogColor = newColor;
 
-    QPalette palette = this->ui->fontColorButton->palette();
-    palette.setColor(QPalette::Text, newColor);
-    this->ui->fontColorButton->setPalette(palette);
+//    QPalette palette = this->ui->fontColorButton->palette();
+//    palette.setColor(QPalette::Text, newColor);
+//    this->ui->fontColorButton->setPalette(palette);
 
-    if (this->currentObject)
-    {
-        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
-        if(textEdit)
-        {
-            textEdit->setTextColor(newColor);
-        }
-    }
+//    if (this->currentObject)
+//    {
+//        QTextEdit *textEdit = qobject_cast<QTextEdit*>(this->currentObject);
+//        if(textEdit)
+//        {
+//            textEdit->setTextColor(newColor);
+//        }
+//    }
+
+    const int x = this->ui->fontColorButton->pos().x();
+    const int y = this->ui->fontColorButton->pos().y() + 2 * this->ui->fontColorButton->height();
+    this->colorDropDown->move(x, y);
+    this->colorDropDown->show();
 }
 

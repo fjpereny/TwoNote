@@ -23,11 +23,11 @@
 #include <QTextEdit>
 
 
-
 NoteTabWidget::NoteTabWidget(QWidget* parent)
 {
     this->setParent(parent);
 }
+
 
 NoteTabWidget::~NoteTabWidget()
 {

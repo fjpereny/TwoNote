@@ -253,6 +253,7 @@ MainWindow::MainWindow(QWidget *parent)
     item10->setForeground(QColor::fromRgb(0, 0, 0));
 }
 
+
 MainWindow::~MainWindow()
 {
     delete this->ui;
@@ -316,6 +317,7 @@ void MainWindow::setTabText()
     this->ui->tabWidget->setTabText(this->ui->tabWidget->currentIndex(), edit->text());
     dlg->close();
 }
+
 
 void MainWindow::on_tabWidget_tabBarClicked(int index)
 {
@@ -384,6 +386,7 @@ void MainWindow::on_boldButton_clicked()
     }
 }
 
+
 void MainWindow::on_italicButton_clicked()
 {
     *this->italic = !(*this->italic);
@@ -413,6 +416,7 @@ void MainWindow::on_italicButton_clicked()
         }
     }
 }
+
 
 void MainWindow::on_underlineButton_clicked()
 {
@@ -444,6 +448,7 @@ void MainWindow::on_underlineButton_clicked()
     }
 }
 
+
 void MainWindow::on_strikeButton_clicked()
 {
     *this->strike = !(*this->strike);
@@ -474,10 +479,12 @@ void MainWindow::on_strikeButton_clicked()
     }
 }
 
+
 bool MainWindow::getBold()
 {
     return *bold;
 }
+
 
 bool MainWindow::getItalic()
 {
@@ -488,6 +495,7 @@ bool MainWindow::getUnderline()
 {
     return *underline;
 }
+
 
 bool MainWindow::getStrike()
 {
@@ -511,6 +519,7 @@ Container* MainWindow::getCurrentContainer()
         return nullptr;
     }
 }
+
 
 void MainWindow::setCurrentObject(QWidget *object)
 {
@@ -557,6 +566,7 @@ void MainWindow::on_fontComboBox_currentFontChanged(const QFont &f)
         textEdit->setCurrentFont(font);
     }
 }
+
 
 void MainWindow::on_fontSizeComboBox_currentIndexChanged(int index)
 {
@@ -798,17 +808,20 @@ QFont MainWindow::getFormatPainterFont()
     return *this->formatPainterFont;
 }
 
+
 void MainWindow::on_styleListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
 {
     this->changeStyle(current);
 
 }
 
+
 void MainWindow::on_styleListWidget_itemClicked(QListWidgetItem *item)
 {
     this->changeStyle(item);
     item->setSelected(true);
 }
+
 
 void MainWindow::changeStyle(QListWidgetItem *current)
 {

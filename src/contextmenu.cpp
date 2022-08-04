@@ -27,6 +27,7 @@ ContextMenu::ContextMenu(QWidget *parent) :
     this->setMouseTracking(true);
 }
 
+
 ContextMenu::~ContextMenu()
 {
     delete ui;
@@ -37,6 +38,7 @@ void ContextMenu::focusInEvent(QFocusEvent *event)
 {
 
 }
+
 
 void ContextMenu::mouseMoveEvent(QMouseEvent *event)
 {

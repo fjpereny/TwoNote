@@ -27,6 +27,7 @@ FloatImage::FloatImage(QWidget *parent)
     this->container = qobject_cast<Container*>(parent);
 }
 
+
 FloatImage::~FloatImage()
 {
 

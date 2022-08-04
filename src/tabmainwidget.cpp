@@ -28,6 +28,7 @@
 #include <QWidget>
 #include <QSizePolicy>
 
+
 TabMainWidget::TabMainWidget(QWidget *parent)
     : QWidget{parent}
 {
@@ -44,10 +45,12 @@ TabMainWidget::TabMainWidget(QWidget *parent)
     contextMenu->hide();
 }
 
+
 TabMainWidget::~TabMainWidget()
 {
     contextMenu->close();
 }
+
 
 void TabMainWidget::mousePressEvent(QMouseEvent *event)
 {

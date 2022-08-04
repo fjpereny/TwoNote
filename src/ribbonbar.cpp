@@ -20,10 +20,12 @@
 #include <QObject>
 #include <QWidget>
 
+
 RibbonBar::RibbonBar(QWidget* parent)
 {
     this->setParent(parent);
 }
+
 
 RibbonBar::~RibbonBar()
 {

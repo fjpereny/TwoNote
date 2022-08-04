@@ -384,5 +384,3 @@ void Container::keyPressEvent(QKeyEvent *event)
         }
     }
 }
-
-

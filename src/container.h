@@ -41,9 +41,12 @@ public:
      * \param parent
      */
     Container(QWidget *parent = nullptr);
+
     //! Default destructor.
     /*!
-     * \brief Container::~Container
+     * \brief If the MainWindow::currentContainer is this Container, it will set the
+     * MainWindow::currentContainer to a nullptr.
+     * \sa MainWindow::currentContainer
      */
     ~Container();
 

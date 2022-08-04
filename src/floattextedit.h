@@ -25,6 +25,7 @@
 
 //! Floating rich text editor.
 /*!
+ *  \image html FloatTextEdit.png
  *  Rich text editor for writing notes contained within a Container.
 */
 class FloatTextEdit : public QTextEdit
@@ -32,15 +33,15 @@ class FloatTextEdit : public QTextEdit
 public:
     //! Default constructor.
     /*!
-     * \brief FloatTextEdit::FloatTextEdit
      * \param parent
      */
     FloatTextEdit(QWidget *parent = nullptr);
 
     //! Default destructor.
     /*!
-     * \brief FloatTextEdit::~FloatTextEdit
-     * \param parent
+     * \brief Destruction of this object will trigger destruction of the parent Container
+     * object.  If the MainWindow::currentObject is this object, it will set the
+     * MainWindow::currentObject to a nullptr.
      */
     ~FloatTextEdit();
 
@@ -48,6 +49,7 @@ public:
     /*!
      * \brief This function is used to automatically resize and enlarge this widget to
      * match the contents as the user types, pastes or modifies data contained within.
+     * \sa MainWindow::currentObject
      */
     void autoResize();
 
@@ -86,11 +88,19 @@ private:
 
 
     bool *selected;
-    MainWindow *window;
+
+    //! A pointer to the MainWindow object of this application instance.
+    /*!
+     * \brief This is used to access the MainWindow instance and allows this Container to access
+     * public methods, variables and other GUI objects of the application.
+     *
+     */
+    MainWindow *mainWindow;
 
 signals:
 
 private slots:
+
 };
 
 #endif // FLOATTEXTEDIT_H

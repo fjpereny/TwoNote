@@ -33,7 +33,7 @@
 
 FloatTextEdit::FloatTextEdit(QWidget *parent)
 {
-    this->window = qobject_cast<MainWindow*>(QApplication::activeWindow());
+    this->mainWindow = qobject_cast<MainWindow*>(QApplication::activeWindow());
 
     this->setAttribute(Qt::WA_DeleteOnClose, true);
     this->setAutoFillBackground(true);
@@ -46,9 +46,9 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     this->setWordWrapMode(QTextOption::NoWrap);
 
-    this->setFont(window->getCurrentFont());
-    this->setCurrentFont(window->getCurrentFont());
-    this->setTextColor(this->window->getCurrentTextColor());
+    this->setFont(mainWindow->getCurrentFont());
+    this->setCurrentFont(mainWindow->getCurrentFont());
+    this->setTextColor(this->mainWindow->getCurrentTextColor());
     this->setCursor(Qt::IBeamCursor);
     this->setText("Blank Note");
     this->selectAll();
@@ -64,9 +64,9 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
 
 FloatTextEdit::~FloatTextEdit()
 {
-    if (this->window->getCurrentObject() == this)
+    if (this->mainWindow->getCurrentObject() == this)
     {
-        this->window->setCurrentObject(nullptr);
+        this->mainWindow->setCurrentObject(nullptr);
     }
 
     if (this->parent())
@@ -78,8 +78,8 @@ FloatTextEdit::~FloatTextEdit()
 
 void FloatTextEdit::setupFont()
 {
-    this->setCurrentFont(this->window->getCurrentFont());
-    this->setTextColor(this->window->getCurrentTextColor());
+    this->setCurrentFont(this->mainWindow->getCurrentFont());
+    this->setTextColor(this->mainWindow->getCurrentTextColor());
 }
 
 
@@ -237,8 +237,6 @@ void FloatTextEdit::focusOutEvent(QFocusEvent *event)
         if (!parent->hasFocus())
             parent->close();
     }
-
-    *selected = false;
 
     Container *parent = qobject_cast<Container*>(this->parent());
     parent->setStyleSheet

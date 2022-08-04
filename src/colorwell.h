@@ -23,18 +23,47 @@
 #include <QObject>
 #include <QWidget>
 
+//! Color container for dialogs and context menus.
+/*!
+ *   Acts as a container for a QColor that can be uased for color selection
+ *   dialogs and context menus.
+*/
 class ColorWell : public QFrame
 {
     Q_OBJECT
 
 public:
+    //! Default constructor.
+    /*!
+     * \brief Default constructor will create a white 20px by 20px ColorWell.
+     * \param QWidget *parent - Parent widget
+     * \param const QColor &color - Color of the ColorWell
+     */
     ColorWell(QWidget *parent = nullptr, const QColor &color = Qt::white);
+
+    //! Default destructor.
     ~ColorWell();
 
+
+    //! Sets the color of this ColorWell.
+    /*!
+     * \param const QColor &color - The new color for this ColorWell.
+     * \sa ColorWell::getColor, ColorWell::color
+     */
     void setColor(const QColor &color);
+
+    //! Gets the color of this ColorWell.
+    /*!
+     * \return The current color of this ColorWell.
+     * \sa ColorWell::setColor, ColorWell::color
+     */
     QColor getColor();
 
 private:
+    //! The color of this ColorWell.
+    /*!
+     * \sa ColorWell::setColor, ColorWell::getColor
+     */
     QColor *color;
 
 };

@@ -63,6 +63,7 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     layout->addWidget(automaticText, 0, 1);
 
     ColorWell *blue = new ColorWell(this, Qt::blue);
+    blue->setColor(Qt::red);
     layout->addWidget(blue, 1, 1);
 }
 

@@ -43,6 +43,10 @@ ColorWell::~ColorWell()
 void ColorWell::setColor(const QColor &color)
 {
     *this->color = color;
+
+    QPalette palette;
+    palette.setBrush(QPalette::Window, color);
+    this->setPalette(palette);
 }
 
 

@@ -54,8 +54,6 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     this->selectAll();
     this->setStyleSheet("background-color: rgba(0, 0, 0, 0);");
 
-    selected = new bool(false);
-
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::changeParentCursor);
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::autoResize);
     QObject::connect(this, &QTextEdit::cursorPositionChanged, this, &FloatTextEdit::cursorSizeChange);

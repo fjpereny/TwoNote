@@ -710,7 +710,14 @@ QFont MainWindow::getFormatPainterFont()
 
 void MainWindow::on_styleListWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous)
 {
-    QFont newFont(current->font());
+    const QFont newFont(current->font());
+    this->ui->fontComboBox->setCurrentFont(newFont);
+
+    const int fontSize = current->font().pointSize();
+    QString fontSizeText = QString::number(fontSize);
+    fontSizeText.append(" pt");
+    this->ui->fontSizeComboBox->setCurrentText(fontSizeText);
+
     if (currentObject)
     {
         QTextEdit *textEdit = qobject_cast<QTextEdit*>(currentObject);

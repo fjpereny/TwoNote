@@ -2,6 +2,7 @@ var class_main_window =
 [
     [ "MainWindow", "class_main_window.html#a996c5a2b6f77944776856f08ec30858d", null ],
     [ "~MainWindow", "class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7", null ],
+    [ "changeStyle", "class_main_window.html#a74ec40de9904fe5abe2794e183b979b9", null ],
     [ "getBold", "class_main_window.html#a2b356ca9ad1aae313d9a8feb52ca0f44", null ],
     [ "getCurrentContainer", "class_main_window.html#aded587978c36216a60383a1b16232075", null ],
     [ "getCurrentFont", "class_main_window.html#a68f48d320f54357b40db809cc11ecf14", null ],
@@ -32,6 +33,8 @@ var class_main_window =
     [ "on_printButton_clicked", "class_main_window.html#a76df88cbffc836dbfc0e6c1a656f6665", null ],
     [ "on_ribbonBar_currentChanged", "class_main_window.html#a67dd7ba54d3dd5a5dc441b7fbd3d2f4f", null ],
     [ "on_strikeButton_clicked", "class_main_window.html#aa02776590767eaaf123f3030b4a11125", null ],
+    [ "on_styleListWidget_currentItemChanged", "class_main_window.html#ae673b66bfe99292cc002f48982e2dfe1", null ],
+    [ "on_styleListWidget_itemClicked", "class_main_window.html#acb4a86427c3c7f5e5442f3a59e21e50d", null ],
     [ "on_tabWidget_tabBarClicked", "class_main_window.html#a738c75b6db1208e2378a539403c6aff9", null ],
     [ "on_tabWidget_tabBarDoubleClicked", "class_main_window.html#ac793cedc7deec4682aea8c253bb55fdb", null ],
     [ "on_underlineButton_clicked", "class_main_window.html#a7ec0846415eb8900c642493462794f83", null ],

@@ -175,6 +175,8 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Private Slots</h2></td></tr>
+<tr class="memitem:a74ec40de9904fe5abe2794e183b979b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a74ec40de9904fe5abe2794e183b979b9">changeStyle</a> (QListWidgetItem *current)</td></tr>
+<tr class="separator:a74ec40de9904fe5abe2794e183b979b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c4f542263838b9ecd06eae839a42a34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9c4f542263838b9ecd06eae839a42a34">keyPressEvent</a> (QKeyEvent *event)</td></tr>
 <tr class="separator:a9c4f542263838b9ecd06eae839a42a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ae0c6540c5d994370162e5866e25c7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a2ae0c6540c5d994370162e5866e25c7d">on_boldButton_clicked</a> ()</td></tr>
@@ -209,6 +211,10 @@ Private Slots</h2></td></tr>
 <tr class="separator:a67dd7ba54d3dd5a5dc441b7fbd3d2f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa02776590767eaaf123f3030b4a11125"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa02776590767eaaf123f3030b4a11125">on_strikeButton_clicked</a> ()</td></tr>
 <tr class="separator:aa02776590767eaaf123f3030b4a11125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae673b66bfe99292cc002f48982e2dfe1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae673b66bfe99292cc002f48982e2dfe1">on_styleListWidget_currentItemChanged</a> (QListWidgetItem *current, QListWidgetItem *previous)</td></tr>
+<tr class="separator:ae673b66bfe99292cc002f48982e2dfe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb4a86427c3c7f5e5442f3a59e21e50d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#acb4a86427c3c7f5e5442f3a59e21e50d">on_styleListWidget_itemClicked</a> (QListWidgetItem *item)</td></tr>
+<tr class="separator:acb4a86427c3c7f5e5442f3a59e21e50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a738c75b6db1208e2378a539403c6aff9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a738c75b6db1208e2378a539403c6aff9">on_tabWidget_tabBarClicked</a> (int index)</td></tr>
 <tr class="separator:a738c75b6db1208e2378a539403c6aff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac793cedc7deec4682aea8c253bb55fdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ac793cedc7deec4682aea8c253bb55fdb">on_tabWidget_tabBarDoubleClicked</a> (int index)</td></tr>
@@ -282,6 +288,32 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a74ec40de9904fe5abe2794e183b979b9" name="a74ec40de9904fe5abe2794e183b979b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74ec40de9904fe5abe2794e183b979b9">&#9670;&nbsp;</a></span>changeStyle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::changeStyle </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>current</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2b356ca9ad1aae313d9a8feb52ca0f44" name="a2b356ca9ad1aae313d9a8feb52ca0f44"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b356ca9ad1aae313d9a8feb52ca0f44">&#9670;&nbsp;</a></span>getBold()</h2>
 
@@ -928,6 +960,68 @@ Private Attributes</h2></td></tr>
           <td class="memname">void MainWindow::on_strikeButton_clicked </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae673b66bfe99292cc002f48982e2dfe1" name="ae673b66bfe99292cc002f48982e2dfe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae673b66bfe99292cc002f48982e2dfe1">&#9670;&nbsp;</a></span>on_styleListWidget_currentItemChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_styleListWidget_currentItemChanged </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>current</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>previous</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb4a86427c3c7f5e5442f3a59e21e50d" name="acb4a86427c3c7f5e5442f3a59e21e50d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb4a86427c3c7f5e5442f3a59e21e50d">&#9670;&nbsp;</a></span>on_styleListWidget_itemClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::on_styleListWidget_itemClicked </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

@@ -16,7 +16,9 @@ var searchData=
   ['on_5fprintbutton_5fclicked_13',['on_printButton_clicked',['../class_main_window.html#a76df88cbffc836dbfc0e6c1a656f6665',1,'MainWindow']]],
   ['on_5fribbonbar_5fcurrentchanged_14',['on_ribbonBar_currentChanged',['../class_main_window.html#a67dd7ba54d3dd5a5dc441b7fbd3d2f4f',1,'MainWindow']]],
   ['on_5fstrikebutton_5fclicked_15',['on_strikeButton_clicked',['../class_main_window.html#aa02776590767eaaf123f3030b4a11125',1,'MainWindow']]],
-  ['on_5ftabwidget_5ftabbarclicked_16',['on_tabWidget_tabBarClicked',['../class_main_window.html#a738c75b6db1208e2378a539403c6aff9',1,'MainWindow']]],
-  ['on_5ftabwidget_5ftabbardoubleclicked_17',['on_tabWidget_tabBarDoubleClicked',['../class_main_window.html#ac793cedc7deec4682aea8c253bb55fdb',1,'MainWindow']]],
-  ['on_5funderlinebutton_5fclicked_18',['on_underlineButton_clicked',['../class_main_window.html#a7ec0846415eb8900c642493462794f83',1,'MainWindow']]]
+  ['on_5fstylelistwidget_5fcurrentitemchanged_16',['on_styleListWidget_currentItemChanged',['../class_main_window.html#ae673b66bfe99292cc002f48982e2dfe1',1,'MainWindow']]],
+  ['on_5fstylelistwidget_5fitemclicked_17',['on_styleListWidget_itemClicked',['../class_main_window.html#acb4a86427c3c7f5e5442f3a59e21e50d',1,'MainWindow']]],
+  ['on_5ftabwidget_5ftabbarclicked_18',['on_tabWidget_tabBarClicked',['../class_main_window.html#a738c75b6db1208e2378a539403c6aff9',1,'MainWindow']]],
+  ['on_5ftabwidget_5ftabbardoubleclicked_19',['on_tabWidget_tabBarDoubleClicked',['../class_main_window.html#ac793cedc7deec4682aea8c253bb55fdb',1,'MainWindow']]],
+  ['on_5funderlinebutton_5fclicked_20',['on_underlineButton_clicked',['../class_main_window.html#a7ec0846415eb8900c642493462794f83',1,'MainWindow']]]
 ];

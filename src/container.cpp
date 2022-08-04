@@ -69,7 +69,6 @@ Container::Container(QWidget *parent)
     this->clickPointY = new int(0);
     this->startingWidth = new int;
     this->startingHeight = new int;
-
     this->currentPositionX = new int(this->pos().x());
     this->currentPositionY = new int(this->pos().y());
 
@@ -102,6 +101,7 @@ Container::~Container()
     delete this->startingHeight;
     delete this->currentPositionX;
     delete this->currentPositionY;
+
     if (this->movePreviewFrame)
     {
         delete this->movePreviewFrame;

@@ -18,19 +18,19 @@
 
 #include "colorwell.h"
 #include <QSizePolicy>
+#include <QString>
+#include <QStyle>
+#include <QPainter>
+#include <iostream>
 
 
 ColorWell::ColorWell(QWidget *parent, const QColor &color)
 {
-    this->color = new QColor(color);
-    this->setAutoFillBackground(true);
-    this->setBackgroundRole(QPalette::Window);
+    this->color = new QColor;
     this->setFixedSize(20, 20);
-    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-    QPalette palette;
-    palette.setBrush(QPalette::Window, color);
-    this->setPalette(palette);
+//    this->setAutoFillBackground(true);
+    this->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    this->setColor(color);
 }
 
 
@@ -42,11 +42,18 @@ ColorWell::~ColorWell()
 
 void ColorWell::setColor(const QColor &color)
 {
+    const QString r = QString::number(color.red());
+    const QString g = QString::number(color.green());
+    const QString b = QString::number(color.blue());
+    const QString styleSheet = QString
+            (
+                "border-width: 1px;"
+                "border-color: rgb(226, 228, 231);"
+                "border-style: solid;"
+                "background-color: rgb(%1, %2, %3);"
+            ).arg(r, g, b);
+    this->setStyleSheet(styleSheet);
     *this->color = color;
-
-    QPalette palette;
-    palette.setBrush(QPalette::Window, color);
-    this->setPalette(palette);
 }
 
 
@@ -54,3 +61,5 @@ QColor ColorWell::getColor()
 {
     return *this->color;
 }
+
+

@@ -65,7 +65,6 @@ private:
      * \sa ColorWell::setColor, ColorWell::getColor
      */
     QColor *color;
-
 };
 
 #endif // COLORWELL_H

@@ -132,6 +132,9 @@ jobs:
           sudo update-alternatives --install /usr/bin/cmake cmake /opt/cmake/bin/cmake 1 --force
           echo cmake version after
           cmake --version
+          echo Update Qt6 =======================================================================
+          sudo apt-get update
+          sudo apt-get install qt6-base
       - name: Install dependencies on macos
         if: startsWith(matrix.config.os, 'macos')
         run: |

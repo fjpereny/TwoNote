@@ -13,7 +13,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "floattextedit.cpp", "floattextedit_8cpp.html", null ],
     [ "floattextedit.h", "floattextedit_8h.html", "floattextedit_8h" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
-    [ "mainwindow.cpp", "mainwindow_8cpp.html", "mainwindow_8cpp" ],
+    [ "mainwindow.cpp", "mainwindow_8cpp.html", null ],
     [ "mainwindow.h", "mainwindow_8h.html", "mainwindow_8h" ],
     [ "notetabwidget.cpp", "notetabwidget_8cpp.html", null ],
     [ "notetabwidget.h", "notetabwidget_8h.html", "notetabwidget_8h" ],

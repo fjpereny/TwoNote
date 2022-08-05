@@ -33,7 +33,7 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
 {
     this->mainWindow = qobject_cast<MainWindow*>(parent);
 
-    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    this->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
     this->setFocusPolicy(Qt::NoFocus);
     this->setAutoFillBackground(true);
     this->setStyleSheet
@@ -45,7 +45,7 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
                 "border-width : 1px;"
                 "border-style : solid;"
                 "border-radius : 0px;"
-                "border-color : rgb(94, 94, 94);"
+                "border-color : rgb(191, 191, 191);"
                 "}"
             );
 
@@ -57,13 +57,14 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     QSize smallColorWell(15, 15);
 
     // Row 0
-    // Automatic Text
+    layout->setRowStretch(0, 1);
     ColorWell *automatic = new ColorWell(this, Qt::black);
     automatic->setFixedSize(largeColorWell);
     layout->addWidget(automatic, 0, 0, 1, 2);
 
     QLabel *automaticText = new QLabel(this);
     automaticText->setText("Automatic");
+    automaticText->setFixedHeight(28);
     layout->addWidget(automaticText, 0, 2, 1, 8);
     automaticText->setStyleSheet
             (
@@ -71,9 +72,10 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
             );
 
     // Row 1
+    layout->setRowStretch(1, 1);
     QLabel *themeColorsLabel = new QLabel(this);
     themeColorsLabel->setText("  Theme Colors");
-    themeColorsLabel->setMaximumHeight(30);
+    themeColorsLabel->setFixedHeight(30);
     layout->addWidget(themeColorsLabel, 1, 0, 1, 10);
     themeColorsLabel->setStyleSheet
             (
@@ -83,6 +85,7 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
             );
 
     // Row 2
+    layout->setRowStretch(2, 1);
     ColorWell *white= new ColorWell(this, Qt::white);
     white->setFixedSize(smallColorWell);
     layout->addWidget(white, 2, 0, 1, 1);
@@ -115,6 +118,7 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     layout->addWidget(green, 2, 9, 1, 1);
 
     // Row 3
+    layout->setRowStretch(3, 2);
     ColorWell *whiteA= new ColorWell(this, QColor(242, 242, 242));
     whiteA->setFixedSize(smallColorWell);
     layout->addWidget(whiteA, 3, 0, 1, 1);
@@ -147,6 +151,7 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     layout->addWidget(greenA, 3, 9, 1, 1);
 
     // Row 4
+    layout->setRowStretch(4, 2);
     ColorWell *whiteB= new ColorWell(this, QColor(216, 216, 216));
     whiteB->setFixedSize(smallColorWell);
     layout->addWidget(whiteB, 4, 0, 1, 1);
@@ -179,6 +184,7 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     layout->addWidget(greenB, 4, 9, 1, 1);
 
     // Row 5
+    layout->setRowStretch(5, 2);
     ColorWell *whiteC= new ColorWell(this, QColor(191, 191, 191));
     whiteC->setFixedSize(smallColorWell);
     layout->addWidget(whiteC, 5, 0, 1, 1);
@@ -211,6 +217,7 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     layout->addWidget(greenC, 5, 9, 1, 1);
 
     // Row 6
+    layout->setRowStretch(6, 2);
     ColorWell *whiteD= new ColorWell(this, QColor(165, 165, 165));
     whiteD->setFixedSize(smallColorWell);
     layout->addWidget(whiteD, 6, 0, 1, 1);
@@ -243,6 +250,7 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     layout->addWidget(greenD, 6, 9, 1, 1);
 
     // Row 7
+    layout->setRowStretch(7, 2);
     ColorWell *whiteE= new ColorWell(this, QColor(127, 127, 127));
     whiteE->setFixedSize(smallColorWell);
     layout->addWidget(whiteE, 7, 0, 1, 1);
@@ -275,9 +283,10 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     layout->addWidget(greenE, 7, 9, 1, 1);
 
     // Row 8
+    layout->setRowStretch(8, 1);
     QLabel *standardLabel = new QLabel(this);
     standardLabel->setText("  Standard Colors");
-    standardLabel->setMaximumHeight(30);
+    standardLabel->setFixedHeight(30);
     layout->addWidget(standardLabel, 8, 0, 1, 10);
     standardLabel->setStyleSheet
             (
@@ -287,38 +296,40 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
             );
 
     // Row 9
-    ColorWell *stdDarkRed= new ColorWell(this, QColor(216, 216, 216));
+    layout->setRowStretch(9, 1);
+    ColorWell *stdDarkRed= new ColorWell(this, QColor(192, 0, 0));
     stdDarkRed->setFixedSize(smallColorWell);
     layout->addWidget(stdDarkRed, 9, 0, 1, 1);
-    ColorWell *stdRed= new ColorWell(this, QColor(89, 89, 89));
+    ColorWell *stdRed= new ColorWell(this, QColor(255, 0, 0));
     stdRed->setFixedSize(smallColorWell);
     layout->addWidget(stdRed, 9, 1, 1, 1);
-    ColorWell *stdOrange = new ColorWell(this, QColor(174, 171, 171));
+    ColorWell *stdOrange = new ColorWell(this, QColor(255, 192, 0));
     stdOrange->setFixedSize(smallColorWell);
     layout->addWidget(stdOrange, 9, 2, 1, 1);
-    ColorWell *stdYellow = new ColorWell(this, QColor(173, 185, 202));
+    ColorWell *stdYellow = new ColorWell(this, QColor(255, 255, 0));
     stdYellow->setFixedSize(smallColorWell);
     layout->addWidget(stdYellow, 9, 3, 1, 1);
-    ColorWell *stdLightGreen = new ColorWell(this, QColor(189, 215, 238));
+    ColorWell *stdLightGreen = new ColorWell(this, QColor(146, 208, 80));
     stdLightGreen->setFixedSize(smallColorWell);
     layout->addWidget(stdLightGreen, 9, 4, 1, 1);
-    ColorWell *stdGreen = new ColorWell(this, QColor(247, 203, 173));
+    ColorWell *stdGreen = new ColorWell(this, QColor(0, 176, 80));
     stdGreen->setFixedSize(smallColorWell);
     layout->addWidget(stdGreen, 9, 5, 1, 1);
-    ColorWell *stdLightBlue = new ColorWell(this, QColor(245, 183, 166));
+    ColorWell *stdLightBlue = new ColorWell(this, QColor(0, 176, 240));
     stdLightBlue->setFixedSize(smallColorWell);
     layout->addWidget(stdLightBlue, 9, 6, 1, 1);
-    ColorWell *stdBlue = new ColorWell(this, QColor(254, 229, 153));
+    ColorWell *stdBlue = new ColorWell(this, QColor(0, 112, 192));
     stdBlue->setFixedSize(smallColorWell);
     layout->addWidget(stdBlue, 9, 7, 1, 1);
-    ColorWell *stdDarkBlue = new ColorWell(this, QColor(204, 193, 217));
+    ColorWell *stdDarkBlue = new ColorWell(this, QColor(0, 32, 96));
     stdDarkBlue->setFixedSize(smallColorWell);
     layout->addWidget(stdDarkBlue, 9, 8, 1, 1);
-    ColorWell *stdPurple = new ColorWell(this, QColor(197, 224, 179));
+    ColorWell *stdPurple = new ColorWell(this, QColor(112, 48, 160));
     stdPurple->setFixedSize(smallColorWell);
     layout->addWidget(stdPurple, 9, 9, 1, 1);
 
     // Row 10
+    layout->setRowStretch(10, 1);
     QPushButton *colorDialogButton = new QPushButton(this);
     QIcon colorDialogIcon(":/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/palette.svg");
     colorDialogButton->setIcon(colorDialogIcon);
@@ -370,6 +381,10 @@ void ColorDropDownMenu::leaveEvent(QEvent *event)
 void ColorDropDownMenu::openColorDialog()
 {
     QColor color = this->mainWindow->getTextDialogColor();
+    if (color == Qt::black)
+    {
+        color = Qt::white;
+    }
     color = QColorDialog::getColor
             (
                 color,

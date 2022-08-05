@@ -627,6 +627,15 @@
                 <property name="maxVisibleItems">
                  <number>12</number>
                 </property>
+                <property name="sizeAdjustPolicy">
+                 <enum>QComboBox::AdjustToContents</enum>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
                 <item>
                  <property name="text">
                   <string>6 pt</string>

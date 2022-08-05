@@ -623,7 +623,14 @@ QColor MainWindow::getCurrentTextColor()
 
 void MainWindow::setTextDialogColor(const QColor color)
 {
-    *this->textColorDialogColor = color;
+    if (this->textColorDialogColor)
+    {
+        *this->textColorDialogColor = color;
+    }
+    else
+    {
+        this->textColorDialogColor = new QColor(color);
+    }
 }
 
 
@@ -638,7 +645,6 @@ QColor MainWindow::getTextDialogColor()
         QColor color(Qt::black);
         return color;
     }
-
 }
 
 

@@ -53,6 +53,9 @@ public:
      */
     void autoResize();
 
+
+    void zoom(float scale);
+
 private:
     void keyPressEvent(QKeyEvent *event);
     void focusInEvent(QFocusEvent *event);

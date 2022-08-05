@@ -83,8 +83,13 @@ void FloatTextEdit::keyPressEvent(QKeyEvent *event)
         this->setOverwriteMode(!this->overwriteMode());
         this->cursorSizeChange();
     }
+    else if (event->key() == Qt::Key_Space)
+    {
+        this->zoom(2);
+    }
     else if (event->key() == Qt::Key_Escape)
     {
+        this->zoomOut(100);
         QTextCursor textCursor = this->textCursor();
         textCursor.clearSelection();
         this->setTextCursor(textCursor);
@@ -219,14 +224,14 @@ void FloatTextEdit::focusInEvent(QFocusEvent *event)
 
 void FloatTextEdit::focusOutEvent(QFocusEvent *event)
 {
-    if (this->toPlainText() == "")
-    {        
-        Container *parent = qobject_cast<Container*>(this->parent());
-        if (!parent->hasFocus())
-            parent->close();
+    Container *parent = qobject_cast<Container*>(this->parent());
+
+    if (this->toPlainText() == "" && (!parent->hasFocus()))
+    {
+        parent->close();
+        return;
     }
 
-    Container *parent = qobject_cast<Container*>(this->parent());
     parent->setStyleSheet
             (
                 "Container "
@@ -292,3 +297,19 @@ void FloatTextEdit::changeParentCursor()
     parent->setCursor(Qt::IBeamCursor);
 }
 
+
+void FloatTextEdit::zoom(float scale)
+{
+    QTextCursor cursor = this->textCursor();
+    cursor.setPosition(0);
+    while(!cursor.atBlockEnd())
+    {
+        cursor.setPosition(cursor.position(), QTextCursor::MoveAnchor);
+        cursor.setPosition(cursor.position() + 1, QTextCursor::KeepAnchor);
+        QTextCharFormat format = cursor.charFormat();
+        float newSize = format.fontPointSize() * scale;
+        format.setFontPointSize(newSize);
+        cursor.setCharFormat(format);
+        cursor.clearSelection();
+    }
+}

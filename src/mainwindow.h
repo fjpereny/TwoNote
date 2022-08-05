@@ -57,7 +57,10 @@ public:
 
     void setCurrentFont(QFont font);
     QFont getCurrentFont();
+    void setCurrentTextColor(const QColor color);
     QColor getCurrentTextColor();
+    void setTextDialogColor(const QColor color);
+    QColor getTextDialogColor();
     QFont getFormatPainterFont();
 
 private slots:
@@ -87,6 +90,7 @@ private slots:
     void on_styleListWidget_itemClicked(QListWidgetItem *item);
     void on_fontColorButton_clicked();
     void on_expandFontColorButton_clicked();
+    void focusInEvent(QFocusEvent *event);
 
 private:
 

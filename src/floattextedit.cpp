@@ -66,11 +66,6 @@ FloatTextEdit::~FloatTextEdit()
     {
         this->mainWindow->setCurrentObject(nullptr);
     }
-
-    if (this->parent())
-    {
-        this->parentWidget()->close();
-    }
 }
 
 

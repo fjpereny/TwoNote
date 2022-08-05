@@ -31,10 +31,10 @@
 ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     : QFrame(parent)
 {
-    this->mainWindow = qobject_cast<MainWindow*>(QApplication::activeWindow());
+    this->mainWindow = qobject_cast<MainWindow*>(parent);
 
-    this->setFixedWidth(250);
-    this->setFixedHeight(400);
+    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    this->setFocusPolicy(Qt::NoFocus);
     this->setAutoFillBackground(true);
     this->setStyleSheet
             (
@@ -50,10 +50,11 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
             );
 
     QGridLayout *layout = new QGridLayout(this);
+    layout->setContentsMargins(2, 2, 2, 2);
     this->setLayout(layout);
 
-    QSize largeColorWell(30, 30);
-    QSize smallColorWell(20, 20);
+    QSize largeColorWell(20, 20);
+    QSize smallColorWell(15, 15);
 
     // Row 0
     // Automatic Text
@@ -177,6 +178,102 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     greenB->setFixedSize(smallColorWell);
     layout->addWidget(greenB, 4, 9, 1, 1);
 
+    // Row 5
+    ColorWell *whiteC= new ColorWell(this, QColor(191, 191, 191));
+    whiteC->setFixedSize(smallColorWell);
+    layout->addWidget(whiteC, 5, 0, 1, 1);
+    ColorWell *blackC= new ColorWell(this, QColor(63, 63, 63));
+    blackC->setFixedSize(smallColorWell);
+    layout->addWidget(blackC, 5, 1, 1, 1);
+    ColorWell *lightGrayC = new ColorWell(this, QColor(117, 112, 112));
+    lightGrayC->setFixedSize(smallColorWell);
+    layout->addWidget(lightGrayC, 5, 2, 1, 1);
+    ColorWell *blueGrayC = new ColorWell(this, QColor(132, 150, 176));
+    blueGrayC->setFixedSize(smallColorWell);
+    layout->addWidget(blueGrayC, 5, 3, 1, 1);
+    ColorWell *blueC = new ColorWell(this, QColor(156, 195, 229));
+    blueC->setFixedSize(smallColorWell);
+    layout->addWidget(blueC, 5, 4, 1, 1);
+    ColorWell *orangeC = new ColorWell(this, QColor(244, 177, 131));
+    orangeC->setFixedSize(smallColorWell);
+    layout->addWidget(orangeC, 5, 5, 1, 1);
+    ColorWell *redC = new ColorWell(this, QColor(241, 147, 122));
+    redC->setFixedSize(smallColorWell);
+    layout->addWidget(redC, 5, 6, 1, 1);
+    ColorWell *goldC = new ColorWell(this, QColor(255, 217, 101));
+    goldC->setFixedSize(smallColorWell);
+    layout->addWidget(goldC, 5, 7, 1, 1);
+    ColorWell *purpleC = new ColorWell(this, QColor(178, 161, 199));
+    purpleC->setFixedSize(smallColorWell);
+    layout->addWidget(purpleC, 5, 8, 1, 1);
+    ColorWell *greenC = new ColorWell(this, QColor(168, 208, 141));
+    greenC->setFixedSize(smallColorWell);
+    layout->addWidget(greenC, 5, 9, 1, 1);
+
+    // Row 6
+    ColorWell *whiteD= new ColorWell(this, QColor(165, 165, 165));
+    whiteD->setFixedSize(smallColorWell);
+    layout->addWidget(whiteD, 6, 0, 1, 1);
+    ColorWell *blackD= new ColorWell(this, QColor(38, 38, 38));
+    blackD->setFixedSize(smallColorWell);
+    layout->addWidget(blackD, 6, 1, 1, 1);
+    ColorWell *lightGrayD = new ColorWell(this, QColor(58, 56, 56));
+    lightGrayD->setFixedSize(smallColorWell);
+    layout->addWidget(lightGrayD, 6, 2, 1, 1);
+    ColorWell *blueGrayD = new ColorWell(this, QColor(50, 63, 79));
+    blueGrayD->setFixedSize(smallColorWell);
+    layout->addWidget(blueGrayD, 6, 3, 1, 1);
+    ColorWell *blueD = new ColorWell(this, QColor(46, 117, 181));
+    blueD->setFixedSize(smallColorWell);
+    layout->addWidget(blueD, 6, 4, 1, 1);
+    ColorWell *orangeD = new ColorWell(this, QColor(197, 90, 17));
+    orangeD->setFixedSize(smallColorWell);
+    layout->addWidget(orangeD, 6, 5, 1, 1);
+    ColorWell *redD = new ColorWell(this, QColor(180, 53, 18));
+    redD->setFixedSize(smallColorWell);
+    layout->addWidget(redD, 6, 6, 1, 1);
+    ColorWell *goldD = new ColorWell(this, QColor(191, 144, 0));
+    goldD->setFixedSize(smallColorWell);
+    layout->addWidget(goldD, 6, 7, 1, 1);
+    ColorWell *purpleD = new ColorWell(this, QColor(95, 73, 122));
+    purpleD->setFixedSize(smallColorWell);
+    layout->addWidget(purpleD, 6, 8, 1, 1);
+    ColorWell *greenD = new ColorWell(this, QColor(83, 129, 53));
+    greenD->setFixedSize(smallColorWell);
+    layout->addWidget(greenD, 6, 9, 1, 1);
+
+    // Row 7
+    ColorWell *whiteE= new ColorWell(this, QColor(127, 127, 127));
+    whiteE->setFixedSize(smallColorWell);
+    layout->addWidget(whiteE, 7, 0, 1, 1);
+    ColorWell *blackE= new ColorWell(this, QColor(12, 12, 12));
+    blackE->setFixedSize(smallColorWell);
+    layout->addWidget(blackE, 7, 1, 1, 1);
+    ColorWell *lightGrayE = new ColorWell(this, QColor(23, 22, 22));
+    lightGrayE->setFixedSize(smallColorWell);
+    layout->addWidget(lightGrayE, 7, 2, 1, 1);
+    ColorWell *blueGrayE = new ColorWell(this, QColor(34, 42, 53));
+    blueGrayE->setFixedSize(smallColorWell);
+    layout->addWidget(blueGrayE, 7, 3, 1, 1);
+    ColorWell *blueE = new ColorWell(this, QColor(30, 78, 121));
+    blueE->setFixedSize(smallColorWell);
+    layout->addWidget(blueE, 7, 4, 1, 1);
+    ColorWell *orangeE = new ColorWell(this, QColor(131, 60, 11));
+    orangeE->setFixedSize(smallColorWell);
+    layout->addWidget(orangeE, 7, 5, 1, 1);
+    ColorWell *redE = new ColorWell(this, QColor(120, 35, 12));
+    redE->setFixedSize(smallColorWell);
+    layout->addWidget(redE, 7, 6, 1, 1);
+    ColorWell *goldE = new ColorWell(this, QColor(127, 96, 0));
+    goldE->setFixedSize(smallColorWell);
+    layout->addWidget(goldE, 7, 7, 1, 1);
+    ColorWell *purpleE = new ColorWell(this, QColor(63, 49, 81));
+    purpleE->setFixedSize(smallColorWell);
+    layout->addWidget(purpleE, 7, 8, 1, 1);
+    ColorWell *greenE = new ColorWell(this, QColor(55, 86, 35));
+    greenE->setFixedSize(smallColorWell);
+    layout->addWidget(greenE, 7, 9, 1, 1);
+
     // Row 8
     QLabel *standardLabel = new QLabel(this);
     standardLabel->setText("  Standard Colors");
@@ -223,9 +320,38 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
 
     // Row 10
     QPushButton *colorDialogButton = new QPushButton(this);
-    colorDialogButton->setText("Other Colors");
+    QIcon colorDialogIcon(":/icons/fontawesome/solid/fontawesome-free-6.1.2-desktop/svgs/solid/palette.svg");
+    colorDialogButton->setIcon(colorDialogIcon);
+    colorDialogButton->setText("\tMore Colors...");
+    colorDialogButton->setFlat(true);
+    colorDialogButton->setFixedHeight(30);
+    colorDialogButton->setFocusPolicy(Qt::NoFocus);
     layout->addWidget(colorDialogButton, 10, 0, 1, 10);
     QObject::connect(colorDialogButton, SIGNAL(clicked()), this, SLOT(openColorDialog()));
+    colorDialogButton->setStyleSheet
+            (
+                "QPushButton"
+                "{"
+                    "text-align: left;"
+                    "color: black;"
+                    "border-width: 0px;"
+                    "border-color: white;"
+                    "border-radius: 0px;"
+                    "background-color: white;"
+                "}"
+
+                "QPushButton::Hover"
+                "{"
+                    "color: black;"
+                    "border-width: 0px;"
+                    "border-color: white;"
+                    "border-radius: 0px;"
+                    "background-color: rgb(197, 197, 197);"
+                "}"
+
+            );
+
+    this->adjustSize();
 }
 
 
@@ -243,11 +369,24 @@ void ColorDropDownMenu::leaveEvent(QEvent *event)
 
 void ColorDropDownMenu::openColorDialog()
 {
-    QColor newColor = QColorDialog::getColor
+    QColor color = this->mainWindow->getTextDialogColor();
+    color = QColorDialog::getColor
             (
-                Qt::white,
+                color,
                 this,
                 "Select Font Color",
                 QColorDialog::DontUseNativeDialog
             );
+    this->mainWindow->setTextDialogColor(color);
+    this->mainWindow->setCurrentTextColor(color);
+
+    QWidget *currentObject = this->mainWindow->getCurrentObject();
+    if (currentObject)
+    {
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(currentObject);
+        if(textEdit)
+        {
+            textEdit->setTextColor(color);
+        }
+    }
 }

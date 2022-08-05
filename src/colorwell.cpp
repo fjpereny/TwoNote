@@ -17,20 +17,44 @@
 
 
 #include "colorwell.h"
+#include "mainwindow.h"
 #include <QSizePolicy>
 #include <QString>
 #include <QStyle>
 #include <QPainter>
+#include <QTextEdit>
 #include <iostream>
 
 
 ColorWell::ColorWell(QWidget *parent, const QColor &color)
+    : QFrame(parent)
 {
     this->color = new QColor;
     this->setFixedSize(20, 20);
-//    this->setAutoFillBackground(true);
+    this->setContentsMargins(0, 0, 0, 0);
     this->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    this->setFocusPolicy(Qt::NoFocus);
     this->setColor(color);
+
+    QWidget *grandParent = parent->parentWidget();
+    if (grandParent)
+    {
+        MainWindow *window = qobject_cast<MainWindow*>(grandParent);
+        if (window)
+        {
+            this->mainWindow = window;
+        }
+        else
+        {
+            std::cerr << "Invalid pointer to MainWindow." << std::endl;
+            this->mainWindow = nullptr;
+        }
+    }
+    else
+    {
+        std::cerr << "Invalid pointer to gradParent widget." << std::endl;
+        grandParent = nullptr;
+    }
 }
 
 
@@ -40,7 +64,7 @@ ColorWell::~ColorWell()
 }
 
 
-void ColorWell::setColor(const QColor &color)
+void ColorWell::setColor(const QColor color)
 {
     const QString r = QString::number(color.red());
     const QString g = QString::number(color.green());
@@ -63,3 +87,27 @@ QColor ColorWell::getColor()
 }
 
 
+void ColorWell::mousePressEvent(QMouseEvent *event)
+{
+    if (this->mainWindow)
+    {
+        this->mainWindow->setTextDialogColor(*this->color);
+        this->mainWindow->setCurrentTextColor(*this->color);
+
+        QWidget *currentObject = this->mainWindow->getCurrentObject();
+        if (currentObject)
+        {
+            QTextEdit *textEdit = qobject_cast<QTextEdit*>(currentObject);
+            if(textEdit)
+            {
+                textEdit->setTextColor(*this->color);
+            }
+        }
+    }
+    else
+    {
+        std::cerr << "Cannot assign color in "
+                     "ColorWell::mouseClickEvent - mainWindow pointer is null." << std::endl;
+    }
+    this->parentWidget()->hide();
+}

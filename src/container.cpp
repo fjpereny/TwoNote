@@ -101,11 +101,7 @@ Container::~Container()
     delete this->startingHeight;
     delete this->currentPositionX;
     delete this->currentPositionY;
-
-    if (this->movePreviewFrame)
-    {
-        delete this->movePreviewFrame;
-    }
+    delete this->movePreviewFrame;
 
     if (mainWindow)
     {
@@ -370,10 +366,6 @@ void Container::keyPressEvent(QKeyEvent *event)
         {
             this->clearFocus();
         }
-//        else if(event->key() == Qt::Key_C && (QGuiApplication::keyboardModifiers() & Qt::ControlModifier))
-//        {
-//            std::cout << "copy" << std::endl;
-//        }
         else if (event->key() == Qt::Key_Delete || event->key() == Qt::Key_Backspace)
         {
             this->close();

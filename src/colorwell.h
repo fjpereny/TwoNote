@@ -19,9 +19,12 @@
 #ifndef COLORWELL_H
 #define COLORWELL_H
 
+
 #include <QFrame>
 #include <QObject>
 #include <QWidget>
+#include "mainwindow.h"
+
 
 //! Color container for dialogs and context menus.
 /*!
@@ -50,7 +53,7 @@ public:
      * \param const QColor &color - The new color for this ColorWell.
      * \sa ColorWell::getColor, ColorWell::color
      */
-    void setColor(const QColor &color);
+    void setColor(const QColor color);
 
     //! Gets the color of this ColorWell.
     /*!
@@ -65,6 +68,15 @@ private:
      * \sa ColorWell::setColor, ColorWell::getColor
      */
     QColor *color;
+
+    //! Pointer to the MainWindow of the application.
+    /*!
+     * \sa MainWindow::MainWindow
+     */
+    MainWindow *mainWindow;
+
+private slots:
+    void mousePressEvent(QMouseEvent *event);
 };
 
 #endif // COLORWELL_H

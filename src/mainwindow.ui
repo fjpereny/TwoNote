@@ -527,6 +527,9 @@
           </item>
           <item>
            <widget class="QLabel" name="label">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string>Clipboard</string>
             </property>
@@ -539,6 +542,9 @@
         </item>
         <item>
          <widget class="Line" name="line">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -563,6 +569,9 @@
                   <width>100</width>
                   <height>16777215</height>
                  </size>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
                 </property>
                 <property name="toolTip">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;Font&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Pick a new font for your text.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -805,6 +814,9 @@
               </item>
               <item>
                <widget class="Line" name="line_5">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
                 <property name="orientation">
                  <enum>Qt::Vertical</enum>
                 </property>
@@ -870,6 +882,9 @@
               </item>
               <item>
                <widget class="Line" name="line_6">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
                 <property name="orientation">
                  <enum>Qt::Vertical</enum>
                 </property>
@@ -1010,6 +1025,9 @@
               </item>
               <item>
                <widget class="QComboBox" name="comboBox_3">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
                 <item>
                  <property name="text">
                   <string>Xsub</string>
@@ -1019,6 +1037,9 @@
               </item>
               <item>
                <widget class="Line" name="line_2">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
                 <property name="orientation">
                  <enum>Qt::Vertical</enum>
                 </property>
@@ -1026,6 +1047,9 @@
               </item>
               <item>
                <widget class="QToolButton" name="highlightButton">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
                 <property name="toolTip">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Text Highlight Color (Ctrl+Alt+H)&lt;/p&gt;&lt;p&gt;Make your text pop by highlighting it in a bright color.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
@@ -1124,6 +1148,9 @@
               </item>
               <item>
                <widget class="Line" name="line_3">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
                 <property name="orientation">
                  <enum>Qt::Vertical</enum>
                 </property>
@@ -1154,6 +1181,9 @@
               </item>
               <item>
                <widget class="Line" name="line_7">
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
                 <property name="orientation">
                  <enum>Qt::Vertical</enum>
                 </property>
@@ -1191,6 +1221,9 @@
           </item>
           <item>
            <widget class="QLabel" name="label_2">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string>Basic Text</string>
             </property>
@@ -1203,6 +1236,9 @@
         </item>
         <item>
          <widget class="Line" name="line_4">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1611,6 +1647,9 @@
           </item>
           <item>
            <widget class="QLabel" name="label_3">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string>Styles</string>
             </property>
@@ -1623,6 +1662,9 @@
         </item>
         <item>
          <widget class="Line" name="line_8">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1659,6 +1701,9 @@
           </item>
           <item>
            <widget class="QLabel" name="label_4">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string>Tags</string>
             </property>
@@ -1671,6 +1716,9 @@
         </item>
         <item>
          <widget class="Line" name="line_9">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1680,6 +1728,9 @@
          <layout class="QVBoxLayout" name="verticalLayout_10">
           <item>
            <widget class="QLabel" name="label_5">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string>Email</string>
             </property>
@@ -1692,6 +1743,9 @@
         </item>
         <item>
          <widget class="Line" name="line_10">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1701,6 +1755,9 @@
          <layout class="QVBoxLayout" name="verticalLayout_11">
           <item>
            <widget class="QLabel" name="label_6">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
             <property name="text">
              <string>Meetings</string>
             </property>
@@ -1713,6 +1770,9 @@
         </item>
         <item>
          <widget class="Line" name="line_11">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1720,6 +1780,9 @@
         </item>
         <item>
          <spacer name="horizontalSpacer">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -1763,6 +1826,9 @@
         <inactive/>
         <disabled/>
        </palette>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="autoFillBackground">
        <bool>true</bool>
@@ -2282,6 +2348,9 @@
                 </colorrole>
                </disabled>
               </palette>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="autoFillBackground">
               <bool>false</bool>

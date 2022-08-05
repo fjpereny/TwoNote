@@ -550,19 +550,6 @@ QWidget* MainWindow::getCurrentObject()
 }
 
 
-static MainWindow* getMainWindow()
-{
-    foreach (QWidget *widget, qApp->topLevelWidgets())
-    {
-        if (MainWindow *win = qobject_cast<MainWindow*>(widget))
-        {
-            return win;
-        }
-    }
-    return nullptr;
-}
-
-
 void MainWindow::on_fontComboBox_currentFontChanged(const QFont &f)
 {
     this->ui->styleListWidget->clearSelection();
@@ -622,9 +609,36 @@ QFont MainWindow::getCurrentFont()
 }
 
 
+void MainWindow::setCurrentTextColor(const QColor color)
+{
+    *this->currentTextColor = color;
+}
+
+
 QColor MainWindow::getCurrentTextColor()
 {
     return *this->currentTextColor;
+}
+
+
+void MainWindow::setTextDialogColor(const QColor color)
+{
+    *this->textColorDialogColor = color;
+}
+
+
+QColor MainWindow::getTextDialogColor()
+{
+    if (this->textColorDialogColor)
+    {
+        return *this->textColorDialogColor;
+    }
+    else
+    {
+        QColor color(Qt::black);
+        return color;
+    }
+
 }
 
 
@@ -886,3 +900,8 @@ void MainWindow::on_expandFontColorButton_clicked()
     this->colorDropDown->show();
 }
 
+
+void MainWindow::focusInEvent(QFocusEvent *event)
+{
+    this->currentObject->setFocus();
+}

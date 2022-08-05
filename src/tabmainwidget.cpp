@@ -36,6 +36,8 @@ TabMainWidget::TabMainWidget(QWidget *parent)
 {    
     this->mainWindow = qobject_cast<MainWindow*>(QApplication::activeWindow());
 
+    this->zoomScale = new float(1.0);
+
     this->setCursor(Qt::IBeamCursor);
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
@@ -52,6 +54,11 @@ TabMainWidget::TabMainWidget(QWidget *parent)
 
 TabMainWidget::~TabMainWidget()
 {
+    delete this->zoomScale;
+    delete this->clicked_x;
+    delete this->clicked_y;
+    delete this->createEnabled;
+    delete this->createMode;
     contextMenu->close();
 }
 
@@ -114,5 +121,52 @@ void TabMainWidget::mousePressEvent(QMouseEvent *event)
         }
         this->contextMenu->move(event->pos());
         this->contextMenu->show();
+    }
+}
+
+
+float TabMainWidget::getZoomScale()
+{
+    return *this->zoomScale;
+}
+
+
+void TabMainWidget::setZoomScale(const float scale)
+{
+    *this->zoomScale = scale;
+}
+
+
+void TabMainWidget::zoomIn()
+{
+    *this->zoomScale *= 1.25;
+    this->zoomAllChildren(1.25);
+}
+
+
+void TabMainWidget::zoomOut()
+{
+    *this->zoomScale /= 1.25;
+    this->zoomAllChildren(1.0 / 1.25);
+}
+
+
+void TabMainWidget::zoomAllChildren(const float &scale)
+{
+    for (QObject *child : this->children())
+    {
+        Container* container = qobject_cast<Container*>(child);
+        if (container)
+        {
+            int newX = container->pos().x() * scale;
+            int newY = container->pos().y() * scale;
+            container->move(newX, newY);
+
+            FloatTextEdit *floatTextEdit = container->findChild<FloatTextEdit*>();
+            if (floatTextEdit)
+            {
+                floatTextEdit->zoom(scale);
+            }
+        }
     }
 }

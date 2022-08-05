@@ -32,8 +32,11 @@
 
 
 FloatTextEdit::FloatTextEdit(QWidget *parent)
+    : QTextEdit{parent}
 {
     this->mainWindow = qobject_cast<MainWindow*>(QApplication::activeWindow());
+    this->container = qobject_cast<Container*>(this->parent());
+    this->tabMainWidget = qobject_cast<TabMainWidget*>(this->container->parent());
 
     this->setAttribute(Qt::WA_DeleteOnClose, true);
     this->setAutoFillBackground(true);
@@ -83,13 +86,20 @@ void FloatTextEdit::keyPressEvent(QKeyEvent *event)
         this->setOverwriteMode(!this->overwriteMode());
         this->cursorSizeChange();
     }
-    else if (event->key() == Qt::Key_Space)
+    else if (event->key() == Qt::Key_Plus &&
+             (event->modifiers() & Qt::Modifier::CTRL) &&
+             (event->modifiers() & Qt::Modifier::SHIFT))
     {
-        this->zoom(2);
+        tabMainWidget->zoomIn();
+    }
+    else if (event->key() == Qt::Key_Minus &&
+             (event->modifiers() & Qt::Modifier::CTRL) &&
+             (event->modifiers() & Qt::Modifier::SHIFT))
+    {
+        tabMainWidget->zoomOut();
     }
     else if (event->key() == Qt::Key_Escape)
     {
-        this->zoomOut(100);
         QTextCursor textCursor = this->textCursor();
         textCursor.clearSelection();
         this->setTextCursor(textCursor);

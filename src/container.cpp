@@ -194,6 +194,18 @@ void Container::focusOutEvent(QFocusEvent *event)
                     "background-color : none;"
                 "}"
             );
+
+    QWidget *child = this->findChild<QWidget*>();
+    if (!child->hasFocus())
+    {
+        QTextEdit *textEdit = qobject_cast<QTextEdit*>(child);
+        if (textEdit)
+        {
+            QTextCursor cursor = textEdit->textCursor();
+            cursor.clearSelection();
+            textEdit->setTextCursor(cursor);
+        }
+    }
 }
 
 

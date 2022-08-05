@@ -21,6 +21,8 @@
 
 #include <QTextEdit>
 #include "mainwindow.h"
+#include "tabmainwidget.h"
+#include "container.h"
 
 
 //! Floating rich text editor.
@@ -30,6 +32,8 @@
 */
 class FloatTextEdit : public QTextEdit
 {
+    Q_OBJECT
+
 public:
     //! Default constructor.
     /*!
@@ -99,6 +103,8 @@ private:
      *
      */
     MainWindow *mainWindow;
+    Container *container;
+    TabMainWidget *tabMainWidget;
 
 signals:
 

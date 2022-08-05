@@ -33,21 +33,24 @@ public:
     TabMainWidget(QWidget *parent = nullptr);
     ~TabMainWidget();
 
+    float getZoomScale();
+    void setZoomScale(const float scale);
+    void zoomIn();
+    void zoomOut();
 
 private:
-    void mousePressEvent(QMouseEvent *event);
-
     int *clicked_x;
     int *clicked_y;
     bool *createEnabled;
     QString *createMode;
     ContextMenu *contextMenu;
     MainWindow *mainWindow;
+    float *zoomScale;
+
 
 private slots:
-
-signals:
-
+    void mousePressEvent(QMouseEvent *event);
+    void zoomAllChildren(const float &scale);
 
 };
 

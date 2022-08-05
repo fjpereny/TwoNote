@@ -22,11 +22,13 @@
 
 #include <QWidget>
 #include "contextmenu.h"
+#include "mainwindow.h"
 
 
 class TabMainWidget : public QWidget
 {
     Q_OBJECT
+
 public:
     TabMainWidget(QWidget *parent = nullptr);
     ~TabMainWidget();
@@ -40,10 +42,12 @@ private:
     bool *createEnabled;
     QString *createMode;
     ContextMenu *contextMenu;
+    MainWindow *mainWindow;
 
 private slots:
 
 signals:
+
 
 };
 

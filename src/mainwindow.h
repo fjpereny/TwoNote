@@ -52,7 +52,6 @@ public:
     bool getUnderline();
     bool getStrike();
 
-    static MainWindow* getMainWindow();
     Ui::MainWindow* getUi();
 
     void setCurrentFont(QFont font);
@@ -62,6 +61,9 @@ public:
     void setTextDialogColor(const QColor color);
     QColor getTextDialogColor();
     QFont getFormatPainterFont();
+
+public slots:
+    void hideAllContextMenus();
 
 private slots:
     void keyPressEvent(QKeyEvent *event);

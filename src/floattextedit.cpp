@@ -182,12 +182,9 @@ void FloatTextEdit::autoResize()
 
 void FloatTextEdit::focusInEvent(QFocusEvent *event)
 {
-    QWidget *winWidget = QWidget::window();
-    MainWindow *win = qobject_cast<MainWindow*>(winWidget);
-    win->setCurrentObject(this);
-
+    mainWindow->setCurrentObject(this);
     Container *parent = qobject_cast<Container*>(this->parent());
-    win->setCurrentContainer(parent);
+    mainWindow->setCurrentContainer(parent);
     parent->setStyleSheet
             (
                 "Container "
@@ -212,13 +209,11 @@ void FloatTextEdit::focusInEvent(QFocusEvent *event)
             );
 
     int curFontSize = this->currentFont().pointSize();
-    QString fontSize = QString::number(curFontSize);
-    QString fontSizeName = fontSize + " pt";
-    win->getUi()->fontSizeComboBox->setCurrentText(fontSizeName);
-
-    QFont font = win->getCurrentFont();
+    QFont font = mainWindow->getCurrentFont();
     font.setPointSize(curFontSize);
-    win->setCurrentFont(font);
+    mainWindow->setCurrentFont(font);
+
+    mainWindow->hideAllContextMenus();
 }
 
 

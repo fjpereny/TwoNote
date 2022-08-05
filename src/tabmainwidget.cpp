@@ -21,17 +21,21 @@
 #include "floatimage.h"
 #include "notetabwidget.h"
 #include "container.h"
+#include "mainwindow.h"
 
 #include <iostream>
 #include <QHBoxLayout>
 #include <QMouseEvent>
 #include <QWidget>
 #include <QSizePolicy>
+#include <QApplication>
 
 
 TabMainWidget::TabMainWidget(QWidget *parent)
     : QWidget{parent}
-{
+{    
+    this->mainWindow = qobject_cast<MainWindow*>(QApplication::activeWindow());
+
     this->setCursor(Qt::IBeamCursor);
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 

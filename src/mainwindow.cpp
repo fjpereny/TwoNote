@@ -600,6 +600,13 @@ QString MainWindow::getFontFamily()
 void MainWindow::setCurrentFont(QFont font)
 {
     *this->currentFont = font;
+    QFont fontFamily = font;
+
+    fontFamily.setPointSize(this->font().pointSize());
+    this->ui->fontComboBox->setFont(fontFamily);
+
+    QString fontSize = QString::number(font.pointSize()) + " pt";
+    this->ui->fontSizeComboBox->setCurrentText(fontSize);
 }
 
 
@@ -910,4 +917,13 @@ void MainWindow::on_expandFontColorButton_clicked()
 void MainWindow::focusInEvent(QFocusEvent *event)
 {
     this->currentObject->setFocus();
+}
+
+
+void MainWindow::hideAllContextMenus()
+{
+    if (this->colorDropDown)
+    {
+        this->colorDropDown->hide();
+    }
 }

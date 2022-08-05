@@ -34,7 +34,6 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     this->mainWindow = qobject_cast<MainWindow*>(parent);
 
     this->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
-    this->setFocusPolicy(Qt::NoFocus);
     this->setAutoFillBackground(true);
     this->setStyleSheet
             (
@@ -88,45 +87,58 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     layout->setRowStretch(2, 1);
     ColorWell *white= new ColorWell(this, Qt::white);
     white->setFixedSize(smallColorWell);
+    white->setToolTip("<h4 style=\"color: black;\">White</h4>");
     layout->addWidget(white, 2, 0, 1, 1);
     ColorWell *black= new ColorWell(this, Qt::black);
     black->setFixedSize(smallColorWell);
+    black->setToolTip("<h4>Black</h4>");
     layout->addWidget(black, 2, 1, 1, 1);
     ColorWell *lightGray = new ColorWell(this, QColor(231, 230, 230));
     lightGray->setFixedSize(smallColorWell);
+    lightGray->setToolTip("<h4 style=\"color: black;\">Light Gray</h4>");
     layout->addWidget(lightGray, 2, 2, 1, 1);
     ColorWell *blueGray = new ColorWell(this, QColor(68, 84, 106));
     blueGray->setFixedSize(smallColorWell);
+    blueGray->setToolTip("<h4>Blue-Gray</h4>");
     layout->addWidget(blueGray, 2, 3, 1, 1);
     ColorWell *blue = new ColorWell(this, QColor(91, 155, 213));
     blue->setFixedSize(smallColorWell);
+    blue->setToolTip("<h4>Blue</h4>");
     layout->addWidget(blue, 2, 4, 1, 1);
     ColorWell *orange = new ColorWell(this, QColor(237, 125, 49));
     orange->setFixedSize(smallColorWell);
+    orange->setToolTip("<h4>Orange</h4>");
     layout->addWidget(orange, 2, 5, 1, 1);
     ColorWell *red = new ColorWell(this, QColor(232, 76, 34));
     red->setFixedSize(smallColorWell);
+    red->setToolTip("<h4>Red</h4>");
     layout->addWidget(red, 2, 6, 1, 1);
     ColorWell *gold = new ColorWell(this, QColor(255, 192, 0));
     gold->setFixedSize(smallColorWell);
+    gold->setToolTip("<h4 style=\"color: black;\">Gold</h4>");
     layout->addWidget(gold, 2, 7, 1, 1);
     ColorWell *purple = new ColorWell(this, QColor(128, 100, 162));
     purple->setFixedSize(smallColorWell);
+    purple->setToolTip("<h4>Purple</h4>");
     layout->addWidget(purple, 2, 8, 1, 1);
     ColorWell *green = new ColorWell(this, QColor(112, 173, 71));
     green->setFixedSize(smallColorWell);
+    green->setToolTip("<h4>Green</h4>");
     layout->addWidget(green, 2, 9, 1, 1);
 
     // Row 3
     layout->setRowStretch(3, 2);
     ColorWell *whiteA= new ColorWell(this, QColor(242, 242, 242));
     whiteA->setFixedSize(smallColorWell);
+    whiteA->setToolTip("<h4 style=\"color: black;\">White, Darker 5%</h4>");
     layout->addWidget(whiteA, 3, 0, 1, 1);
     ColorWell *blackA= new ColorWell(this, QColor(127, 127, 127));
     blackA->setFixedSize(smallColorWell);
+    blackA->setToolTip("<h4>Black, Lighter 50%</h4>");
     layout->addWidget(blackA, 3, 1, 1, 1);
     ColorWell *lightGrayA = new ColorWell(this, QColor(208, 206, 206));
     lightGrayA->setFixedSize(smallColorWell);
+    lightGrayA->setToolTip("<h4 style=\"color: black;\">Light Gray, Darker 10%</h4>");
     layout->addWidget(lightGrayA, 3, 2, 1, 1);
     ColorWell *blueGrayA = new ColorWell(this, QColor(214, 220, 228));
     blueGrayA->setFixedSize(smallColorWell);
@@ -154,12 +166,15 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     layout->setRowStretch(4, 2);
     ColorWell *whiteB= new ColorWell(this, QColor(216, 216, 216));
     whiteB->setFixedSize(smallColorWell);
+    whiteB->setToolTip("<h4 style=\"color: black;\">White, Darker 15%</h4>");
     layout->addWidget(whiteB, 4, 0, 1, 1);
     ColorWell *blackB= new ColorWell(this, QColor(89, 89, 89));
     blackB->setFixedSize(smallColorWell);
+    blackB->setToolTip("<h4>Black, Lighter 35%</h4>");
     layout->addWidget(blackB, 4, 1, 1, 1);
     ColorWell *lightGrayB = new ColorWell(this, QColor(174, 171, 171));
     lightGrayB->setFixedSize(smallColorWell);
+    lightGrayB->setToolTip("<h4 style=\"color: black;\">Light Gray, Darker 25%</h4>");
     layout->addWidget(lightGrayB, 4, 2, 1, 1);
     ColorWell *blueGrayB = new ColorWell(this, QColor(173, 185, 202));
     blueGrayB->setFixedSize(smallColorWell);
@@ -187,12 +202,15 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     layout->setRowStretch(5, 2);
     ColorWell *whiteC= new ColorWell(this, QColor(191, 191, 191));
     whiteC->setFixedSize(smallColorWell);
+    whiteC->setToolTip("<h4 style=\"color: black;\">White, Darker 25%</h4>");
     layout->addWidget(whiteC, 5, 0, 1, 1);
     ColorWell *blackC= new ColorWell(this, QColor(63, 63, 63));
     blackC->setFixedSize(smallColorWell);
+    blackC->setToolTip("<h4>Black, Lighter 25%</h4>");
     layout->addWidget(blackC, 5, 1, 1, 1);
     ColorWell *lightGrayC = new ColorWell(this, QColor(117, 112, 112));
     lightGrayC->setFixedSize(smallColorWell);
+    lightGrayC->setToolTip("<h4>Light Gray, Darker 50%</h4>");
     layout->addWidget(lightGrayC, 5, 2, 1, 1);
     ColorWell *blueGrayC = new ColorWell(this, QColor(132, 150, 176));
     blueGrayC->setFixedSize(smallColorWell);
@@ -220,12 +238,15 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     layout->setRowStretch(6, 2);
     ColorWell *whiteD= new ColorWell(this, QColor(165, 165, 165));
     whiteD->setFixedSize(smallColorWell);
+    whiteD->setToolTip("<h4 style=\"color: black;\">White, Darker 35%</h4>");
     layout->addWidget(whiteD, 6, 0, 1, 1);
     ColorWell *blackD= new ColorWell(this, QColor(38, 38, 38));
     blackD->setFixedSize(smallColorWell);
+    blackD->setToolTip("<h4>Black, Lighter 15%</h4>");
     layout->addWidget(blackD, 6, 1, 1, 1);
     ColorWell *lightGrayD = new ColorWell(this, QColor(58, 56, 56));
     lightGrayD->setFixedSize(smallColorWell);
+    lightGrayD->setToolTip("<h4>Light Gray, Darker 75%</h4>");
     layout->addWidget(lightGrayD, 6, 2, 1, 1);
     ColorWell *blueGrayD = new ColorWell(this, QColor(50, 63, 79));
     blueGrayD->setFixedSize(smallColorWell);
@@ -253,12 +274,15 @@ ColorDropDownMenu::ColorDropDownMenu(QWidget* parent)
     layout->setRowStretch(7, 2);
     ColorWell *whiteE= new ColorWell(this, QColor(127, 127, 127));
     whiteE->setFixedSize(smallColorWell);
+    whiteE->setToolTip("<h4>White, Darker 50%</h4>");
     layout->addWidget(whiteE, 7, 0, 1, 1);
     ColorWell *blackE= new ColorWell(this, QColor(12, 12, 12));
     blackE->setFixedSize(smallColorWell);
+    blackE->setToolTip("<h4>Black, Lighter 5%</h4>");
     layout->addWidget(blackE, 7, 1, 1, 1);
     ColorWell *lightGrayE = new ColorWell(this, QColor(23, 22, 22));
     lightGrayE->setFixedSize(smallColorWell);
+    lightGrayE->setToolTip("<h4>Light Gray, Darker 90%</h4>");
     layout->addWidget(lightGrayE, 7, 2, 1, 1);
     ColorWell *blueGrayE = new ColorWell(this, QColor(34, 42, 53));
     blueGrayE->setFixedSize(smallColorWell);
@@ -374,12 +398,14 @@ ColorDropDownMenu::~ColorDropDownMenu()
 
 void ColorDropDownMenu::leaveEvent(QEvent *event)
 {
-    this->hide();
+
 }
 
 
 void ColorDropDownMenu::openColorDialog()
 {
+    this->hide();
+
     QColor color = this->mainWindow->getTextDialogColor();
     if (color == Qt::black)
     {

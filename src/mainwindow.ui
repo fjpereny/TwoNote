@@ -2320,7 +2320,7 @@
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
-            <widget class="TabMainWidget" name="widget" native="true">
+            <widget class="TabMainWidget" name="tabMainWidget" native="true">
              <property name="palette">
               <palette>
                <active>

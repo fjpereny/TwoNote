@@ -31,36 +31,36 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
-set(TS_FILES ../src/TwoNote_en_US.ts)
+set(TS_FILES TwoNote_en_US.ts)
 
 set(PROJECT_SOURCES
-        ../src/main.cpp
-        ../src/mainwindow.cpp
-        ../src/mainwindow.h
-        ../src/mainwindow.ui
-        ../src/ribbonbar.h
-        ../src/ribbonbar.cpp
-        ../src/notetabwidget.h
-        ../src/notetabwidget.cpp
-        ../src/floattextedit.h
-        ../src/floattextedit.cpp
-        ../src/tabmainwidget.h
-        ../src/tabmainwidget.cpp
-        ../src/container.h
-        ../src/container.cpp
-        ../src/contextmenu.h
-        ../src/contextmenu.cpp
-        ../src/contextmenu.ui
-        ../src/floatimage.h
-        ../src/floatimage.cpp
-        ../src/colordropdownmenu.h
-        ../src/colordropdownmenu.cpp
-        ../src/colorwell.h
-        ../src/colorwell.cpp
+        main.cpp
+        mainwindow.cpp
+        mainwindow.h
+        mainwindow.ui
+        ribbonbar.h
+        ribbonbar.cpp
+        notetabwidget.h
+        notetabwidget.cpp
+        floattextedit.h
+        floattextedit.cpp
+        tabmainwidget.h
+        tabmainwidget.cpp
+        container.h
+        container.cpp
+        contextmenu.h
+        contextmenu.cpp
+        contextmenu.ui
+        floatimage.h
+        floatimage.cpp
+        colordropdownmenu.h
+        colordropdownmenu.cpp
+        colorwell.h
+        colorwell.cpp
 
-        ../src/rsc/rsc.qrc
+        rsc/rsc.qrc
 
-        ../src/css/ribbonButtons.css
+        css/ribbonButtons.css
         ${TS_FILES}
 )
 

@@ -94,6 +94,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install ninja-build cmake
+          sudo apt-get install qt6-base-dev
           ninja --version
           cmake --version
           gcc --version
@@ -134,7 +135,7 @@ jobs:
           cmake --version
           echo Update Qt6 =======================================================================
           sudo apt-get update
-          sudo apt-get install qt6-base
+          sudo apt-get install qt6-base-dev
       - name: Install dependencies on macos
         if: startsWith(matrix.config.os, 'macos')
         run: |

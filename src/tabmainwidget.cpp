@@ -139,15 +139,21 @@ void TabMainWidget::setZoomScale(const float scale)
 
 void TabMainWidget::zoomIn()
 {
-    *this->zoomScale *= 1.25;
-    this->zoomAllChildren(1.25);
+    if (*this->zoomScale < 10)
+    {
+        *this->zoomScale *= 1.05;
+        this->zoomAllChildren(1.25);
+    }
 }
 
 
 void TabMainWidget::zoomOut()
 {
-    *this->zoomScale /= 1.25;
-    this->zoomAllChildren(1.0 / 1.25);
+    if (*this->zoomScale > 0.25)
+    {
+        *this->zoomScale /= 1.05;
+        this->zoomAllChildren(1.0 / 1.05);
+    }
 }
 
 
@@ -158,8 +164,8 @@ void TabMainWidget::zoomAllChildren(const float &scale)
         Container* container = qobject_cast<Container*>(child);
         if (container)
         {
-            int newX = container->pos().x() * scale;
-            int newY = container->pos().y() * scale;
+            int newX = container->getZoomX() * scale;
+            int newY = container->getZoomY() * scale;
             container->move(newX, newY);
 
             FloatTextEdit *floatTextEdit = container->findChild<FloatTextEdit*>();

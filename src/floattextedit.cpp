@@ -312,7 +312,7 @@ void FloatTextEdit::zoom(float scale)
 {
     QTextCursor cursor = this->textCursor();
     cursor.setPosition(0);
-    while(!cursor.atBlockEnd())
+    while(!cursor.atEnd())
     {
         cursor.setPosition(cursor.position(), QTextCursor::MoveAnchor);
         cursor.setPosition(cursor.position() + 1, QTextCursor::KeepAnchor);

@@ -72,6 +72,10 @@ Container::Container(QWidget *parent)
     this->currentPositionX = new int(this->pos().x());
     this->currentPositionY = new int(this->pos().y());
 
+    // Add scalar operatin to adjust while created during zoomed state.
+    this->zoomPositionX = nullptr;
+    this->zoomPositionX = nullptr;
+
     this->movePreviewFrame = nullptr;
 
     QWidget *winWidget = QWidget::window();
@@ -387,4 +391,63 @@ void Container::keyPressEvent(QKeyEvent *event)
             this->findChild<QWidget*>()->setFocus();
         }
     }
+}
+
+
+int Container::getZoomX()
+{
+    if (!this->zoomPositionX)
+    {
+        this->zoomPositionX = new int(this->pos().x());
+    }
+    return *this->zoomPositionX;
+}
+
+int Container::getZoomY()
+{
+    if(!this->zoomPositionY)
+    {
+        this->zoomPositionY = new int(this->pos().y());
+    }
+    return *this->zoomPositionY;
+}
+
+
+void Container::moveEvent(QMoveEvent *event)
+{
+    // Check to keep Containers in bounds.
+    int x = event->pos().x();
+    int y = event->pos().y();
+    if (x < 0 || y < 0)
+    {
+        if (x < 0)
+        {
+            x = 0;
+        }
+        if (y < 0)
+        {
+            y = 0;
+        }
+        this->move(x, y);
+    }
+
+    std::cout << event->pos().x() << std::endl;
+    std::cout << event->pos().y() << std::endl;
+//    if (!this->zoomPositionX)
+//    {
+//        this->zoomPositionX = new int(event->pos().x());
+//    }
+//    else
+//    {
+//        *this->zoomPositionX = event->pos().x();
+//    }
+
+//    if (!this->zoomPositionY)
+//    {
+//        this->zoomPositionY = new int(event->pos().y());
+//    }
+//    else
+//    {
+//        *this->zoomPositionY = event->pos().y();
+//    }
 }

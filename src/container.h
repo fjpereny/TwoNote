@@ -80,6 +80,9 @@ public:
      */
     bool getSizable();
 
+    int getZoomX();
+    int getZoomY();
+
 private:
     void focusInEvent(QFocusEvent *event);
     void focusOutEvent(QFocusEvent *event);
@@ -169,6 +172,24 @@ private:
      */
     int *currentPositionY;
 
+    //! The actual x coordinate of the Container relative to a normal zoomed state.
+    /*!
+     * \brief This is the actual x coordinate of the object on the page.
+     * This is used to keep track of the acutal location of objects when they are moved during
+     * zoom operations.  Also used to calculate the new zoomed position from a fixed location.
+     * \sa TabMainWidget::zoomIn, TabMainWidget::zoomOut, TabMainWidget::zoomAllChildren
+     */
+    int *zoomPositionX;
+
+    //! The actual y coordinate of the Container relative to a normal zoomed state.
+    /*!
+     * \brief This is the actual y coordinate of the object on the page.
+     * This is used to keep track of the acutal location of objects when they are moved during
+     * zoom operations.  Also used to calculate the new zoomed position from a fixed location.
+     * \sa TabMainWidget::zoomIn, TabMainWidget::zoomOut, TabMainWidget::zoomAllChildren
+     */
+    int *zoomPositionY;
+
     //! A QFrame object used for movement and resizing preview purposes.
     /*!
      * \brief This object is instantiated during a movement or resizing operation to show the user
@@ -188,6 +209,7 @@ private:
 
 private slots:
 
+    void moveEvent(QMoveEvent *event);
 
 signals:
 

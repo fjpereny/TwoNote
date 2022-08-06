@@ -396,19 +396,11 @@ void Container::keyPressEvent(QKeyEvent *event)
 
 int Container::getZoomX()
 {
-    if (!this->zoomPositionX)
-    {
-        this->zoomPositionX = new int(this->pos().x());
-    }
     return *this->zoomPositionX;
 }
 
 int Container::getZoomY()
 {
-    if(!this->zoomPositionY)
-    {
-        this->zoomPositionY = new int(this->pos().y());
-    }
     return *this->zoomPositionY;
 }
 
@@ -431,23 +423,15 @@ void Container::moveEvent(QMoveEvent *event)
         this->move(x, y);
     }
 
-    std::cout << event->pos().x() << std::endl;
-    std::cout << event->pos().y() << std::endl;
-//    if (!this->zoomPositionX)
-//    {
-//        this->zoomPositionX = new int(event->pos().x());
-//    }
-//    else
-//    {
-//        *this->zoomPositionX = event->pos().x();
-//    }
+    if (!this->zoomPositionX)
+    {
+        this->zoomPositionX = new int();
+    }
+    *this->zoomPositionX = event->pos().x();
 
-//    if (!this->zoomPositionY)
-//    {
-//        this->zoomPositionY = new int(event->pos().y());
-//    }
-//    else
-//    {
-//        *this->zoomPositionY = event->pos().y();
-//    }
+    if (!this->zoomPositionY)
+    {
+        this->zoomPositionY = new int();
+    }
+    *this->zoomPositionY = event->pos().y();
 }

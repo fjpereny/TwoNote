@@ -356,3 +356,23 @@ void FloatTextEdit::updatePointSizeVector()
         }
     }
 }
+
+
+void FloatTextEdit::wheelEvent(QWheelEvent *event)
+{
+    if (event->angleDelta().y() > 0)
+    {
+        if (event->modifiers() & Qt::Modifier::CTRL)
+        {
+            tabMainWidget->zoomIn();
+        }
+    }
+
+    else if (event->angleDelta().y() < 0)
+    {
+        if (event->modifiers() & Qt::Modifier::CTRL)
+        {
+            tabMainWidget->zoomOut();
+        }
+    }
+}

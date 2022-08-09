@@ -196,3 +196,23 @@ void TabMainWidget::zoomAllChildren(const float &scale)
         }
     }
 }
+
+
+void TabMainWidget::wheelEvent(QWheelEvent *event)
+{
+    if (event->angleDelta().y() > 0)
+    {
+        if (event->modifiers() & Qt::Modifier::CTRL)
+        {
+            this->zoomIn();
+        }
+    }
+
+    else if (event->angleDelta().y() < 0)
+    {
+        if (event->modifiers() & Qt::Modifier::CTRL)
+        {
+            this->zoomOut();
+        }
+    }
+}

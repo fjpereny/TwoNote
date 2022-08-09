@@ -51,6 +51,7 @@ private:
 private slots:
     void mousePressEvent(QMouseEvent *event);
     void zoomAllChildren(const float &scale);
+    void wheelEvent(QWheelEvent *event);
 
 };
 

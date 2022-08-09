@@ -115,6 +115,7 @@ signals:
 
 private slots:
     void updatePointSizeVector();
+    void wheelEvent(QWheelEvent *event);
 };
 
 #endif // FLOATTEXTEDIT_H

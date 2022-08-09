@@ -19,6 +19,8 @@
 #ifndef FLOATTEXTEDIT_H
 #define FLOATTEXTEDIT_H
 
+
+#include <vector>
 #include <QTextEdit>
 #include "mainwindow.h"
 #include "tabmainwidget.h"
@@ -106,10 +108,13 @@ private:
     Container *container;
     TabMainWidget *tabMainWidget;
 
+    bool *allowPointSizeChanges;
+    std::vector<float> *absolutePointSize;
+
 signals:
 
 private slots:
-
+    void updatePointSizeVector();
 };
 
 #endif // FLOATTEXTEDIT_H

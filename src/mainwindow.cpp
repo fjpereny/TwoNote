@@ -77,6 +77,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->currentFont->setItalic(*italic);
     this->currentFont->setUnderline(*underline);
     this->currentFont->setStrikeOut(*strike);
+    this->currentFont->setPointSize(12);
 
     this->currentTextColor = new QColor(Qt::black);
     this->textColorDialogColor = new QColor(Qt::black);

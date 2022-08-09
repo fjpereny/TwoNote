@@ -23,6 +23,7 @@
 #include <QFrame>
 
 class MainWindow;
+class TabMainWidget;
 
 //! Visible frame for all objects contained on the note page.
 /*!
@@ -80,8 +81,10 @@ public:
      */
     bool getSizable();
 
-    int getZoomX();
-    int getZoomY();
+    void setAbsolutePositionX(int x);
+    void setAbsolutePositionY(int y);
+    int getAbsolutePositionX();
+    int getAbsolutePositionY();
 
 private:
     void focusInEvent(QFocusEvent *event);
@@ -179,7 +182,7 @@ private:
      * zoom operations.  Also used to calculate the new zoomed position from a fixed location.
      * \sa TabMainWidget::zoomIn, TabMainWidget::zoomOut, TabMainWidget::zoomAllChildren
      */
-    int *zoomPositionX;
+    int *absolutePositionX;
 
     //! The actual y coordinate of the Container relative to a normal zoomed state.
     /*!
@@ -188,7 +191,7 @@ private:
      * zoom operations.  Also used to calculate the new zoomed position from a fixed location.
      * \sa TabMainWidget::zoomIn, TabMainWidget::zoomOut, TabMainWidget::zoomAllChildren
      */
-    int *zoomPositionY;
+    int *absolutePositionY;
 
     //! A QFrame object used for movement and resizing preview purposes.
     /*!
@@ -206,6 +209,8 @@ private:
      *
      */
     MainWindow *mainWindow;
+
+    TabMainWidget *tabMainWidget;
 
 private slots:
 

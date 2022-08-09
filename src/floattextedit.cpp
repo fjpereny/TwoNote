@@ -49,17 +49,27 @@ FloatTextEdit::FloatTextEdit(QWidget *parent)
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     this->setWordWrapMode(QTextOption::NoWrap);
 
-    this->setFont(mainWindow->getCurrentFont());
-    this->setCurrentFont(mainWindow->getCurrentFont());
-    this->setTextColor(this->mainWindow->getCurrentTextColor());
+
+    QTextCharFormat format;
+    format.setFont(mainWindow->getCurrentFont());
+    format.setFontPointSize(mainWindow->getFontSize());
+    format.setForeground(mainWindow->getCurrentTextColor());
+    this->setCurrentCharFormat(format);
+
     this->setCursor(Qt::IBeamCursor);
-    this->setText("Blank Note");
-    this->selectAll();
+
+    this->setPlaceholderText("Blank Note");
+
     this->setStyleSheet("background-color: rgba(0, 0, 0, 0);");
+
+    this->allowPointSizeChanges = new bool(true);
+    this->absolutePointSize = new std::vector<float>();
 
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::changeParentCursor);
     QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::autoResize);
+    QObject::connect(this, &QTextEdit::textChanged, this, &FloatTextEdit::updatePointSizeVector);
     QObject::connect(this, &QTextEdit::cursorPositionChanged, this, &FloatTextEdit::cursorSizeChange);
+
 }
 
 
@@ -310,16 +320,39 @@ void FloatTextEdit::changeParentCursor()
 
 void FloatTextEdit::zoom(float scale)
 {
+    *this->allowPointSizeChanges = false;
+
     QTextCursor cursor = this->textCursor();
     cursor.setPosition(0);
     while(!cursor.atEnd())
     {
+        float newSize = this->absolutePointSize->at(cursor.position()) * scale;
         cursor.setPosition(cursor.position(), QTextCursor::MoveAnchor);
         cursor.setPosition(cursor.position() + 1, QTextCursor::KeepAnchor);
         QTextCharFormat format = cursor.charFormat();
-        float newSize = format.fontPointSize() * scale;
         format.setFontPointSize(newSize);
         cursor.setCharFormat(format);
-        cursor.clearSelection();
+    }
+
+    *this->allowPointSizeChanges = true;
+}
+
+
+void FloatTextEdit::updatePointSizeVector()
+{
+    if (*this->allowPointSizeChanges)
+    {
+        this->absolutePointSize->clear();
+
+        QTextCursor cursor = this->textCursor();
+        cursor.setPosition(0);
+        while(!cursor.atEnd())
+        {
+            cursor.setPosition(cursor.position(), QTextCursor::MoveAnchor);
+            cursor.setPosition(cursor.position() + 1, QTextCursor::KeepAnchor);
+            float pointSize = cursor.charFormat().fontPointSize();
+            this->absolutePointSize->push_back(pointSize);
+            cursor.clearSelection();
+        }
     }
 }

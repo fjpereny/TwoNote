@@ -20,15 +20,20 @@
 #include "floattextedit.h"
 #include "floatimage.h"
 #include "mainwindow.h"
+#include "tabmainwidget.h"
 
 #include <iostream>
 #include <QMouseEvent>
 #include <QStyle>
+#include <QApplication>
 
 
 Container::Container(QWidget *parent)
     : QFrame{parent}
 {
+    this->mainWindow = qobject_cast<MainWindow*>(QApplication::activeWindow());
+    this->tabMainWidget = qobject_cast<TabMainWidget*>(this->parent());
+
     this->setAttribute(Qt::WA_DeleteOnClose, true);
     this->setFocusPolicy(Qt::ClickFocus);
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -73,23 +78,10 @@ Container::Container(QWidget *parent)
     this->currentPositionY = new int(this->pos().y());
 
     // Add scalar operatin to adjust while created during zoomed state.
-    this->zoomPositionX = nullptr;
-    this->zoomPositionX = nullptr;
+    this->absolutePositionX = new int(this->pos().x() / tabMainWidget->getZoomScale());
+    this->absolutePositionY = new int(this->pos().y() / tabMainWidget->getZoomScale());
 
     this->movePreviewFrame = nullptr;
-
-    QWidget *winWidget = QWidget::window();
-    MainWindow *window = qobject_cast<MainWindow*>(winWidget);
-    if (window)
-    {
-        this->mainWindow = window;
-    }
-    else
-    {
-        std::cerr << "Error: Container::Container() could not get pointer to MainWindow.\n"
-                     "\tthis->mainWindow set to nullptr and may have unexpected consequences.";
-        this->mainWindow = nullptr;
-    }
 }
 
 
@@ -360,6 +352,9 @@ void Container::mouseReleaseEvent(QMouseEvent *event)
     *this->currentPositionX = this->pos().x();
     *this->currentPositionY = this->pos().y();
 
+    this->absolutePositionX = new int(this->pos().x() / tabMainWidget->getZoomScale());
+    this->absolutePositionY = new int(this->pos().y() / tabMainWidget->getZoomScale());
+
     if (this->movePreviewFrame)
     {
         this->movePreviewFrame->close();
@@ -394,14 +389,26 @@ void Container::keyPressEvent(QKeyEvent *event)
 }
 
 
-int Container::getZoomX()
+void Container::setAbsolutePositionX(int x)
 {
-    return *this->zoomPositionX;
+    *this->absolutePositionX = x;
 }
 
-int Container::getZoomY()
+
+void Container::setAbsolutePositionY(int y)
 {
-    return *this->zoomPositionY;
+    *this->absolutePositionY = y;
+}
+
+
+int Container::getAbsolutePositionX()
+{
+    return *this->absolutePositionX;
+}
+
+int Container::getAbsolutePositionY()
+{
+    return *this->absolutePositionY;
 }
 
 
@@ -422,16 +429,4 @@ void Container::moveEvent(QMoveEvent *event)
         }
         this->move(x, y);
     }
-
-    if (!this->zoomPositionX)
-    {
-        this->zoomPositionX = new int();
-    }
-    *this->zoomPositionX = event->pos().x();
-
-    if (!this->zoomPositionY)
-    {
-        this->zoomPositionY = new int();
-    }
-    *this->zoomPositionY = event->pos().y();
 }

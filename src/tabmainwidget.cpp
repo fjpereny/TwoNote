@@ -81,6 +81,8 @@ void TabMainWidget::mousePressEvent(QMouseEvent *event)
         {
             Container *newContainer = new Container(this);
             newContainer->move(*this->clicked_x - 20, *this->clicked_y - 20);
+            newContainer->setAbsolutePositionX((*this->clicked_x - 20) / this->getZoomScale());
+            newContainer->setAbsolutePositionY((*this->clicked_y - 20) / this->getZoomScale());
             QHBoxLayout *newContainerLayout = new QHBoxLayout(newContainer);
             newContainerLayout->setContentsMargins(0, 0, 0, 0);
             newContainer->setLayout(newContainerLayout);
@@ -139,20 +141,38 @@ void TabMainWidget::setZoomScale(const float scale)
 
 void TabMainWidget::zoomIn()
 {
-    if (*this->zoomScale < 10)
+    // Maximum zoom of 500%
+    // Zoom should take place in 25% increments with 10% minimum
+    if (*this->zoomScale < 5.0)
     {
-        *this->zoomScale *= 1.05;
-        this->zoomAllChildren(1.25);
+        if (*this->zoomScale <= 0.10)
+        {
+            *this->zoomScale = 0.25;
+        }
+        else
+        {
+            *this->zoomScale += 0.25;
+        }
+        this->zoomAllChildren(*this->zoomScale);
     }
 }
 
 
 void TabMainWidget::zoomOut()
 {
-    if (*this->zoomScale > 0.25)
+    // Minimum zoom of 10%
+    // Zoom increments of 25%
+    if (*this->zoomScale >= 0.25)
     {
-        *this->zoomScale /= 1.05;
-        this->zoomAllChildren(1.0 / 1.05);
+        if (*this->zoomScale == 0.25)
+        {
+            *this->zoomScale = 0.10;
+        }
+        else
+        {
+            *this->zoomScale -= 0.25;
+        }
+        this->zoomAllChildren(*this->zoomScale);
     }
 }
 
@@ -164,8 +184,8 @@ void TabMainWidget::zoomAllChildren(const float &scale)
         Container* container = qobject_cast<Container*>(child);
         if (container)
         {
-            int newX = container->getZoomX() * scale;
-            int newY = container->getZoomY() * scale;
+            int newX = container->getAbsolutePositionX() * scale;
+            int newY = container->getAbsolutePositionY() * scale;
             container->move(newX, newY);
 
             FloatTextEdit *floatTextEdit = container->findChild<FloatTextEdit*>();

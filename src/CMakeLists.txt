@@ -57,6 +57,8 @@ set(PROJECT_SOURCES
         colordropdownmenu.cpp
         colorwell.h
         colorwell.cpp
+        todolist.h
+        todolist.cpp
 
         rsc/rsc.qrc
 

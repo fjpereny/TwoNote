@@ -22,6 +22,7 @@
 #include "floattextedit.h"
 #include "floatimage.h"
 #include "colordropdownmenu.h"
+#include "todolist.h"
 
 #include <iostream>
 #include <QDialog>
@@ -49,6 +50,7 @@
 #include <QSizePolicy>
 #include <QScrollBar>
 #include <QColorDialog>
+#include <QCheckBox>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -928,3 +930,11 @@ void MainWindow::hideAllContextMenus()
         this->colorDropDown->hide();
     }
 }
+
+void MainWindow::on_toDoTagButton_clicked()
+{
+    Container *container = new Container(this->ui->tabMainWidget);
+    ToDoList *toDoList = new ToDoList(container);
+    container->show();
+}
+

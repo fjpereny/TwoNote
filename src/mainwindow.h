@@ -94,6 +94,8 @@ private slots:
     void on_expandFontColorButton_clicked();
     void focusInEvent(QFocusEvent *event);
 
+    void on_toDoTagButton_clicked();
+
 private:
 
     Ui::MainWindow *ui;
